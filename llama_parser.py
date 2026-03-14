@@ -1,11 +1,11 @@
 import json
+
 from ollama import chat
 from pydantic import BaseModel
-from movie_search import search_movies
 
-# -----------------------
-# Parser configuration
-# -----------------------
+from movie_search import search_movies
+from semantic_search import cosine_search, recommend_similar_movies
+
 
 VALID_MOODS = [
     "light",
@@ -14,7 +14,7 @@ VALID_MOODS = [
     "dark",
     "exciting",
     "uplifting",
-    "romantic"
+    "romantic",
 ]
 
 
@@ -25,6 +25,9 @@ class MovieQuery(BaseModel):
     year_max: int | None = None
     year: int | None = None
     language: str | None = None
+    similar_to: str | None = None
+    semantic_query: str | None = None
+
 
 def _to_int_or_none(value):
     try:
@@ -32,11 +35,13 @@ def _to_int_or_none(value):
     except (TypeError, ValueError):
         return None
 
+
 def _to_str_or_none(value):
     if value is None:
         return None
     value = str(value).strip()
     return value if value else None
+
 
 def parse_user_query(user_input: str) -> dict:
     response = chat(
@@ -54,30 +59,35 @@ def parse_user_query(user_input: str) -> dict:
                     "- year_max means movies before that year\n"
                     "- year means exactly that year\n"
                     "- language means movie language\n"
+                    "- similar_to is a movie title the user wants something like\n"
+                    "- semantic_query is a free-text taste query about themes, vibe, or story style\n"
+                    "- If the user says 'like Interstellar', set similar_to to 'Interstellar'\n"
+                    "- If the user describes a vibe or concept, copy that into semantic_query\n"
                     "- If information is missing return null\n"
                     "- Return ONLY valid JSON"
-                )
+                ),
             },
             {
                 "role": "user",
-                "content": user_input
-            }
+                "content": user_input,
+            },
         ],
-        format=MovieQuery.model_json_schema()
+        format=MovieQuery.model_json_schema(),
     )
 
     data = json.loads(response.message.content)
 
-    normalized_data = {
+    return {
         "genre": _to_str_or_none(data.get("genre")),
         "mood": _to_str_or_none(data.get("mood")),
         "year_min": _to_int_or_none(data.get("year_min")),
         "year_max": _to_int_or_none(data.get("year_max")),
         "year": _to_int_or_none(data.get("year")),
         "language": _to_str_or_none(data.get("language")),
+        "similar_to": _to_str_or_none(data.get("similar_to")),
+        "semantic_query": _to_str_or_none(data.get("semantic_query")),
     }
 
-    return normalized_data
 
 def recommend_movies(user_input: str):
     query = parse_user_query(user_input)
@@ -91,23 +101,33 @@ def recommend_movies(user_input: str):
         "emotional": "Drama",
         "exciting": "Action",
         "uplifting": "Drama",
-        "light": "Comedy"
+        "light": "Comedy",
     }
 
     if not query.get("genre") and query.get("mood") in mood_genre_map:
         query["genre"] = mood_genre_map[query["mood"]]
 
-    # 第一次：全部條件都用
+    if query.get("similar_to"):
+        try:
+            return recommend_similar_movies(query["similar_to"], top_k=5)
+        except FileNotFoundError:
+            pass
+
+    if query.get("semantic_query"):
+        try:
+            return cosine_search(query["semantic_query"], top_k=5)
+        except FileNotFoundError:
+            pass
+
     movies = search_movies(
         genre=query.get("genre"),
         mood=query.get("mood"),
         year_min=query.get("year_min"),
         year_max=query.get("year_max"),
         year=query.get("year"),
-        language=query.get("language")
+        language=query.get("language"),
     )
 
-    # 第二次：如果沒有結果，拿掉 mood 再試一次
     if not movies and query.get("mood"):
         movies = search_movies(
             genre=query.get("genre"),
@@ -115,15 +135,20 @@ def recommend_movies(user_input: str):
             year_min=query.get("year_min"),
             year_max=query.get("year_max"),
             year=query.get("year"),
-            language=query.get("language")
+            language=query.get("language"),
         )
+
+    if not movies:
+        try:
+            movies = cosine_search(user_input, top_k=5)
+        except FileNotFoundError:
+            pass
 
     return movies
 
+
 if __name__ == "__main__":
-
     while True:
-
         user_input = input("\nWhat movie do you want to watch? (type 'exit' to quit)\n> ")
 
         if user_input.lower() == "exit":
@@ -137,4 +162,8 @@ if __name__ == "__main__":
             print("No movies found matching your request.\n")
         else:
             for movie in results[:5]:
-                print(f"{movie['title']} ({movie['year']})")
+                similarity = movie.get("similarity")
+                if similarity is None:
+                    print(f"{movie['title']} ({movie['year']})")
+                else:
+                    print(f"{movie['title']} ({movie['year']}) - score={similarity:.4f}")
