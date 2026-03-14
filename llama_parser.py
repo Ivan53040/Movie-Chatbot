@@ -4,7 +4,12 @@ from ollama import chat
 from pydantic import BaseModel
 
 from movie_search import search_movies
-from semantic_search import cosine_search, recommend_similar_movies
+from semantic_search import (
+    cosine_search,
+    hybrid_recommend_similar_movies,
+    hybrid_search,
+    recommend_similar_movies,
+)
 
 
 VALID_MOODS = [
@@ -107,14 +112,49 @@ def recommend_movies(user_input: str):
     if not query.get("genre") and query.get("mood") in mood_genre_map:
         query["genre"] = mood_genre_map[query["mood"]]
 
+    has_hard_filters = any(
+        query.get(key) is not None
+        for key in ("genre", "mood", "year_min", "year_max", "year", "language")
+    )
+
     if query.get("similar_to"):
         try:
+            movies = hybrid_recommend_similar_movies(
+                query["similar_to"],
+                genre=query.get("genre"),
+                mood=query.get("mood"),
+                year_min=query.get("year_min"),
+                year_max=query.get("year_max"),
+                year=query.get("year"),
+                language=query.get("language"),
+                candidate_k=20,
+                top_k=5,
+            )
+            if movies:
+                return movies
+            if has_hard_filters:
+                return []
             return recommend_similar_movies(query["similar_to"], top_k=5)
         except FileNotFoundError:
             pass
 
     if query.get("semantic_query"):
         try:
+            movies = hybrid_search(
+                query["semantic_query"],
+                genre=query.get("genre"),
+                mood=query.get("mood"),
+                year_min=query.get("year_min"),
+                year_max=query.get("year_max"),
+                year=query.get("year"),
+                language=query.get("language"),
+                candidate_k=20,
+                top_k=5,
+            )
+            if movies:
+                return movies
+            if has_hard_filters:
+                return []
             return cosine_search(query["semantic_query"], top_k=5)
         except FileNotFoundError:
             pass
@@ -138,7 +178,7 @@ def recommend_movies(user_input: str):
             language=query.get("language"),
         )
 
-    if not movies:
+    if not movies and not has_hard_filters:
         try:
             movies = cosine_search(user_input, top_k=5)
         except FileNotFoundError:

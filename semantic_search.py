@@ -2,6 +2,7 @@ import json
 import numpy as np
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
+from movie_search import filter_movies
 
 MOVIES_PATH = Path(__file__).parent / "movies.json"
 EMBEDDINGS_PATH = Path(__file__).parent / "movie_embeddings.npz"
@@ -41,6 +42,31 @@ def cosine_search(query, top_k=5):
         results.append(movie)
 
     return results
+
+
+def hybrid_search(
+    query,
+    *,
+    genre=None,
+    mood=None,
+    year_min=None,
+    year_max=None,
+    year=None,
+    language=None,
+    candidate_k=20,
+    top_k=5,
+):
+    semantic_results = cosine_search(query, top_k=candidate_k)
+    filtered_results = filter_movies(
+        semantic_results,
+        genre=genre,
+        mood=mood,
+        year_min=year_min,
+        year_max=year_max,
+        year=year,
+        language=language,
+    )
+    return filtered_results[:top_k]
 
 def find_movie_by_title(title, movies):
     title_lower = title.strip().lower()
@@ -93,6 +119,31 @@ def recommend_similar_movies(movie_title, top_k=5):
         results.append(movie)
 
     return results
+
+
+def hybrid_recommend_similar_movies(
+    movie_title,
+    *,
+    genre=None,
+    mood=None,
+    year_min=None,
+    year_max=None,
+    year=None,
+    language=None,
+    candidate_k=20,
+    top_k=5,
+):
+    similar_results = recommend_similar_movies(movie_title, top_k=candidate_k)
+    filtered_results = filter_movies(
+        similar_results,
+        genre=genre,
+        mood=mood,
+        year_min=year_min,
+        year_max=year_max,
+        year=year,
+        language=language,
+    )
+    return filtered_results[:top_k]
 
 
 if __name__ == "__main__":
