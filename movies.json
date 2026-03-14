@@ -1,0 +1,6810 @@
+[
+  {
+    "title": "The Godfather",
+    "genre": [
+      "Drama",
+      "Crime"
+    ],
+    "year": 1972,
+    "mood": [
+      "intense",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Schindler's List",
+    "genre": [
+      "Drama",
+      "History",
+      "War"
+    ],
+    "year": 1993,
+    "mood": [
+      "emotional",
+      "powerful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Raging Bull",
+    "genre": [
+      "Drama",
+      "Sport",
+      "Biography"
+    ],
+    "year": 1980,
+    "mood": [
+      "intense",
+      "raw"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Casablanca",
+    "genre": [
+      "Romance",
+      "Drama",
+      "War"
+    ],
+    "year": 1942,
+    "mood": [
+      "romantic",
+      "classic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Citizen Kane",
+    "genre": [
+      "Drama",
+      "Mystery"
+    ],
+    "year": 1941,
+    "mood": [
+      "cinematic",
+      "complex"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Gone with the Wind",
+    "genre": [
+      "Romance",
+      "Drama",
+      "War"
+    ],
+    "year": 1939,
+    "mood": [
+      "epic",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Wizard of Oz",
+    "genre": [
+      "Fantasy",
+      "Adventure",
+      "Family"
+    ],
+    "year": 1939,
+    "mood": [
+      "whimsical",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "One Flew Over the Cuckoo's Nest",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1975,
+    "mood": [
+      "rebellious",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Lawrence of Arabia",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "War"
+    ],
+    "year": 1962,
+    "mood": [
+      "epic",
+      "cinematic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Vertigo",
+    "genre": [
+      "Thriller",
+      "Mystery",
+      "Romance"
+    ],
+    "year": 1958,
+    "mood": [
+      "suspenseful",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Psycho",
+    "genre": [
+      "Horror",
+      "Thriller",
+      "Mystery"
+    ],
+    "year": 1960,
+    "mood": [
+      "suspenseful",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Godfather: Part II",
+    "genre": [
+      "Drama",
+      "Crime"
+    ],
+    "year": 1974,
+    "mood": [
+      "intense",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "On the Waterfront",
+    "genre": [
+      "Drama",
+      "Crime"
+    ],
+    "year": 1954,
+    "mood": [
+      "gritty",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Forrest Gump",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 1994,
+    "mood": [
+      "heartwarming",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Sound of Music",
+    "genre": [
+      "Musical",
+      "Family",
+      "Drama"
+    ],
+    "year": 1965,
+    "mood": [
+      "uplifting",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "12 Angry Men",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1957,
+    "mood": [
+      "tense",
+      "thought-provoking"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "West Side Story",
+    "genre": [
+      "Musical",
+      "Romance",
+      "Drama"
+    ],
+    "year": 1961,
+    "mood": [
+      "romantic",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Star Wars: Episode IV - A New Hope",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Action"
+    ],
+    "year": 1977,
+    "mood": [
+      "adventurous",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "2001: A Space Odyssey",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Mystery"
+    ],
+    "year": 1968,
+    "mood": [
+      "contemplative",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Chinatown",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 1974,
+    "mood": [
+      "noir",
+      "complex"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Singin' in the Rain",
+    "genre": [
+      "Musical",
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1952,
+    "mood": [
+      "joyful",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "It's a Wonderful Life",
+    "genre": [
+      "Drama",
+      "Family",
+      "Fantasy"
+    ],
+    "year": 1946,
+    "mood": [
+      "heartwarming",
+      "uplifting"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+    "genre": [
+      "Comedy",
+      "War",
+      "Satire"
+    ],
+    "year": 1964,
+    "mood": [
+      "dark humor",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Some Like It Hot",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1959,
+    "mood": [
+      "witty",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Ben-Hur",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "History"
+    ],
+    "year": 1959,
+    "mood": [
+      "epic",
+      "spectacular"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Apocalypse Now",
+    "genre": [
+      "Drama",
+      "War"
+    ],
+    "year": 1979,
+    "mood": [
+      "intense",
+      "visceral"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "genre": [
+      "Fantasy",
+      "Adventure",
+      "Drama"
+    ],
+    "year": 2003,
+    "mood": [
+      "epic",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Gladiator",
+    "genre": [
+      "Action",
+      "Drama",
+      "Adventure"
+    ],
+    "year": 2000,
+    "mood": [
+      "epic",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Unforgiven",
+    "genre": [
+      "Western",
+      "Drama"
+    ],
+    "year": 1992,
+    "mood": [
+      "gritty",
+      "contemplative"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Raiders of the Lost Ark",
+    "genre": [
+      "Adventure",
+      "Action"
+    ],
+    "year": 1981,
+    "mood": [
+      "adventurous",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Rocky",
+    "genre": [
+      "Drama",
+      "Sport"
+    ],
+    "year": 1976,
+    "mood": [
+      "inspirational",
+      "uplifting"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "A Streetcar Named Desire",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1951,
+    "mood": [
+      "intense",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1962,
+    "mood": [
+      "thought-provoking",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "My Fair Lady",
+    "genre": [
+      "Musical",
+      "Romance",
+      "Comedy"
+    ],
+    "year": 1964,
+    "mood": [
+      "charming",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "A Clockwork Orange",
+    "genre": [
+      "Sci-Fi",
+      "Drama",
+      "Crime"
+    ],
+    "year": 1971,
+    "mood": [
+      "disturbing",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Doctor Zhivago",
+    "genre": [
+      "Drama",
+      "Romance",
+      "War"
+    ],
+    "year": 1965,
+    "mood": [
+      "romantic",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Searchers",
+    "genre": [
+      "Western",
+      "Adventure",
+      "Drama"
+    ],
+    "year": 1956,
+    "mood": [
+      "cinematic",
+      "contemplative"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Jaws",
+    "genre": [
+      "Thriller",
+      "Adventure",
+      "Horror"
+    ],
+    "year": 1975,
+    "mood": [
+      "tense",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Patton",
+    "genre": [
+      "Drama",
+      "War",
+      "Biography"
+    ],
+    "year": 1970,
+    "mood": [
+      "epic",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Butch Cassidy and the Sundance Kid",
+    "genre": [
+      "Western",
+      "Comedy",
+      "Adventure"
+    ],
+    "year": 1969,
+    "mood": [
+      "charming",
+      "adventurous"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Good, the Bad and the Ugly",
+    "genre": [
+      "Western",
+      "Adventure"
+    ],
+    "year": 1966,
+    "mood": [
+      "stylish",
+      "epic"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "The Apartment",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 1960,
+    "mood": [
+      "witty",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Platoon",
+    "genre": [
+      "Drama",
+      "War"
+    ],
+    "year": 1986,
+    "mood": [
+      "intense",
+      "visceral"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Braveheart",
+    "genre": [
+      "Drama",
+      "War",
+      "History"
+    ],
+    "year": 1995,
+    "mood": [
+      "epic",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dances with Wolves",
+    "genre": [
+      "Western",
+      "Drama",
+      "Adventure"
+    ],
+    "year": 1990,
+    "mood": [
+      "contemplative",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Exorcist",
+    "genre": [
+      "Horror",
+      "Drama"
+    ],
+    "year": 1973,
+    "mood": [
+      "disturbing",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Pianist",
+    "genre": [
+      "Drama",
+      "War",
+      "Biography"
+    ],
+    "year": 2002,
+    "mood": [
+      "emotional",
+      "powerful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Goodfellas",
+    "genre": [
+      "Drama",
+      "Crime"
+    ],
+    "year": 1990,
+    "mood": [
+      "intense",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Deer Hunter",
+    "genre": [
+      "Drama",
+      "War"
+    ],
+    "year": 1978,
+    "mood": [
+      "emotional",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "All Quiet on the Western Front",
+    "genre": [
+      "Drama",
+      "War"
+    ],
+    "year": 1930,
+    "mood": [
+      "grim",
+      "powerful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Bonnie and Clyde",
+    "genre": [
+      "Drama",
+      "Crime",
+      "Biography"
+    ],
+    "year": 1967,
+    "mood": [
+      "stylish",
+      "violent"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The French Connection",
+    "genre": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "year": 1971,
+    "mood": [
+      "gritty",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Midnight Cowboy",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1969,
+    "mood": [
+      "gritty",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Mr. Smith Goes to Washington",
+    "genre": [
+      "Drama",
+      "Comedy"
+    ],
+    "year": 1939,
+    "mood": [
+      "inspirational",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Rain Man",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1988,
+    "mood": [
+      "emotional",
+      "touching"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Annie Hall",
+    "genre": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "year": 1977,
+    "mood": [
+      "witty",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Fargo",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 1996,
+    "mood": [
+      "dark humor",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Close Encounters of the Third Kind",
+    "genre": [
+      "Sci-Fi",
+      "Drama"
+    ],
+    "year": 1977,
+    "mood": [
+      "wonder",
+      "contemplative"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Nashville",
+    "genre": [
+      "Drama",
+      "Comedy",
+      "Music"
+    ],
+    "year": 1975,
+    "mood": [
+      "satirical",
+      "complex"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Network",
+    "genre": [
+      "Drama",
+      "Satire"
+    ],
+    "year": 1976,
+    "mood": [
+      "sharp",
+      "satirical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Graduate",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 1967,
+    "mood": [
+      "witty",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "American Graffiti",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 1973,
+    "mood": [
+      "nostalgic",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Pulp Fiction",
+    "genre": [
+      "Crime",
+      "Thriller",
+      "Drama"
+    ],
+    "year": 1994,
+    "mood": [
+      "stylish",
+      "violent"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Terms of Endearment",
+    "genre": [
+      "Drama",
+      "Comedy"
+    ],
+    "year": 1983,
+    "mood": [
+      "emotional",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Great Dictator",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "War"
+    ],
+    "year": 1940,
+    "mood": [
+      "satirical",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Double Indemnity",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 1944,
+    "mood": [
+      "noir",
+      "suspenseful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Maltese Falcon",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 1941,
+    "mood": [
+      "noir",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Taxi Driver",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "year": 1976,
+    "mood": [
+      "dark",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Rear Window",
+    "genre": [
+      "Thriller",
+      "Mystery",
+      "Romance"
+    ],
+    "year": 1954,
+    "mood": [
+      "suspenseful",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Third Man",
+    "genre": [
+      "Thriller",
+      "Mystery",
+      "Drama"
+    ],
+    "year": 1949,
+    "mood": [
+      "noir",
+      "atmospheric"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Rebel Without a Cause",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1955,
+    "mood": [
+      "rebellious",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "North by Northwest",
+    "genre": [
+      "Thriller",
+      "Adventure",
+      "Romance"
+    ],
+    "year": 1959,
+    "mood": [
+      "suspenseful",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Tom Jones",
+    "genre": [
+      "Comedy",
+      "Adventure",
+      "Romance"
+    ],
+    "year": 1963,
+    "mood": [
+      "witty",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "A Man for All Seasons",
+    "genre": [
+      "Drama",
+      "History"
+    ],
+    "year": 1966,
+    "mood": [
+      "thought-provoking",
+      "stirring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "In the Heat of the Night",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "Crime"
+    ],
+    "year": 1967,
+    "mood": [
+      "tense",
+      "powerful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Oliver!",
+    "genre": [
+      "Musical",
+      "Drama",
+      "Family"
+    ],
+    "year": 1968,
+    "mood": [
+      "charming",
+      "uplifting"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Sting",
+    "genre": [
+      "Comedy",
+      "Crime",
+      "Drama"
+    ],
+    "year": 1973,
+    "mood": [
+      "clever",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Kramer vs. Kramer",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1979,
+    "mood": [
+      "emotional",
+      "touching"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Ordinary People",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1980,
+    "mood": [
+      "emotional",
+      "raw"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Chariots of Fire",
+    "genre": [
+      "Drama",
+      "Sport",
+      "History"
+    ],
+    "year": 1981,
+    "mood": [
+      "inspiring",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Gandhi",
+    "genre": [
+      "Drama",
+      "Biography",
+      "History"
+    ],
+    "year": 1982,
+    "mood": [
+      "epic",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Out of Africa",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 1985,
+    "mood": [
+      "romantic",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Last Emperor",
+    "genre": [
+      "Drama",
+      "History",
+      "Biography"
+    ],
+    "year": 1987,
+    "mood": [
+      "epic",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Driving Miss Daisy",
+    "genre": [
+      "Drama",
+      "Comedy"
+    ],
+    "year": 1989,
+    "mood": [
+      "heartwarming",
+      "touching"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The English Patient",
+    "genre": [
+      "Drama",
+      "Romance",
+      "War"
+    ],
+    "year": 1996,
+    "mood": [
+      "romantic",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Shakespeare in Love",
+    "genre": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "year": 1998,
+    "mood": [
+      "charming",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "American Beauty",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1999,
+    "mood": [
+      "dark",
+      "satirical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "A Beautiful Mind",
+    "genre": [
+      "Drama",
+      "Biography",
+      "Romance"
+    ],
+    "year": 2001,
+    "mood": [
+      "emotional",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Chicago",
+    "genre": [
+      "Musical",
+      "Crime",
+      "Drama"
+    ],
+    "year": 2002,
+    "mood": [
+      "stylish",
+      "glamorous"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Million Dollar Baby",
+    "genre": [
+      "Drama",
+      "Sport"
+    ],
+    "year": 2004,
+    "mood": [
+      "emotional",
+      "powerful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Crash",
+    "genre": [
+      "Drama",
+      "Crime"
+    ],
+    "year": 2005,
+    "mood": [
+      "thought-provoking",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Departed",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2006,
+    "mood": [
+      "tense",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "No Country for Old Men",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2007,
+    "mood": [
+      "tense",
+      "bleak"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Slumdog Millionaire",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2008,
+    "mood": [
+      "uplifting",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Hurt Locker",
+    "genre": [
+      "Drama",
+      "War",
+      "Thriller"
+    ],
+    "year": 2009,
+    "mood": [
+      "tense",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The King's Speech",
+    "genre": [
+      "Drama",
+      "Biography",
+      "History"
+    ],
+    "year": 2010,
+    "mood": [
+      "inspiring",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Artist",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2011,
+    "mood": [
+      "charming",
+      "nostalgic"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Argo",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "History"
+    ],
+    "year": 2012,
+    "mood": [
+      "tense",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "12 Years a Slave",
+    "genre": [
+      "Drama",
+      "History"
+    ],
+    "year": 2013,
+    "mood": [
+      "powerful",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Birdman",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2014,
+    "mood": [
+      "stylish",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Spotlight",
+    "genre": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "year": 2015,
+    "mood": [
+      "tense",
+      "thought-provoking"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Moonlight",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2016,
+    "mood": [
+      "emotional",
+      "poetic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Shape of Water",
+    "genre": [
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "year": 2017,
+    "mood": [
+      "romantic",
+      "whimsical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Black Swan",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "Horror"
+    ],
+    "year": 2010,
+    "mood": [
+      "intense",
+      "psychological"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Inception",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Thriller"
+    ],
+    "year": 2010,
+    "mood": [
+      "mind-bending",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Social Network",
+    "genre": [
+      "Drama",
+      "Biography"
+    ],
+    "year": 2010,
+    "mood": [
+      "sharp",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Toy Story 3",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "year": 2010,
+    "mood": [
+      "emotional",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "True Grit",
+    "genre": [
+      "Western",
+      "Drama",
+      "Adventure"
+    ],
+    "year": 2010,
+    "mood": [
+      "gritty",
+      "atmospheric"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Moneyball",
+    "genre": [
+      "Drama",
+      "Sport",
+      "Biography"
+    ],
+    "year": 2011,
+    "mood": [
+      "smart",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "War Horse",
+    "genre": [
+      "Drama",
+      "War",
+      "Adventure"
+    ],
+    "year": 2011,
+    "mood": [
+      "emotional",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Life of Pi",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "year": 2012,
+    "mood": [
+      "visually stunning",
+      "contemplative"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Silver Linings Playbook",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2012,
+    "mood": [
+      "charming",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Zero Dark Thirty",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "History"
+    ],
+    "year": 2012,
+    "mood": [
+      "tense",
+      "grim"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dallas Buyers Club",
+    "genre": [
+      "Drama",
+      "Biography"
+    ],
+    "year": 2013,
+    "mood": [
+      "emotional",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Gravity",
+    "genre": [
+      "Sci-Fi",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2013,
+    "mood": [
+      "tense",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Her",
+    "genre": [
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "year": 2013,
+    "mood": [
+      "thought-provoking",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Wolf of Wall Street",
+    "genre": [
+      "Comedy",
+      "Crime",
+      "Drama"
+    ],
+    "year": 2013,
+    "mood": [
+      "excessive",
+      "dark humor"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "American Sniper",
+    "genre": [
+      "Drama",
+      "War",
+      "Biography"
+    ],
+    "year": 2014,
+    "mood": [
+      "intense",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Boyhood",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2014,
+    "mood": [
+      "naturalistic",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Grand Budapest Hotel",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2014,
+    "mood": [
+      "whimsical",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Imitation Game",
+    "genre": [
+      "Drama",
+      "Biography",
+      "Thriller"
+    ],
+    "year": 2014,
+    "mood": [
+      "tense",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Selma",
+    "genre": [
+      "Drama",
+      "History",
+      "Biography"
+    ],
+    "year": 2014,
+    "mood": [
+      "powerful",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Whiplash",
+    "genre": [
+      "Drama",
+      "Music"
+    ],
+    "year": 2014,
+    "mood": [
+      "intense",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Big Short",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Biography"
+    ],
+    "year": 2015,
+    "mood": [
+      "sharp",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Mad Max: Fury Road",
+    "genre": [
+      "Action",
+      "Sci-Fi",
+      "Adventure"
+    ],
+    "year": 2015,
+    "mood": [
+      "intense",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Martian",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Drama"
+    ],
+    "year": 2015,
+    "mood": [
+      "inspiring",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Revenant",
+    "genre": [
+      "Drama",
+      "Adventure",
+      "Western"
+    ],
+    "year": 2015,
+    "mood": [
+      "visceral",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Arrival",
+    "genre": [
+      "Sci-Fi",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2016,
+    "mood": [
+      "thought-provoking",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Hidden Figures",
+    "genre": [
+      "Drama",
+      "History",
+      "Biography"
+    ],
+    "year": 2016,
+    "mood": [
+      "inspiring",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "La La Land",
+    "genre": [
+      "Romance",
+      "Drama",
+      "Musical"
+    ],
+    "year": 2016,
+    "mood": [
+      "emotional",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Manchester by the Sea",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2016,
+    "mood": [
+      "emotional",
+      "raw"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Call Me by Your Name",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2017,
+    "mood": [
+      "romantic",
+      "lyrical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dunkirk",
+    "genre": [
+      "Drama",
+      "War",
+      "Thriller"
+    ],
+    "year": 2017,
+    "mood": [
+      "tense",
+      "immersive"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Get Out",
+    "genre": [
+      "Horror",
+      "Thriller",
+      "Mystery"
+    ],
+    "year": 2017,
+    "mood": [
+      "tense",
+      "satirical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Lady Bird",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2017,
+    "mood": [
+      "warm",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Phantom Thread",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2017,
+    "mood": [
+      "stylish",
+      "complex"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Post",
+    "genre": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "year": 2017,
+    "mood": [
+      "tense",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Three Billboards Outside Ebbing Missouri",
+    "genre": [
+      "Drama",
+      "Crime",
+      "Comedy"
+    ],
+    "year": 2017,
+    "mood": [
+      "dark humor",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Chocolat",
+    "genre": [
+      "Romance",
+      "Drama",
+      "Comedy"
+    ],
+    "year": 2000,
+    "mood": [
+      "charming",
+      "whimsical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Crouching Tiger Hidden Dragon",
+    "genre": [
+      "Action",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2000,
+    "mood": [
+      "stylish",
+      "poetic"
+    ],
+    "language": "Mandarin"
+  },
+  {
+    "title": "Erin Brockovich",
+    "genre": [
+      "Drama",
+      "Biography"
+    ],
+    "year": 2000,
+    "mood": [
+      "inspiring",
+      "feisty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Traffic",
+    "genre": [
+      "Drama",
+      "Crime",
+      "Thriller"
+    ],
+    "year": 2000,
+    "mood": [
+      "complex",
+      "gritty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "genre": [
+      "Fantasy",
+      "Adventure",
+      "Drama"
+    ],
+    "year": 2001,
+    "mood": [
+      "epic",
+      "immersive"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Moulin Rouge!",
+    "genre": [
+      "Musical",
+      "Romance",
+      "Drama"
+    ],
+    "year": 2001,
+    "mood": [
+      "glamorous",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Gangs of New York",
+    "genre": [
+      "Drama",
+      "Crime",
+      "History"
+    ],
+    "year": 2002,
+    "mood": [
+      "gritty",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Hours",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2002,
+    "mood": [
+      "emotional",
+      "literary"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Lord of the Rings: The Two Towers",
+    "genre": [
+      "Fantasy",
+      "Adventure",
+      "Drama"
+    ],
+    "year": 2002,
+    "mood": [
+      "epic",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Lost in Translation",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2003,
+    "mood": [
+      "melancholic",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Master and Commander: The Far Side of the World",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "War"
+    ],
+    "year": 2003,
+    "mood": [
+      "epic",
+      "immersive"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Mystic River",
+    "genre": [
+      "Drama",
+      "Crime",
+      "Thriller"
+    ],
+    "year": 2003,
+    "mood": [
+      "dark",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Seabiscuit",
+    "genre": [
+      "Drama",
+      "Sport",
+      "History"
+    ],
+    "year": 2003,
+    "mood": [
+      "inspiring",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Sideways",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2004,
+    "mood": [
+      "witty",
+      "contemplative"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Brokeback Mountain",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2005,
+    "mood": [
+      "romantic",
+      "tragic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Capote",
+    "genre": [
+      "Drama",
+      "Biography",
+      "Crime"
+    ],
+    "year": 2005,
+    "mood": [
+      "contemplative",
+      "complex"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Good Night and Good Luck",
+    "genre": [
+      "Drama",
+      "History",
+      "Biography"
+    ],
+    "year": 2005,
+    "mood": [
+      "sharp",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Little Miss Sunshine",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2006,
+    "mood": [
+      "heartwarming",
+      "dark humor"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Juno",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2007,
+    "mood": [
+      "witty",
+      "charming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "There Will Be Blood",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2007,
+    "mood": [
+      "intense",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Curious Case of Benjamin Button",
+    "genre": [
+      "Drama",
+      "Romance",
+      "Fantasy"
+    ],
+    "year": 2008,
+    "mood": [
+      "romantic",
+      "contemplative"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Avatar",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Action"
+    ],
+    "year": 2009,
+    "mood": [
+      "visually stunning",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "District 9",
+    "genre": [
+      "Sci-Fi",
+      "Thriller",
+      "Drama"
+    ],
+    "year": 2009,
+    "mood": [
+      "gritty",
+      "thought-provoking"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Inglourious Basterds",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "War"
+    ],
+    "year": 2009,
+    "mood": [
+      "stylish",
+      "dark humor"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Up",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "year": 2009,
+    "mood": [
+      "emotional",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Blade Runner",
+    "genre": [
+      "Sci-Fi",
+      "Thriller",
+      "Drama"
+    ],
+    "year": 1982,
+    "mood": [
+      "noir",
+      "atmospheric"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Beetlejuice",
+    "genre": [
+      "Comedy",
+      "Fantasy",
+      "Horror"
+    ],
+    "year": 1988,
+    "mood": [
+      "quirky",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Ghostbusters",
+    "genre": [
+      "Comedy",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "year": 1984,
+    "mood": [
+      "fun",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Back to the Future",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Comedy"
+    ],
+    "year": 1985,
+    "mood": [
+      "fun",
+      "clever"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Princess Bride",
+    "genre": [
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 1987,
+    "mood": [
+      "charming",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Goonies",
+    "genre": [
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 1985,
+    "mood": [
+      "fun",
+      "adventurous"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Shining",
+    "genre": [
+      "Horror",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 1980,
+    "mood": [
+      "terrifying",
+      "atmospheric"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Full Metal Jacket",
+    "genre": [
+      "Drama",
+      "War"
+    ],
+    "year": 1987,
+    "mood": [
+      "grim",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Top Gun",
+    "genre": [
+      "Action",
+      "Drama"
+    ],
+    "year": 1986,
+    "mood": [
+      "stylish",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Outsiders",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1983,
+    "mood": [
+      "emotional",
+      "rebellious"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Uncle Buck",
+    "genre": [
+      "Comedy",
+      "Family"
+    ],
+    "year": 1989,
+    "mood": [
+      "heartwarming",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Karate Kid",
+    "genre": [
+      "Drama",
+      "Sport",
+      "Family"
+    ],
+    "year": 1984,
+    "mood": [
+      "inspiring",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "E.T. the Extra-Terrestrial",
+    "genre": [
+      "Sci-Fi",
+      "Family",
+      "Drama"
+    ],
+    "year": 1982,
+    "mood": [
+      "heartwarming",
+      "wonder"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Breakfast Club",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 1985,
+    "mood": [
+      "nostalgic",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dune",
+    "genre": [
+      "Sci-Fi",
+      "Adventure"
+    ],
+    "year": 1984,
+    "mood": [
+      "epic",
+      "atmospheric"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Aliens",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Horror"
+    ],
+    "year": 1986,
+    "mood": [
+      "tense",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Stand by Me",
+    "genre": [
+      "Adventure",
+      "Drama"
+    ],
+    "year": 1986,
+    "mood": [
+      "nostalgic",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Scarface",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "year": 1983,
+    "mood": [
+      "violent",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Road House",
+    "genre": [
+      "Action",
+      "Drama"
+    ],
+    "year": 1989,
+    "mood": [
+      "cheesy",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Die Hard",
+    "genre": [
+      "Action",
+      "Thriller"
+    ],
+    "year": 1988,
+    "mood": [
+      "thrilling",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dirty Dancing",
+    "genre": [
+      "Drama",
+      "Romance",
+      "Music"
+    ],
+    "year": 1987,
+    "mood": [
+      "romantic",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Batman",
+    "genre": [
+      "Action",
+      "Crime",
+      "Fantasy"
+    ],
+    "year": 1989,
+    "mood": [
+      "dark",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Star Wars: Episode VI - Return of the Jedi",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Action"
+    ],
+    "year": 1983,
+    "mood": [
+      "adventurous",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Star Wars: Episode V - The Empire Strikes Back",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Action"
+    ],
+    "year": 1980,
+    "mood": [
+      "epic",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Ferris Bueller's Day Off",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 1986,
+    "mood": [
+      "fun",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Predator",
+    "genre": [
+      "Action",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "year": 1987,
+    "mood": [
+      "tense",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Little Mermaid",
+    "genre": [
+      "Animation",
+      "Family",
+      "Musical"
+    ],
+    "year": 1989,
+    "mood": [
+      "charming",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dead Poets Society",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1989,
+    "mood": [
+      "inspiring",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Thing",
+    "genre": [
+      "Horror",
+      "Sci-Fi",
+      "Mystery"
+    ],
+    "year": 1982,
+    "mood": [
+      "tense",
+      "paranoid"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Heathers",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 1988,
+    "mood": [
+      "dark",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Terminator",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Thriller"
+    ],
+    "year": 1984,
+    "mood": [
+      "tense",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Ghostbusters II",
+    "genre": [
+      "Comedy",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "year": 1989,
+    "mood": [
+      "fun",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Once Upon a Time in America",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "year": 1984,
+    "mood": [
+      "epic",
+      "noir"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Coming to America",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1988,
+    "mood": [
+      "fun",
+      "charming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Indiana Jones and the Last Crusade",
+    "genre": [
+      "Adventure",
+      "Action"
+    ],
+    "year": 1989,
+    "mood": [
+      "adventurous",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Airplane!",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 1980,
+    "mood": [
+      "silly",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Fast Times at Ridgemont High",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 1982,
+    "mood": [
+      "nostalgic",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Indiana Jones and the Temple of Doom",
+    "genre": [
+      "Adventure",
+      "Action"
+    ],
+    "year": 1984,
+    "mood": [
+      "adventurous",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "TRON",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Adventure"
+    ],
+    "year": 1982,
+    "mood": [
+      "visually striking",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Caddyshack",
+    "genre": [
+      "Comedy",
+      "Sport"
+    ],
+    "year": 1980,
+    "mood": [
+      "silly",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Beverly Hills Cop",
+    "genre": [
+      "Comedy",
+      "Action",
+      "Crime"
+    ],
+    "year": 1984,
+    "mood": [
+      "fun",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Evil Dead",
+    "genre": [
+      "Horror",
+      "Comedy"
+    ],
+    "year": 1981,
+    "mood": [
+      "campy",
+      "scary"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Highlander",
+    "genre": [
+      "Action",
+      "Fantasy",
+      "Adventure"
+    ],
+    "year": 1986,
+    "mood": [
+      "cheesy",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The NeverEnding Story",
+    "genre": [
+      "Fantasy",
+      "Adventure",
+      "Family"
+    ],
+    "year": 1984,
+    "mood": [
+      "whimsical",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1994,
+    "mood": [
+      "hopeful",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Jumanji",
+    "genre": [
+      "Adventure",
+      "Family",
+      "Fantasy"
+    ],
+    "year": 1995,
+    "mood": [
+      "fun",
+      "adventurous"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "genre": [
+      "Thriller",
+      "Crime",
+      "Drama"
+    ],
+    "year": 1991,
+    "mood": [
+      "tense",
+      "psychological"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Lion King",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family"
+    ],
+    "year": 1994,
+    "mood": [
+      "emotional",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Titanic",
+    "genre": [
+      "Drama",
+      "Romance",
+      "Disaster"
+    ],
+    "year": 1997,
+    "mood": [
+      "romantic",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Eyes Wide Shut",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 1999,
+    "mood": [
+      "dreamlike",
+      "erotic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Professional",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "year": 1994,
+    "mood": [
+      "stylish",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Matrix",
+    "genre": [
+      "Sci-Fi",
+      "Action"
+    ],
+    "year": 1999,
+    "mood": [
+      "mind-bending",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Deep Impact",
+    "genre": [
+      "Sci-Fi",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 1998,
+    "mood": [
+      "tense",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Casino",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "year": 1995,
+    "mood": [
+      "epic",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Green Mile",
+    "genre": [
+      "Drama",
+      "Fantasy",
+      "Crime"
+    ],
+    "year": 1999,
+    "mood": [
+      "emotional",
+      "powerful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Fight Club",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "year": 1999,
+    "mood": [
+      "subversive",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Jurassic Park",
+    "genre": [
+      "Adventure",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "year": 1993,
+    "mood": [
+      "thrilling",
+      "wonder"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Saving Private Ryan",
+    "genre": [
+      "Drama",
+      "War"
+    ],
+    "year": 1998,
+    "mood": [
+      "intense",
+      "visceral"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Fifth Element",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Adventure"
+    ],
+    "year": 1997,
+    "mood": [
+      "stylish",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Big Lebowski",
+    "genre": [
+      "Comedy",
+      "Crime"
+    ],
+    "year": 1998,
+    "mood": [
+      "quirky",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "American Pie",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 1999,
+    "mood": [
+      "raunchy",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Beauty and the Beast",
+    "genre": [
+      "Animation",
+      "Family",
+      "Musical"
+    ],
+    "year": 1991,
+    "mood": [
+      "romantic",
+      "charming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Se7en",
+    "genre": [
+      "Crime",
+      "Thriller",
+      "Mystery"
+    ],
+    "year": 1995,
+    "mood": [
+      "dark",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "10 Things I Hate About You",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1999,
+    "mood": [
+      "witty",
+      "charming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Toy Story",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ],
+    "year": 1995,
+    "mood": [
+      "heartwarming",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Boogie Nights",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1997,
+    "mood": [
+      "excessive",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Cruel Intentions",
+    "genre": [
+      "Drama",
+      "Romance",
+      "Thriller"
+    ],
+    "year": 1999,
+    "mood": [
+      "stylish",
+      "dark"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Romeo + Juliet",
+    "genre": [
+      "Romance",
+      "Drama"
+    ],
+    "year": 1996,
+    "mood": [
+      "stylish",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Usual Suspects",
+    "genre": [
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 1995,
+    "mood": [
+      "clever",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Good Will Hunting",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 1997,
+    "mood": [
+      "emotional",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Heat",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 1995,
+    "mood": [
+      "tense",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Star Wars: Episode I - The Phantom Menace",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Action"
+    ],
+    "year": 1999,
+    "mood": [
+      "epic",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "American History X",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1998,
+    "mood": [
+      "intense",
+      "powerful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Mummy",
+    "genre": [
+      "Adventure",
+      "Action",
+      "Fantasy"
+    ],
+    "year": 1999,
+    "mood": [
+      "fun",
+      "adventurous"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Clueless",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1995,
+    "mood": [
+      "witty",
+      "charming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Reservoir Dogs",
+    "genre": [
+      "Crime",
+      "Thriller"
+    ],
+    "year": 1992,
+    "mood": [
+      "stylish",
+      "violent"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Basic Instinct",
+    "genre": [
+      "Thriller",
+      "Mystery",
+      "Erotic"
+    ],
+    "year": 1992,
+    "mood": [
+      "suspenseful",
+      "steamy"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Magnolia",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1999,
+    "mood": [
+      "complex",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Sixth Sense",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "year": 1999,
+    "mood": [
+      "eerie",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Truman Show",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "year": 1998,
+    "mood": [
+      "thought-provoking",
+      "charming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Waterworld",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Action"
+    ],
+    "year": 1995,
+    "mood": [
+      "epic",
+      "adventurous"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Terminator 2: Judgment Day",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Thriller"
+    ],
+    "year": 1991,
+    "mood": [
+      "thrilling",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Trainspotting",
+    "genre": [
+      "Drama",
+      "Comedy"
+    ],
+    "year": 1996,
+    "mood": [
+      "gritty",
+      "dark humor"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dazed and Confused",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 1993,
+    "mood": [
+      "nostalgic",
+      "laid-back"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Pretty Woman",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1990,
+    "mood": [
+      "charming",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Amélie",
+    "genre": [
+      "Romance",
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2001,
+    "mood": [
+      "whimsical",
+      "charming"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Pan's Labyrinth",
+    "genre": [
+      "Fantasy",
+      "Drama",
+      "War"
+    ],
+    "year": 2006,
+    "mood": [
+      "dark",
+      "whimsical"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "Parasite",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "Comedy"
+    ],
+    "year": 2019,
+    "mood": [
+      "satirical",
+      "tense"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "Spirited Away",
+    "genre": [
+      "Animation",
+      "Fantasy",
+      "Adventure"
+    ],
+    "year": 2001,
+    "mood": [
+      "magical",
+      "whimsical"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Cidade de Deus",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "year": 2002,
+    "mood": [
+      "gritty",
+      "visceral"
+    ],
+    "language": "Portuguese"
+  },
+  {
+    "title": "Oldboy",
+    "genre": [
+      "Thriller",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2003,
+    "mood": [
+      "intense",
+      "disturbing"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "The Lives of Others",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2006,
+    "mood": [
+      "tense",
+      "emotional"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "Cinema Paradiso",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 1988,
+    "mood": [
+      "nostalgic",
+      "emotional"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "Life Is Beautiful",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "War"
+    ],
+    "year": 1997,
+    "mood": [
+      "heartwarming",
+      "emotional"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "Amadeus",
+    "genre": [
+      "Drama",
+      "Biography",
+      "Music"
+    ],
+    "year": 1984,
+    "mood": [
+      "opulent",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Blue Lagoon",
+    "genre": [
+      "Adventure",
+      "Romance",
+      "Drama"
+    ],
+    "year": 1980,
+    "mood": [
+      "romantic",
+      "exotic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Weekend at Bernie's",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 1989,
+    "mood": [
+      "silly",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Newsies",
+    "genre": [
+      "Musical",
+      "Family",
+      "Drama"
+    ],
+    "year": 1992,
+    "mood": [
+      "uplifting",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Darkest Hour",
+    "genre": [
+      "Drama",
+      "War",
+      "Biography"
+    ],
+    "year": 2017,
+    "mood": [
+      "tense",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Birdman or (The Unexpected Virtue of Ignorance)",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2014,
+    "mood": [
+      "stylish",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "One Flew Over The Cuckoo's Nest",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1975,
+    "mood": [
+      "rebellious",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Intouchables",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2011,
+    "mood": [
+      "heartwarming",
+      "uplifting"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "A Separation",
+    "genre": [
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2011,
+    "mood": [
+      "tense",
+      "emotional"
+    ],
+    "language": "Persian"
+  },
+  {
+    "title": "Roma",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2018,
+    "mood": [
+      "contemplative",
+      "emotional"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "Rashomon",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Crime"
+    ],
+    "year": 1950,
+    "mood": [
+      "complex",
+      "philosophical"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Seven Samurai",
+    "genre": [
+      "Drama",
+      "Action",
+      "Adventure"
+    ],
+    "year": 1954,
+    "mood": [
+      "epic",
+      "action-packed"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Yojimbo",
+    "genre": [
+      "Action",
+      "Drama"
+    ],
+    "year": 1961,
+    "mood": [
+      "stylish",
+      "witty"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Run Lola Run",
+    "genre": [
+      "Thriller",
+      "Crime",
+      "Romance"
+    ],
+    "year": 1998,
+    "mood": [
+      "energetic",
+      "stylish"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "Downfall",
+    "genre": [
+      "Drama",
+      "War",
+      "History"
+    ],
+    "year": 2004,
+    "mood": [
+      "grim",
+      "powerful"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "The White Ribbon",
+    "genre": [
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2009,
+    "mood": [
+      "unsettling",
+      "atmospheric"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "Das Boot",
+    "genre": [
+      "Drama",
+      "War",
+      "Thriller"
+    ],
+    "year": 1981,
+    "mood": [
+      "claustrophobic",
+      "tense"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "Metropolis",
+    "genre": [
+      "Sci-Fi",
+      "Drama"
+    ],
+    "year": 1927,
+    "mood": [
+      "visually stunning",
+      "epic"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "Nosferatu",
+    "genre": [
+      "Horror",
+      "Fantasy"
+    ],
+    "year": 1922,
+    "mood": [
+      "atmospheric",
+      "creepy"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "M",
+    "genre": [
+      "Thriller",
+      "Crime",
+      "Drama"
+    ],
+    "year": 1931,
+    "mood": [
+      "tense",
+      "noir"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "Wings of Desire",
+    "genre": [
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "year": 1987,
+    "mood": [
+      "poetic",
+      "contemplative"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "The Tin Drum",
+    "genre": [
+      "Drama",
+      "War",
+      "Fantasy"
+    ],
+    "year": 1979,
+    "mood": [
+      "surreal",
+      "disturbing"
+    ],
+    "language": "German"
+  },
+  {
+    "title": "The Bicycle Thieves",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1948,
+    "mood": [
+      "emotional",
+      "realistic"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "La Dolce Vita",
+    "genre": [
+      "Drama",
+      "Comedy"
+    ],
+    "year": 1960,
+    "mood": [
+      "stylish",
+      "satirical"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "8½",
+    "genre": [
+      "Drama",
+      "Fantasy"
+    ],
+    "year": 1963,
+    "mood": [
+      "surreal",
+      "stylish"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "Bicycle Thieves",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1948,
+    "mood": [
+      "emotional",
+      "realistic"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "The Conformist",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "year": 1970,
+    "mood": [
+      "stylish",
+      "complex"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "Il Postino",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 1994,
+    "mood": [
+      "charming",
+      "romantic"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "Malena",
+    "genre": [
+      "Drama",
+      "Romance",
+      "War"
+    ],
+    "year": 2000,
+    "mood": [
+      "romantic",
+      "nostalgic"
+    ],
+    "language": "Italian"
+  },
+  {
+    "title": "The 400 Blows",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1959,
+    "mood": [
+      "emotional",
+      "raw"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Breathless",
+    "genre": [
+      "Drama",
+      "Crime",
+      "Romance"
+    ],
+    "year": 1960,
+    "mood": [
+      "stylish",
+      "rebellious"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Jules and Jim",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 1962,
+    "mood": [
+      "romantic",
+      "complex"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "The Umbrellas of Cherbourg",
+    "genre": [
+      "Musical",
+      "Romance",
+      "Drama"
+    ],
+    "year": 1964,
+    "mood": [
+      "romantic",
+      "colorful"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "A Man and a Woman",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 1966,
+    "mood": [
+      "romantic",
+      "stylish"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "The Discreet Charm of the Bourgeoisie",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Fantasy"
+    ],
+    "year": 1972,
+    "mood": [
+      "surreal",
+      "satirical"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Jean de Florette",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1986,
+    "mood": [
+      "emotional",
+      "lyrical"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Manon of the Spring",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1986,
+    "mood": [
+      "emotional",
+      "tragic"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Cyrano de Bergerac",
+    "genre": [
+      "Drama",
+      "Romance",
+      "Comedy"
+    ],
+    "year": 1990,
+    "mood": [
+      "romantic",
+      "witty"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "The Diving Bell and the Butterfly",
+    "genre": [
+      "Drama",
+      "Biography"
+    ],
+    "year": 2007,
+    "mood": [
+      "emotional",
+      "poetic"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Tell No One",
+    "genre": [
+      "Thriller",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2006,
+    "mood": [
+      "tense",
+      "clever"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Incendies",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "War"
+    ],
+    "year": 2010,
+    "mood": [
+      "powerful",
+      "emotional"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Rust and Bone",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2012,
+    "mood": [
+      "raw",
+      "emotional"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Blue Is the Warmest Color",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2013,
+    "mood": [
+      "emotional",
+      "raw"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Portrait of a Lady on Fire",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2019,
+    "mood": [
+      "romantic",
+      "lyrical"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Memories of Murder",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2003,
+    "mood": [
+      "tense",
+      "atmospheric"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "The Host",
+    "genre": [
+      "Horror",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "year": 2006,
+    "mood": [
+      "thrilling",
+      "emotional"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "Burning",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2018,
+    "mood": [
+      "slow-burn",
+      "tense"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "Train to Busan",
+    "genre": [
+      "Action",
+      "Horror",
+      "Drama"
+    ],
+    "year": 2016,
+    "mood": [
+      "tense",
+      "emotional"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "The Handmaiden",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "Romance"
+    ],
+    "year": 2016,
+    "mood": [
+      "stylish",
+      "erotic"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "Snowpiercer",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Drama"
+    ],
+    "year": 2013,
+    "mood": [
+      "dystopian",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Okja",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "year": 2017,
+    "mood": [
+      "emotional",
+      "quirky"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "My Neighbor Totoro",
+    "genre": [
+      "Animation",
+      "Fantasy",
+      "Family"
+    ],
+    "year": 1988,
+    "mood": [
+      "whimsical",
+      "heartwarming"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Princess Mononoke",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Fantasy"
+    ],
+    "year": 1997,
+    "mood": [
+      "epic",
+      "environmental"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Howl's Moving Castle",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Fantasy"
+    ],
+    "year": 2004,
+    "mood": [
+      "whimsical",
+      "romantic"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Grave of the Fireflies",
+    "genre": [
+      "Animation",
+      "Drama",
+      "War"
+    ],
+    "year": 1988,
+    "mood": [
+      "devastating",
+      "emotional"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Akira",
+    "genre": [
+      "Animation",
+      "Sci-Fi",
+      "Action"
+    ],
+    "year": 1988,
+    "mood": [
+      "visually stunning",
+      "intense"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Ghost in the Shell",
+    "genre": [
+      "Animation",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "year": 1995,
+    "mood": [
+      "philosophical",
+      "stylish"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Perfect Blue",
+    "genre": [
+      "Animation",
+      "Thriller",
+      "Horror"
+    ],
+    "year": 1997,
+    "mood": [
+      "psychological",
+      "disturbing"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Your Name",
+    "genre": [
+      "Animation",
+      "Drama",
+      "Romance",
+      "Fantasy"
+    ],
+    "year": 2016,
+    "mood": [
+      "romantic",
+      "emotional"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Weathering with You",
+    "genre": [
+      "Animation",
+      "Drama",
+      "Romance",
+      "Fantasy"
+    ],
+    "year": 2019,
+    "mood": [
+      "romantic",
+      "visually stunning"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Farewell My Concubine",
+    "genre": [
+      "Drama",
+      "History",
+      "Romance"
+    ],
+    "year": 1993,
+    "mood": [
+      "epic",
+      "emotional"
+    ],
+    "language": "Mandarin"
+  },
+  {
+    "title": "In the Mood for Love",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2000,
+    "mood": [
+      "romantic",
+      "stylish"
+    ],
+    "language": "Cantonese"
+  },
+  {
+    "title": "Chungking Express",
+    "genre": [
+      "Drama",
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1994,
+    "mood": [
+      "stylish",
+      "romantic"
+    ],
+    "language": "Cantonese"
+  },
+  {
+    "title": "Hero",
+    "genre": [
+      "Action",
+      "Drama",
+      "Adventure"
+    ],
+    "year": 2002,
+    "mood": [
+      "visually stunning",
+      "epic"
+    ],
+    "language": "Mandarin"
+  },
+  {
+    "title": "House of Flying Daggers",
+    "genre": [
+      "Action",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2004,
+    "mood": [
+      "visually stunning",
+      "romantic"
+    ],
+    "language": "Mandarin"
+  },
+  {
+    "title": "Kung Fu Hustle",
+    "genre": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
+    "year": 2004,
+    "mood": [
+      "fun",
+      "stylish"
+    ],
+    "language": "Cantonese"
+  },
+  {
+    "title": "A Better Tomorrow",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "year": 1986,
+    "mood": [
+      "stylish",
+      "violent"
+    ],
+    "language": "Cantonese"
+  },
+  {
+    "title": "Infernal Affairs",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2002,
+    "mood": [
+      "tense",
+      "clever"
+    ],
+    "language": "Cantonese"
+  },
+  {
+    "title": "Lagaan",
+    "genre": [
+      "Drama",
+      "Sport",
+      "Musical"
+    ],
+    "year": 2001,
+    "mood": [
+      "inspiring",
+      "epic"
+    ],
+    "language": "Hindi"
+  },
+  {
+    "title": "3 Idiots",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2009,
+    "mood": [
+      "heartwarming",
+      "witty"
+    ],
+    "language": "Hindi"
+  },
+  {
+    "title": "Dangal",
+    "genre": [
+      "Drama",
+      "Sport",
+      "Biography"
+    ],
+    "year": 2016,
+    "mood": [
+      "inspiring",
+      "emotional"
+    ],
+    "language": "Hindi"
+  },
+  {
+    "title": "PK",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "year": 2014,
+    "mood": [
+      "thought-provoking",
+      "witty"
+    ],
+    "language": "Hindi"
+  },
+  {
+    "title": "Taare Zameen Par",
+    "genre": [
+      "Drama",
+      "Family"
+    ],
+    "year": 2007,
+    "mood": [
+      "emotional",
+      "inspiring"
+    ],
+    "language": "Hindi"
+  },
+  {
+    "title": "Ratsasan",
+    "genre": [
+      "Thriller",
+      "Crime",
+      "Mystery"
+    ],
+    "year": 2018,
+    "mood": [
+      "tense",
+      "psychological"
+    ],
+    "language": "Tamil"
+  },
+  {
+    "title": "Jallikattu",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2019,
+    "mood": [
+      "visceral",
+      "raw"
+    ],
+    "language": "Malayalam"
+  },
+  {
+    "title": "Aladdin",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family",
+      "Musical"
+    ],
+    "year": 1992,
+    "mood": [
+      "charming",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Mulan",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Drama",
+      "Family"
+    ],
+    "year": 1998,
+    "mood": [
+      "inspiring",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Tarzan",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family"
+    ],
+    "year": 1999,
+    "mood": [
+      "adventurous",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Lilo & Stitch",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Sci-Fi"
+    ],
+    "year": 2002,
+    "mood": [
+      "heartwarming",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Finding Nemo",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2003,
+    "mood": [
+      "heartwarming",
+      "adventurous"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Incredibles",
+    "genre": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Family"
+    ],
+    "year": 2004,
+    "mood": [
+      "fun",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Ratatouille",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2007,
+    "mood": [
+      "charming",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "WALL-E",
+    "genre": [
+      "Animation",
+      "Sci-Fi",
+      "Adventure",
+      "Family"
+    ],
+    "year": 2008,
+    "mood": [
+      "sweet",
+      "thought-provoking"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Coco",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family",
+      "Fantasy"
+    ],
+    "year": 2017,
+    "mood": [
+      "emotional",
+      "colorful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Inside Out",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2015,
+    "mood": [
+      "emotional",
+      "clever"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Zootopia",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2016,
+    "mood": [
+      "witty",
+      "satirical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Moana",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family",
+      "Musical"
+    ],
+    "year": 2016,
+    "mood": [
+      "inspiring",
+      "adventurous"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Frozen",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family",
+      "Musical"
+    ],
+    "year": 2013,
+    "mood": [
+      "heartwarming",
+      "empowering"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Tangled",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family",
+      "Musical"
+    ],
+    "year": 2010,
+    "mood": [
+      "charming",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Shrek",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2001,
+    "mood": [
+      "witty",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Shrek 2",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2004,
+    "mood": [
+      "witty",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Monsters Inc",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Fantasy"
+    ],
+    "year": 2001,
+    "mood": [
+      "heartwarming",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Monsters University",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2013,
+    "mood": [
+      "fun",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Brave",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family",
+      "Fantasy"
+    ],
+    "year": 2012,
+    "mood": [
+      "empowering",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Iron Giant",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family",
+      "Sci-Fi"
+    ],
+    "year": 1999,
+    "mood": [
+      "emotional",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Spider-Man: Into the Spider-Verse",
+    "genre": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "year": 2018,
+    "mood": [
+      "stylish",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Dark Knight",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2008,
+    "mood": [
+      "dark",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Dark Knight Rises",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2012,
+    "mood": [
+      "epic",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Batman Begins",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "year": 2005,
+    "mood": [
+      "dark",
+      "origin"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Iron Man",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "year": 2008,
+    "mood": [
+      "fun",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Avengers",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "year": 2012,
+    "mood": [
+      "epic",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Black Panther",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "year": 2018,
+    "mood": [
+      "powerful",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Guardians of the Galaxy",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Sci-Fi",
+      "Comedy"
+    ],
+    "year": 2014,
+    "mood": [
+      "fun",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Thor: Ragnarok",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Sci-Fi",
+      "Comedy"
+    ],
+    "year": 2017,
+    "mood": [
+      "fun",
+      "colorful"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Captain America: The Winter Soldier",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "year": 2014,
+    "mood": [
+      "tense",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Logan",
+    "genre": [
+      "Action",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "year": 2017,
+    "mood": [
+      "emotional",
+      "gritty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Deadpool",
+    "genre": [
+      "Action",
+      "Comedy",
+      "Adventure"
+    ],
+    "year": 2016,
+    "mood": [
+      "raunchy",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "John Wick",
+    "genre": [
+      "Action",
+      "Thriller",
+      "Crime"
+    ],
+    "year": 2014,
+    "mood": [
+      "stylish",
+      "violent"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "John Wick: Chapter 2",
+    "genre": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "year": 2017,
+    "mood": [
+      "stylish",
+      "violent"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Mission: Impossible",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "year": 1996,
+    "mood": [
+      "thrilling",
+      "clever"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Mission: Impossible - Fallout",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "year": 2018,
+    "mood": [
+      "thrilling",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Bourne Identity",
+    "genre": [
+      "Action",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2002,
+    "mood": [
+      "tense",
+      "smart"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Bourne Ultimatum",
+    "genre": [
+      "Action",
+      "Thriller"
+    ],
+    "year": 2007,
+    "mood": [
+      "tense",
+      "thrilling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Skyfall",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "year": 2012,
+    "mood": [
+      "stylish",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Casino Royale",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "year": 2006,
+    "mood": [
+      "stylish",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "GoldenEye",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "year": 1995,
+    "mood": [
+      "fun",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Léon: The Professional",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "year": 1994,
+    "mood": [
+      "stylish",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Kill Bill: Vol. 1",
+    "genre": [
+      "Action",
+      "Thriller",
+      "Crime"
+    ],
+    "year": 2003,
+    "mood": [
+      "stylish",
+      "violent"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Kill Bill: Vol. 2",
+    "genre": [
+      "Action",
+      "Thriller",
+      "Crime"
+    ],
+    "year": 2004,
+    "mood": [
+      "stylish",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Sin City",
+    "genre": [
+      "Crime",
+      "Thriller",
+      "Neo-Noir"
+    ],
+    "year": 2005,
+    "mood": [
+      "stylish",
+      "violent"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Town",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2010,
+    "mood": [
+      "tense",
+      "gritty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Sicario",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2015,
+    "mood": [
+      "tense",
+      "grim"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Prisoners",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2013,
+    "mood": [
+      "tense",
+      "disturbing"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Zodiac",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2007,
+    "mood": [
+      "tense",
+      "methodical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Gone Girl",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2014,
+    "mood": [
+      "twisted",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Girl with the Dragon Tattoo",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2011,
+    "mood": [
+      "dark",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Shutter Island",
+    "genre": [
+      "Mystery",
+      "Thriller",
+      "Drama"
+    ],
+    "year": 2010,
+    "mood": [
+      "twisted",
+      "atmospheric"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Memento",
+    "genre": [
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2000,
+    "mood": [
+      "mind-bending",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Prestige",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "year": 2006,
+    "mood": [
+      "clever",
+      "twisted"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Interstellar",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "year": 2014,
+    "mood": [
+      "emotional",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Ex Machina",
+    "genre": [
+      "Drama",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "year": 2014,
+    "mood": [
+      "thought-provoking",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Blade Runner 2049",
+    "genre": [
+      "Sci-Fi",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2017,
+    "mood": [
+      "visually stunning",
+      "contemplative"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Everything Everywhere All at Once",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "year": 2022,
+    "mood": [
+      "chaotic",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Batman",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2022,
+    "mood": [
+      "dark",
+      "noir"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Top Gun: Maverick",
+    "genre": [
+      "Action",
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "thrilling",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Dune: Part Two",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Drama"
+    ],
+    "year": 2024,
+    "mood": [
+      "epic",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Oppenheimer",
+    "genre": [
+      "Drama",
+      "History",
+      "Biography"
+    ],
+    "year": 2023,
+    "mood": [
+      "intense",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Barbie",
+    "genre": [
+      "Comedy",
+      "Adventure",
+      "Fantasy"
+    ],
+    "year": 2023,
+    "mood": [
+      "satirical",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Past Lives",
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "year": 2023,
+    "mood": [
+      "contemplative",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Holdovers",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2023,
+    "mood": [
+      "warm",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Poor Things",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Sci-Fi",
+      "Romance"
+    ],
+    "year": 2023,
+    "mood": [
+      "quirky",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Killers of the Flower Moon",
+    "genre": [
+      "Drama",
+      "Crime",
+      "History"
+    ],
+    "year": 2023,
+    "mood": [
+      "epic",
+      "grim"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Banshees of Inisherin",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "dark humor",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Tár",
+    "genre": [
+      "Drama",
+      "Music"
+    ],
+    "year": 2022,
+    "mood": [
+      "complex",
+      "intense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Fabelmans",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "autobiographical",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Aftersun",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "quiet",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "EEAAO",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "chaotic",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Nomadland",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2020,
+    "mood": [
+      "contemplative",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Minari",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2020,
+    "mood": [
+      "quiet",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Sound of Metal",
+    "genre": [
+      "Drama",
+      "Music"
+    ],
+    "year": 2019,
+    "mood": [
+      "raw",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Father",
+    "genre": [
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2020,
+    "mood": [
+      "heartbreaking",
+      "clever"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Promising Young Woman",
+    "genre": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2020,
+    "mood": [
+      "dark",
+      "satirical"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Judas and the Black Messiah",
+    "genre": [
+      "Drama",
+      "History",
+      "Biography"
+    ],
+    "year": 2021,
+    "mood": [
+      "powerful",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Power of the Dog",
+    "genre": [
+      "Drama",
+      "Western"
+    ],
+    "year": 2021,
+    "mood": [
+      "slow-burn",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Licorice Pizza",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2021,
+    "mood": [
+      "nostalgic",
+      "charming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Don't Look Up",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "year": 2021,
+    "mood": [
+      "satirical",
+      "dark humor"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The French Dispatch",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2021,
+    "mood": [
+      "whimsical",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Spencer",
+    "genre": [
+      "Drama",
+      "Biography",
+      "History"
+    ],
+    "year": 2021,
+    "mood": [
+      "claustrophobic",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Lost Daughter",
+    "genre": [
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2021,
+    "mood": [
+      "unsettling",
+      "complex"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "C'mon C'mon",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2021,
+    "mood": [
+      "quiet",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Red Rocket",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2021,
+    "mood": [
+      "dark humor",
+      "gritty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Worst Person in the World",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2021,
+    "mood": [
+      "witty",
+      "emotional"
+    ],
+    "language": "Norwegian"
+  },
+  {
+    "title": "Drive My Car",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2021,
+    "mood": [
+      "contemplative",
+      "emotional"
+    ],
+    "language": "Japanese"
+  },
+  {
+    "title": "Petite Maman",
+    "genre": [
+      "Drama",
+      "Fantasy"
+    ],
+    "year": 2021,
+    "mood": [
+      "gentle",
+      "emotional"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Titane",
+    "genre": [
+      "Horror",
+      "Sci-Fi",
+      "Drama"
+    ],
+    "year": 2021,
+    "mood": [
+      "disturbing",
+      "visceral"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "The Green Knight",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "year": 2021,
+    "mood": [
+      "atmospheric",
+      "meditative"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Northman",
+    "genre": [
+      "Action",
+      "Drama",
+      "Adventure"
+    ],
+    "year": 2022,
+    "mood": [
+      "visceral",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Unbearable Weight of Massive Talent",
+    "genre": [
+      "Comedy",
+      "Action"
+    ],
+    "year": 2022,
+    "mood": [
+      "meta",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Menu",
+    "genre": [
+      "Comedy",
+      "Horror",
+      "Thriller"
+    ],
+    "year": 2022,
+    "mood": [
+      "dark humor",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Glass Onion",
+    "genre": [
+      "Comedy",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2022,
+    "mood": [
+      "clever",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Triangle of Sadness",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "satirical",
+      "dark humor"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Women Talking",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "powerful",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "She Said",
+    "genre": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "year": 2022,
+    "mood": [
+      "tense",
+      "inspiring"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Elvis",
+    "genre": [
+      "Drama",
+      "Biography",
+      "Music"
+    ],
+    "year": 2022,
+    "mood": [
+      "stylish",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Avatar: The Way of Water",
+    "genre": [
+      "Sci-Fi",
+      "Adventure",
+      "Action"
+    ],
+    "year": 2022,
+    "mood": [
+      "visually stunning",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Black Adam",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "year": 2022,
+    "mood": [
+      "action-packed",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Whale",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "emotional",
+      "raw"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Till",
+    "genre": [
+      "Drama",
+      "History",
+      "Biography"
+    ],
+    "year": 2022,
+    "mood": [
+      "powerful",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Woman King",
+    "genre": [
+      "Action",
+      "Drama",
+      "History"
+    ],
+    "year": 2022,
+    "mood": [
+      "powerful",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "RRR",
+    "genre": [
+      "Action",
+      "Drama",
+      "War"
+    ],
+    "year": 2022,
+    "mood": [
+      "epic",
+      "over-the-top"
+    ],
+    "language": "Telugu"
+  },
+  {
+    "title": "Decision to Leave",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Romance"
+    ],
+    "year": 2022,
+    "mood": [
+      "stylish",
+      "romantic"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "Broker",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "emotional",
+      "contemplative"
+    ],
+    "language": "Korean"
+  },
+  {
+    "title": "Return to Seoul",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "contemplative",
+      "emotional"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Saint Omer",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "contemplative",
+      "powerful"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Close",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "emotional",
+      "devastating"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "EO",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "contemplative",
+      "emotional"
+    ],
+    "language": "Polish"
+  },
+  {
+    "title": "Argentina 1985",
+    "genre": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "year": 2022,
+    "mood": [
+      "tense",
+      "inspiring"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "Bardo",
+    "genre": [
+      "Drama",
+      "Comedy",
+      "Fantasy"
+    ],
+    "year": 2022,
+    "mood": [
+      "surreal",
+      "personal"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "Alcarràs",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "quiet",
+      "emotional"
+    ],
+    "language": "Catalan"
+  },
+  {
+    "title": "Pacifiction",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2022,
+    "mood": [
+      "atmospheric",
+      "paranoid"
+    ],
+    "language": "French"
+  },
+  {
+    "title": "Living",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "quiet",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Quiet Girl",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2022,
+    "mood": [
+      "quiet",
+      "emotional"
+    ],
+    "language": "Irish"
+  },
+  {
+    "title": "Marcel the Shell with Shoes On",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Drama"
+    ],
+    "year": 2021,
+    "mood": [
+      "charming",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Guillermo del Toro's Pinocchio",
+    "genre": [
+      "Animation",
+      "Drama",
+      "Family",
+      "Fantasy"
+    ],
+    "year": 2022,
+    "mood": [
+      "dark",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Turning Red",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2022,
+    "mood": [
+      "charming",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Encanto",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Musical"
+    ],
+    "year": 2021,
+    "mood": [
+      "colorful",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Luca",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2021,
+    "mood": [
+      "charming",
+      "nostalgic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Soul",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Drama",
+      "Family"
+    ],
+    "year": 2020,
+    "mood": [
+      "contemplative",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Onward",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2020,
+    "mood": [
+      "emotional",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Frozen II",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Family",
+      "Fantasy"
+    ],
+    "year": 2019,
+    "mood": [
+      "emotional",
+      "epic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Toy Story 4",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "year": 2019,
+    "mood": [
+      "emotional",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Napoleon Dynamite",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 2004,
+    "mood": [
+      "quirky",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Superbad",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 2007,
+    "mood": [
+      "raunchy",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Bridesmaids",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 2011,
+    "mood": [
+      "raunchy",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Hangover",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 2009,
+    "mood": [
+      "raunchy",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Anchorman",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 2004,
+    "mood": [
+      "silly",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Step Brothers",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 2008,
+    "mood": [
+      "raunchy",
+      "fun"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Tropic Thunder",
+    "genre": [
+      "Comedy",
+      "Action",
+      "War"
+    ],
+    "year": 2008,
+    "mood": [
+      "dark humor",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Borat",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 2006,
+    "mood": [
+      "satirical",
+      "shocking"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Office Space",
+    "genre": [
+      "Comedy"
+    ],
+    "year": 1999,
+    "mood": [
+      "relatable",
+      "witty"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Groundhog Day",
+    "genre": [
+      "Comedy",
+      "Romance",
+      "Fantasy"
+    ],
+    "year": 1993,
+    "mood": [
+      "witty",
+      "heartwarming"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "When Harry Met Sally",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1989,
+    "mood": [
+      "witty",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Sleepless in Seattle",
+    "genre": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "year": 1993,
+    "mood": [
+      "charming",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "You've Got Mail",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1998,
+    "mood": [
+      "charming",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Notting Hill",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1999,
+    "mood": [
+      "charming",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Love Actually",
+    "genre": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "year": 2003,
+    "mood": [
+      "heartwarming",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Four Weddings and a Funeral",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ],
+    "year": 1994,
+    "mood": [
+      "witty",
+      "romantic"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Full Monty",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "year": 1997,
+    "mood": [
+      "heartwarming",
+      "uplifting"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Billy Elliot",
+    "genre": [
+      "Drama",
+      "Comedy",
+      "Music"
+    ],
+    "year": 2000,
+    "mood": [
+      "inspiring",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Babel",
+    "genre": [
+      "Drama"
+    ],
+    "year": 2006,
+    "mood": [
+      "complex",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "21 Grams",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "year": 2003,
+    "mood": [
+      "heavy",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Constant Gardener",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "Romance"
+    ],
+    "year": 2005,
+    "mood": [
+      "tense",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Children of Men",
+    "genre": [
+      "Sci-Fi",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2006,
+    "mood": [
+      "bleak",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "V for Vendetta",
+    "genre": [
+      "Action",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2005,
+    "mood": [
+      "rebellious",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Watchmen",
+    "genre": [
+      "Action",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "year": 2009,
+    "mood": [
+      "dark",
+      "stylish"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Source Code",
+    "genre": [
+      "Sci-Fi",
+      "Thriller",
+      "Mystery"
+    ],
+    "year": 2011,
+    "mood": [
+      "tense",
+      "clever"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Looper",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Thriller"
+    ],
+    "year": 2012,
+    "mood": [
+      "mind-bending",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Moon",
+    "genre": [
+      "Sci-Fi",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2009,
+    "mood": [
+      "contemplative",
+      "lonely"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Sunshine",
+    "genre": [
+      "Sci-Fi",
+      "Thriller",
+      "Adventure"
+    ],
+    "year": 2007,
+    "mood": [
+      "tense",
+      "visually stunning"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Annihilation",
+    "genre": [
+      "Horror",
+      "Sci-Fi",
+      "Adventure"
+    ],
+    "year": 2018,
+    "mood": [
+      "trippy",
+      "unsettling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Under the Skin",
+    "genre": [
+      "Horror",
+      "Sci-Fi",
+      "Drama"
+    ],
+    "year": 2013,
+    "mood": [
+      "unsettling",
+      "atmospheric"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Witch",
+    "genre": [
+      "Horror",
+      "Drama"
+    ],
+    "year": 2015,
+    "mood": [
+      "atmospheric",
+      "unsettling"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Hereditary",
+    "genre": [
+      "Horror",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2018,
+    "mood": [
+      "disturbing",
+      "tense"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Midsommar",
+    "genre": [
+      "Horror",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2019,
+    "mood": [
+      "unsettling",
+      "visceral"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "The Babadook",
+    "genre": [
+      "Horror",
+      "Drama"
+    ],
+    "year": 2014,
+    "mood": [
+      "unsettling",
+      "emotional"
+    ],
+    "language": "English"
+  },
+  {
+    "title": "Let the Right One In",
+    "genre": [
+      "Horror",
+      "Drama",
+      "Romance"
+    ],
+    "year": 2008,
+    "mood": [
+      "atmospheric",
+      "emotional"
+    ],
+    "language": "Swedish"
+  },
+  {
+    "title": "The Orphanage",
+    "genre": [
+      "Horror",
+      "Drama",
+      "Mystery"
+    ],
+    "year": 2007,
+    "mood": [
+      "atmospheric",
+      "emotional"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "Rec",
+    "genre": [
+      "Horror",
+      "Thriller"
+    ],
+    "year": 2007,
+    "mood": [
+      "tense",
+      "claustrophobic"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "The Devil's Backbone",
+    "genre": [
+      "Horror",
+      "Drama",
+      "War"
+    ],
+    "year": 2001,
+    "mood": [
+      "atmospheric",
+      "emotional"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "Open Your Eyes",
+    "genre": [
+      "Drama",
+      "Sci-Fi",
+      "Thriller",
+      "Mystery"
+    ],
+    "year": 1997,
+    "mood": [
+      "mind-bending",
+      "romantic"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "The Secret in Their Eyes",
+    "genre": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "year": 2009,
+    "mood": [
+      "tense",
+      "emotional"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "Wild Tales",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Thriller"
+    ],
+    "year": 2014,
+    "mood": [
+      "dark humor",
+      "anthology"
+    ],
+    "language": "Spanish"
+  },
+  {
+    "title": "The Sea Inside",
+    "genre": [
+      "Drama",
+      "Biography",
+      "Romance"
+    ],
+    "year": 2004,
+    "mood": [
+      "emotional",
+      "contemplative"
+    ],
+    "language": "Spanish"
+  }
+]
