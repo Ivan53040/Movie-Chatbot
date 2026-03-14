@@ -8,6 +8,26 @@ from pathlib import Path
 # movies.json path — all searches use this file
 MOVIES_PATH = Path(__file__).parent / "movies.json"
 
+GENRE_ALIASES = {
+    "sci-fi": "science fiction",
+    "scifi": "science fiction",
+    "science fiction": "science fiction",
+    "romcom": "romance",
+}
+
+LANGUAGE_ALIASES = {
+    "english": "en",
+    "en": "en",
+    "japanese": "ja",
+    "ja": "ja",
+    "korean": "ko",
+    "ko": "ko",
+    "french": "fr",
+    "fr": "fr",
+    "spanish": "es",
+    "es": "es",
+}
+
 
 def _load_movies():
     """Load movies from JSON file."""
@@ -15,29 +35,55 @@ def _load_movies():
         return json.load(f)
 
 
+def _normalize_text(value):
+    return str(value).strip().lower() if value and str(value).strip() else None
+
+
+def _normalize_genre(value):
+    value_lower = _normalize_text(value)
+    if value_lower is None:
+        return None
+    return GENRE_ALIASES.get(value_lower, value_lower)
+
+
+def _normalize_language(value):
+    value_lower = _normalize_text(value)
+    if value_lower is None:
+        return None
+    return LANGUAGE_ALIASES.get(value_lower, value_lower)
+
+
+def _listify(value):
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    return [value]
+
+
 def _matches_filters(movie, genre=None, mood=None, year_min=None, year_max=None, year=None, language=None):
-    genre_lower = genre.strip().lower() if genre and str(genre).strip() else None
-    mood_lower = mood.strip().lower() if mood and str(mood).strip() else None
-    language_lower = language.strip().lower() if language and str(language).strip() else None
+    genre_lower = _normalize_genre(genre)
+    mood_lower = _normalize_text(mood)
+    language_lower = _normalize_language(language)
 
     if genre_lower is not None:
-        movie_genre_data = movie.get("genre", [])
-        if isinstance(movie_genre_data, str):
-            movie_genres = [movie_genre_data.strip().lower()]
-        else:
-            movie_genres = [g.strip().lower() for g in movie_genre_data if str(g).strip()]
+        movie_genres = [
+            _normalize_genre(g) for g in _listify(movie.get("genres", movie.get("genre", []))) if _normalize_genre(g)
+        ]
 
         if genre_lower not in movie_genres:
             return False
 
     if mood_lower is not None:
-        movie_mood_data = movie.get("mood", [])
-        if isinstance(movie_mood_data, str):
-            movie_moods = [movie_mood_data.strip().lower()]
-        else:
-            movie_moods = [m.strip().lower() for m in movie_mood_data if str(m).strip()]
+        keyword_tokens = [_normalize_text(k) for k in _listify(movie.get("keywords", [])) if _normalize_text(k)]
+        mood_tokens = [_normalize_text(m) for m in _listify(movie.get("mood", [])) if _normalize_text(m)]
+        overview_lower = _normalize_text(movie.get("overview", "")) or ""
 
-        if mood_lower not in movie_moods:
+        if (
+            mood_lower not in mood_tokens
+            and mood_lower not in keyword_tokens
+            and mood_lower not in overview_lower
+        ):
             return False
 
     raw_year = movie.get("year")
@@ -59,12 +105,9 @@ def _matches_filters(movie, genre=None, mood=None, year_min=None, year_max=None,
             return False
 
     if language_lower is not None:
-        movie_language_data = movie.get("language", [])
-
-        if isinstance(movie_language_data, str):
-            movie_languages = [movie_language_data.strip().lower()]
-        else:
-            movie_languages = [l.strip().lower() for l in movie_language_data if str(l).strip()]
+        movie_languages = [
+            _normalize_language(l) for l in _listify(movie.get("language", [])) if _normalize_language(l)
+        ]
 
         if language_lower not in movie_languages:
             return False

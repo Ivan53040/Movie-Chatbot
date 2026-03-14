@@ -75,19 +75,35 @@ def find_movie_by_title(title, movies):
             return movie
     return None
 
+
+def _list_to_text(value):
+    if value is None:
+        return ""
+    if isinstance(value, list):
+        return ", ".join(str(item) for item in value if str(item).strip())
+    return str(value)
+
+
 def make_movie_text(movie):
     title = movie.get("title", "")
-    genres = ", ".join(movie.get("genre", [])) if isinstance(movie.get("genre"), list) else movie.get("genre", "")
-    moods = ", ".join(movie.get("mood", [])) if isinstance(movie.get("mood"), list) else movie.get("mood", "")
-    language_data = movie.get("language", "")
-    language = ", ".join(language_data) if isinstance(language_data, list) else language_data
+    year = movie.get("year", "")
+    genres = _list_to_text(movie.get("genres", movie.get("genre", [])))
+    keywords = _list_to_text(movie.get("keywords", []))
+    cast = _list_to_text(movie.get("cast", []))
+    director = movie.get("director", "")
+    language = _list_to_text(movie.get("language", ""))
     overview = movie.get("overview", "")
+    runtime = movie.get("runtime", "")
 
     return (
         f"Title: {title}. "
+        f"Year: {year}. "
         f"Genres: {genres}. "
-        f"Mood: {moods}. "
+        f"Keywords: {keywords}. "
+        f"Director: {director}. "
+        f"Cast: {cast}. "
         f"Language: {language}. "
+        f"Runtime: {runtime} minutes. "
         f"Overview: {overview}"
     )
 
