@@ -1,15 +1,8 @@
 import json
+import re
 
 from ollama import chat
 from pydantic import BaseModel
-
-from movie_search import search_movies
-from semantic_search import (
-    cosine_search,
-    hybrid_recommend_similar_movies,
-    hybrid_search,
-    recommend_similar_movies,
-)
 
 
 VALID_MOODS = [
@@ -21,6 +14,16 @@ VALID_MOODS = [
     "uplifting",
     "romantic",
 ]
+
+MOOD_HINTS = {
+    "light": ["light", "輕鬆", "轻松"],
+    "funny": ["funny", "comedy", "搞笑", "好笑"],
+    "emotional": ["emotional", "sad", "touching", "催淚", "催泪", "感人"],
+    "dark": ["dark", "grim", "黑暗", "陰暗", "阴暗"],
+    "exciting": ["exciting", "thrilling", "刺激", "熱血", "热血"],
+    "uplifting": ["uplifting", "inspiring", "勵志", "励志", "振奮", "振奋"],
+    "romantic": ["romantic", "浪漫"],
+}
 
 
 class MovieQuery(BaseModel):
@@ -53,6 +56,74 @@ def _to_str_or_none(value):
     return value if value else None
 
 
+def _extract_year_overrides(user_input: str) -> dict:
+    text = user_input.lower()
+    overrides = {"year": None, "year_min": None, "year_max": None}
+
+    match = re.search(r"\bafter\s+(19\d{2}|20\d{2}|21\d{2})\b", text)
+    if match:
+        overrides["year_min"] = int(match.group(1)) + 1
+        return overrides
+
+    match = re.search(r"\b(before|earlier than)\s+(19\d{2}|20\d{2}|21\d{2})\b", text)
+    if match:
+        overrides["year_max"] = int(match.group(2)) - 1
+        return overrides
+
+    match = re.search(r"\b(since|from)\s+(19\d{2}|20\d{2}|21\d{2})\b", text)
+    if match:
+        overrides["year_min"] = int(match.group(2))
+        return overrides
+
+    match = re.search(r"\b(in|from)\s+(19\d{2}|20\d{2}|21\d{2})\b", text)
+    if match:
+        overrides["year"] = int(match.group(2))
+        return overrides
+
+    match = re.search(r"(19\d{2}|20\d{2}|21\d{2})\s*年(?:\s*[的之])?(?:\s*(後|后))?", user_input)
+    if match:
+        year_value = int(match.group(1))
+        if match.group(2):
+            overrides["year_min"] = year_value + 1
+        else:
+            overrides["year"] = year_value
+        return overrides
+
+    match = re.search(r"(19\d{2}|20\d{2}|21\d{2})", user_input)
+    if match:
+        overrides["year"] = int(match.group(1))
+
+    return overrides
+
+
+def _is_mood_explicit(user_input: str, mood: str | None) -> bool:
+    if not mood:
+        return False
+    normalized_input = user_input.lower()
+    for token in MOOD_HINTS.get(mood.lower(), [mood.lower()]):
+        if token.lower() in normalized_input:
+            return True
+    return False
+
+
+def _normalize_parsed_query(user_input: str, query: dict) -> dict:
+    year_overrides = _extract_year_overrides(user_input)
+    if year_overrides["year"] is not None:
+        query["year"] = year_overrides["year"]
+        query["year_min"] = None
+        query["year_max"] = None
+    else:
+        if year_overrides["year_min"] is not None:
+            query["year_min"] = year_overrides["year_min"]
+        if year_overrides["year_max"] is not None:
+            query["year_max"] = year_overrides["year_max"]
+
+    if query.get("mood") and not _is_mood_explicit(user_input, query["mood"]):
+        query["mood"] = None
+
+    return query
+
+
 def parse_user_query(user_input: str) -> dict:
     response = chat(
         model="llama3.1:8b",
@@ -65,9 +136,12 @@ def parse_user_query(user_input: str) -> dict:
                     "Rules:\n"
                     "- genre should be a movie genre (Romance, Comedy, Sci-Fi, Drama, etc)\n"
                     "- mood should be a simple word (light, emotional, dark, funny, exciting)\n"
+                    "- Only set mood when the user explicitly states a mood or feeling\n"
+                    "- Do not infer mood from genre, plot, or semantic_query\n"
                     "- year_min means movies after that year\n"
                     "- year_max means movies before that year\n"
                     "- year means exactly that year\n"
+                    "- If the user does not mention a year, year/year_min/year_max must be null, never 0\n"
                     "- language means movie language\n"
                     "- similar_to must only be used when the user explicitly mentions a specific movie title\n"
                     "- Never use similar_to for generic concepts, topics, themes, or categories\n"
@@ -94,8 +168,7 @@ def parse_user_query(user_input: str) -> dict:
     )
 
     data = json.loads(response.message.content)
-
-    return {
+    parsed_query = {
         "genre": _to_str_or_none(data.get("genre")),
         "mood": _to_str_or_none(data.get("mood")),
         "year_min": _to_int_or_none(data.get("year_min")),
@@ -105,147 +178,10 @@ def parse_user_query(user_input: str) -> dict:
         "similar_to": _to_str_or_none(data.get("similar_to")),
         "semantic_query": _to_str_or_none(data.get("semantic_query")),
     }
-
-
-def recommend_movies(user_input: str):
-    query = parse_user_query(user_input)
-
-    print("\nParsed query:")
-    print(query)
-
-    mood_genre_map = {
-        "funny": "Comedy",
-        "romantic": "Romance",
-        "emotional": "Drama",
-        "exciting": "Action",
-        "uplifting": "Drama",
-        "light": "Comedy",
-    }
-
-    if not query.get("genre") and query.get("mood") in mood_genre_map:
-        query["genre"] = mood_genre_map[query["mood"]]
-
-    has_hard_filters = any(
-        query.get(key) is not None
-        for key in ("genre", "mood", "year_min", "year_max", "year", "language")
-    )
-
-    def print_hybrid_debug(hybrid_result):
-        print("\nHybrid debug:")
-        print(f"semantic candidates: {len(hybrid_result['semantic_candidates'])}")
-        print(f"filtered candidates: {len(hybrid_result['filtered_candidates'])}")
-        filtered_ids = {
-            movie.get("id", movie.get("title"))
-            for movie in hybrid_result["filtered_candidates"]
-        }
-        dropped_candidates = [
-            movie
-            for movie in hybrid_result["semantic_candidates"][:10]
-            if movie.get("id", movie.get("title")) not in filtered_ids
-        ]
-        if dropped_candidates:
-            print("dropped from top 10 semantic candidates:")
-            for movie in dropped_candidates:
-                score = float(movie.get("similarity", 0.0) or 0.0)
-                print(f"  - {movie['title']} ({movie.get('year', 'N/A')}) score={score:.4f}")
-        print("final top 5:")
-        for movie in hybrid_result["final_results"]:
-            score = float(movie.get("similarity", 0.0) or 0.0)
-            print(f"  - {movie['title']} ({movie.get('year', 'N/A')}) score={score:.4f}")
-
-    if query.get("similar_to"):
-        try:
-            hybrid_result = hybrid_recommend_similar_movies(
-                query["similar_to"],
-                genre=query.get("genre"),
-                mood=query.get("mood"),
-                year_min=query.get("year_min"),
-                year_max=query.get("year_max"),
-                year=query.get("year"),
-                language=query.get("language"),
-                candidate_k=50,
-                top_k=5,
-            )
-            movies = hybrid_result["final_results"]
-            if movies:
-                print_hybrid_debug(hybrid_result)
-                return movies
-            if has_hard_filters:
-                print_hybrid_debug(hybrid_result)
-                return []
-            return recommend_similar_movies(query["similar_to"], top_k=5)
-        except FileNotFoundError:
-            pass
-
-    if query.get("semantic_query"):
-        try:
-            hybrid_result = hybrid_search(
-                query["semantic_query"],
-                genre=query.get("genre"),
-                mood=query.get("mood"),
-                year_min=query.get("year_min"),
-                year_max=query.get("year_max"),
-                year=query.get("year"),
-                language=query.get("language"),
-                candidate_k=50,
-                top_k=5,
-            )
-            movies = hybrid_result["final_results"]
-            if movies:
-                print_hybrid_debug(hybrid_result)
-                return movies
-            if has_hard_filters:
-                print_hybrid_debug(hybrid_result)
-                return []
-            return cosine_search(query["semantic_query"], top_k=5)
-        except FileNotFoundError:
-            pass
-
-    movies = search_movies(
-        genre=query.get("genre"),
-        mood=query.get("mood"),
-        year_min=query.get("year_min"),
-        year_max=query.get("year_max"),
-        year=query.get("year"),
-        language=query.get("language"),
-    )
-
-    if not movies and query.get("mood"):
-        movies = search_movies(
-            genre=query.get("genre"),
-            mood=None,
-            year_min=query.get("year_min"),
-            year_max=query.get("year_max"),
-            year=query.get("year"),
-            language=query.get("language"),
-        )
-
-    if not movies and not has_hard_filters:
-        try:
-            movies = cosine_search(user_input, top_k=5)
-        except FileNotFoundError:
-            pass
-
-    return movies
+    return _normalize_parsed_query(user_input, parsed_query)
 
 
 if __name__ == "__main__":
-    while True:
-        user_input = input("\nWhat movie do you want to watch? (type 'exit' to quit)\n> ")
+    from router import main
 
-        if user_input.lower() == "exit":
-            break
-
-        results = recommend_movies(user_input)
-
-        print("\nRecommended Movies:\n")
-
-        if not results:
-            print("No movies found matching your request.\n")
-        else:
-            for movie in results[:5]:
-                similarity = movie.get("similarity")
-                if similarity is None:
-                    print(f"{movie['title']} ({movie['year']})")
-                else:
-                    print(f"{movie['title']} ({movie['year']}) - score={similarity:.4f}")
+    main()

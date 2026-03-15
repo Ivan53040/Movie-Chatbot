@@ -1,8 +1,9 @@
 import json
 import numpy as np
 from pathlib import Path
+
 from sentence_transformers import SentenceTransformer
-from movie_search import filter_movies
+
 
 MOVIES_PATH = Path(__file__).parent / "movies.json"
 EMBEDDINGS_PATH = Path(__file__).parent / "movie_embeddings.npz"
@@ -15,6 +16,14 @@ SEMANTIC_QUERY_HINTS = {
     "ai": "artificial intelligence robot science fiction movie",
     "人工智慧": "artificial intelligence robot science fiction movie",
     "人工智能": "artificial intelligence robot science fiction movie",
+    "韓國": "korean cinema korean language movie",
+    "韩国": "korean cinema korean language movie",
+    "日本": "japanese cinema japanese language movie",
+    "驚悚": "thriller suspense movie",
+    "惊悚": "thriller suspense movie",
+    "犯罪": "crime movie",
+    "懸疑片": "mystery thriller movie",
+    "悬疑片": "mystery thriller movie",
     "太空": "space exploration science fiction movie",
     "宇宙": "space exploration science fiction movie",
     "外星": "alien first contact science fiction movie",
@@ -65,9 +74,7 @@ def cosine_search(query, top_k=5):
     normalized_query = normalize_semantic_query(query)
 
     query_embedding = model.encode([normalized_query], convert_to_numpy=True, normalize_embeddings=True)[0]
-
     scores = np.dot(movie_embeddings, query_embedding)
-
     top_indices = np.argsort(scores)[::-1][:top_k]
 
     results = []
@@ -78,48 +85,6 @@ def cosine_search(query, top_k=5):
 
     return results
 
-
-def rerank_movies(movies):
-    return sorted(
-        movies,
-        key=lambda movie: (
-            float(movie.get("similarity", 0.0) or 0.0),
-            float(movie.get("popularity", 0.0) or 0.0),
-            float(movie.get("vote_average", 0.0) or 0.0),
-        ),
-        reverse=True,
-    )
-
-
-def hybrid_search(
-    query,
-    *,
-    genre=None,
-    mood=None,
-    year_min=None,
-    year_max=None,
-    year=None,
-    language=None,
-    candidate_k=50,
-    top_k=5,
-):
-    semantic_results = cosine_search(query, top_k=candidate_k)
-    filtered_results = filter_movies(
-        semantic_results,
-        genre=genre,
-        mood=mood,
-        year_min=year_min,
-        year_max=year_max,
-        year=year,
-        language=language,
-    )
-    reranked_results = rerank_movies(filtered_results)
-    final_results = reranked_results[:top_k]
-    return {
-        "semantic_candidates": semantic_results,
-        "filtered_candidates": filtered_results,
-        "final_results": final_results,
-    }
 
 def find_movie_by_title(title, movies):
     title_lower = title.strip().lower()
@@ -159,66 +124,6 @@ def make_movie_text(movie):
         f"Runtime: {runtime} minutes. "
         f"Overview: {overview}"
     )
-
-def recommend_similar_movies(movie_title, top_k=5):
-    movies = load_movies()
-    movie_embeddings = load_embeddings()
-
-    target_index = None
-    for i, movie in enumerate(movies):
-        if movie.get("title", "").strip().lower() == movie_title.strip().lower():
-            target_index = i
-            break
-
-    if target_index is None:
-        return cosine_search(f"movies like {movie_title}", top_k=top_k)
-
-    target_embedding = movie_embeddings[target_index]
-    scores = np.dot(movie_embeddings, target_embedding)
-
-    # 排除自己
-    scores[target_index] = -1
-
-    top_indices = np.argsort(scores)[::-1][:top_k]
-
-    results = []
-    for idx in top_indices:
-        movie = movies[idx].copy()
-        movie["similarity"] = float(scores[idx])
-        results.append(movie)
-
-    return results
-
-
-def hybrid_recommend_similar_movies(
-    movie_title,
-    *,
-    genre=None,
-    mood=None,
-    year_min=None,
-    year_max=None,
-    year=None,
-    language=None,
-    candidate_k=50,
-    top_k=5,
-):
-    similar_results = recommend_similar_movies(movie_title, top_k=candidate_k)
-    filtered_results = filter_movies(
-        similar_results,
-        genre=genre,
-        mood=mood,
-        year_min=year_min,
-        year_max=year_max,
-        year=year,
-        language=language,
-    )
-    reranked_results = rerank_movies(filtered_results)
-    final_results = reranked_results[:top_k]
-    return {
-        "semantic_candidates": similar_results,
-        "filtered_candidates": filtered_results,
-        "final_results": final_results,
-    }
 
 
 if __name__ == "__main__":
