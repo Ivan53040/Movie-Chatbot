@@ -4,6 +4,12 @@ from movie_search import search_movies
 from ranking_layer import rank_movies
 from semantic_search import cosine_search
 from similar_search import recommend_similar_movies
+from top_k_movies import (
+    DEFAULT_TOP_K,
+    candidate_k_for_top_k,
+    normalize_top_k,
+    parse_more_command,
+)
 
 
 def build_ranking_context(query):
@@ -20,7 +26,7 @@ def build_ranking_context(query):
     }
 
 
-def print_hybrid_debug(hybrid_result):
+def print_hybrid_debug(hybrid_result, top_k):
     print("\nHybrid debug:")
     print(f"semantic candidates: {len(hybrid_result['semantic_candidates'])}")
     print(f"filtered candidates: {len(hybrid_result['filtered_candidates'])}")
@@ -41,7 +47,7 @@ def print_hybrid_debug(hybrid_result):
             score = float(movie.get("similarity", 0.0) or 0.0)
             print(f"  - {movie['title']} ({movie.get('year', 'N/A')}) score={score:.4f}")
 
-    print("final top 5:")
+    print(f"final top {top_k}:")
     for movie in hybrid_result["final_results"]:
         similarity = float(movie.get("similarity", 0.0) or 0.0)
         ranking_score = float(movie.get("ranking_score", 0.0) or 0.0)
@@ -51,7 +57,9 @@ def print_hybrid_debug(hybrid_result):
         )
 
 
-def recommend_movies(user_input: str):
+def recommend_movies(user_input: str, top_k=DEFAULT_TOP_K):
+    top_k = normalize_top_k(top_k)
+    candidate_k = candidate_k_for_top_k(top_k)
     query = parse_user_query(user_input)
 
     print("\nParsed query:")
@@ -85,18 +93,18 @@ def recommend_movies(user_input: str):
                 year_max=query.get("year_max"),
                 year=query.get("year"),
                 language=query.get("language"),
-                candidate_k=50,
-                top_k=5,
+                candidate_k=candidate_k,
+                top_k=top_k,
                 ranking_context=ranking_context,
             )
             movies = hybrid_result["final_results"]
             if movies:
-                print_hybrid_debug(hybrid_result)
+                print_hybrid_debug(hybrid_result, top_k)
                 return movies
             if has_hard_filters:
-                print_hybrid_debug(hybrid_result)
+                print_hybrid_debug(hybrid_result, top_k)
                 return []
-            return recommend_similar_movies(query["similar_to"], top_k=5)
+            return recommend_similar_movies(query["similar_to"], top_k=top_k)
         except FileNotFoundError:
             pass
 
@@ -110,18 +118,18 @@ def recommend_movies(user_input: str):
                 year_max=query.get("year_max"),
                 year=query.get("year"),
                 language=query.get("language"),
-                candidate_k=50,
-                top_k=5,
+                candidate_k=candidate_k,
+                top_k=top_k,
                 ranking_context=ranking_context,
             )
             movies = hybrid_result["final_results"]
             if movies:
-                print_hybrid_debug(hybrid_result)
+                print_hybrid_debug(hybrid_result, top_k)
                 return movies
             if has_hard_filters:
-                print_hybrid_debug(hybrid_result)
+                print_hybrid_debug(hybrid_result, top_k)
                 return []
-            return cosine_search(query["semantic_query"], top_k=5)
+            return cosine_search(query["semantic_query"], top_k=top_k)
         except FileNotFoundError:
             pass
 
@@ -149,7 +157,7 @@ def recommend_movies(user_input: str):
 
     if not movies and not has_hard_filters:
         try:
-            movies = cosine_search(user_input, top_k=5)
+            movies = cosine_search(user_input, top_k=top_k)
         except FileNotFoundError:
             pass
 
@@ -157,20 +165,34 @@ def recommend_movies(user_input: str):
 
 
 def main():
+    last_query = None
+
     while True:
         user_input = input("\nWhat movie do you want to watch? (type 'exit' to quit)\n> ")
 
         if user_input.lower() == "exit":
             break
 
-        results = recommend_movies(user_input)
+        more_top_k = parse_more_command(user_input)
+        if more_top_k is not None:
+            if last_query is None:
+                print("\nNo previous query found. Ask for a movie first.\n")
+                continue
+            query_text = last_query
+            requested_top_k = more_top_k
+        else:
+            query_text = user_input
+            requested_top_k = DEFAULT_TOP_K
+            last_query = user_input
+
+        results = recommend_movies(query_text, top_k=requested_top_k)
 
         print("\nRecommended Movies:\n")
 
         if not results:
             print("No movies found matching your request.\n")
         else:
-            for movie in results[:5]:
+            for movie in results[:requested_top_k]:
                 similarity = movie.get("similarity")
                 ranking_score = float(movie.get("ranking_score", 0.0) or 0.0)
                 if similarity is None:

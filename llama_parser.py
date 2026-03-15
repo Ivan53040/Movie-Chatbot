@@ -1,8 +1,7 @@
-import json
 import re
 
-from ollama import chat
 from pydantic import BaseModel
+from api_parser_client import chat_json
 
 
 VALID_MOODS = [
@@ -125,49 +124,37 @@ def _normalize_parsed_query(user_input: str, query: dict) -> dict:
 
 
 def parse_user_query(user_input: str) -> dict:
-    response = chat(
-        model="llama3.1:8b",
-        messages=[
-            {
-                "role": "system",
-                "content": (
-                    "You are a movie preference parser.\n"
-                    "Extract movie search filters from the user's message.\n\n"
-                    "Rules:\n"
-                    "- genre should be a movie genre (Romance, Comedy, Sci-Fi, Drama, etc)\n"
-                    "- mood should be a simple word (light, emotional, dark, funny, exciting)\n"
-                    "- Only set mood when the user explicitly states a mood or feeling\n"
-                    "- Do not infer mood from genre, plot, or semantic_query\n"
-                    "- year_min means movies after that year\n"
-                    "- year_max means movies before that year\n"
-                    "- year means exactly that year\n"
-                    "- If the user does not mention a year, year/year_min/year_max must be null, never 0\n"
-                    "- language means movie language\n"
-                    "- similar_to must only be used when the user explicitly mentions a specific movie title\n"
-                    "- Never use similar_to for generic concepts, topics, themes, or categories\n"
-                    "- Phrases like robot movies, space movies, sad movies, war movies, or action movies are not movie titles\n"
-                    "- semantic_query is a free-text taste query about themes, vibe, or story style\n"
-                    "- If the user says 'like Interstellar', set similar_to to 'Interstellar'\n"
-                    "- If the user says they want robot-related movies, set semantic_query to 'robot movies'\n"
-                    "- If the user asks in Chinese for machine, robot, AI, or space related movies, use semantic_query, not similar_to\n"
-                    "- Example: 'I want movies like Interstellar' -> similar_to='Interstellar'\n"
-                    "- Example: 'Recommend robot movies' -> semantic_query='robot movies'\n"
-                    "- Example: '我想看機器人相關的電影' -> semantic_query='robot movies'\n"
-                    "- Example: '推薦像星際效應的電影' -> similar_to='Interstellar'\n"
-                    "- If the user describes a vibe or concept, copy that into semantic_query\n"
-                    "- If information is missing return null\n"
-                    "- Return ONLY valid JSON"
-                ),
-            },
-            {
-                "role": "user",
-                "content": user_input,
-            },
-        ],
-        format=MovieQuery.model_json_schema(),
+    system_prompt = (
+        "You are a movie preference parser.\n"
+        "Extract movie search filters from the user's message.\n\n"
+        "Return a JSON object with these keys only:\n"
+        "genre, mood, year_min, year_max, year, language, similar_to, semantic_query\n\n"
+        "Rules:\n"
+        "- genre should be a movie genre (Romance, Comedy, Sci-Fi, Drama, etc)\n"
+        "- mood should be a simple word (light, emotional, dark, funny, exciting)\n"
+        "- Only set mood when the user explicitly states a mood or feeling\n"
+        "- Do not infer mood from genre, plot, or semantic_query\n"
+        "- year_min means movies after that year\n"
+        "- year_max means movies before that year\n"
+        "- year means exactly that year\n"
+        "- If the user does not mention a year, year/year_min/year_max must be null, never 0\n"
+        "- language means movie language\n"
+        "- similar_to must only be used when the user explicitly mentions a specific movie title\n"
+        "- Never use similar_to for generic concepts, topics, themes, or categories\n"
+        "- Phrases like robot movies, space movies, sad movies, war movies, or action movies are not movie titles\n"
+        "- semantic_query is a free-text taste query about themes, vibe, or story style\n"
+        "- If the user says 'like Interstellar', set similar_to to 'Interstellar'\n"
+        "- If the user says they want robot-related movies, set semantic_query to 'robot movies'\n"
+        "- If the user asks in Chinese for machine, robot, AI, or space related movies, use semantic_query, not similar_to\n"
+        "- Example: 'I want movies like Interstellar' -> similar_to='Interstellar'\n"
+        "- Example: 'Recommend robot movies' -> semantic_query='robot movies'\n"
+        "- Example: '我想看機器人相關的電影' -> semantic_query='robot movies'\n"
+        "- Example: '推薦像星際效應的電影' -> similar_to='Interstellar'\n"
+        "- If the user describes a vibe or concept, copy that into semantic_query\n"
+        "- If information is missing return null\n"
+        "- Return ONLY valid JSON"
     )
-
-    data = json.loads(response.message.content)
+    data = chat_json(system_prompt=system_prompt, user_input=user_input)
     parsed_query = {
         "genre": _to_str_or_none(data.get("genre")),
         "mood": _to_str_or_none(data.get("mood")),
