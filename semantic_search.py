@@ -114,7 +114,12 @@ def hybrid_search(
         language=language,
     )
     reranked_results = rerank_movies(filtered_results)
-    return reranked_results[:top_k]
+    final_results = reranked_results[:top_k]
+    return {
+        "semantic_candidates": semantic_results,
+        "filtered_candidates": filtered_results,
+        "final_results": final_results,
+    }
 
 def find_movie_by_title(title, movies):
     title_lower = title.strip().lower()
@@ -208,7 +213,12 @@ def hybrid_recommend_similar_movies(
         language=language,
     )
     reranked_results = rerank_movies(filtered_results)
-    return reranked_results[:top_k]
+    final_results = reranked_results[:top_k]
+    return {
+        "semantic_candidates": similar_results,
+        "filtered_candidates": filtered_results,
+        "final_results": final_results,
+    }
 
 
 if __name__ == "__main__":

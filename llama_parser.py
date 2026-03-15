@@ -130,9 +130,32 @@ def recommend_movies(user_input: str):
         for key in ("genre", "mood", "year_min", "year_max", "year", "language")
     )
 
+    def print_hybrid_debug(hybrid_result):
+        print("\nHybrid debug:")
+        print(f"semantic candidates: {len(hybrid_result['semantic_candidates'])}")
+        print(f"filtered candidates: {len(hybrid_result['filtered_candidates'])}")
+        filtered_ids = {
+            movie.get("id", movie.get("title"))
+            for movie in hybrid_result["filtered_candidates"]
+        }
+        dropped_candidates = [
+            movie
+            for movie in hybrid_result["semantic_candidates"][:10]
+            if movie.get("id", movie.get("title")) not in filtered_ids
+        ]
+        if dropped_candidates:
+            print("dropped from top 10 semantic candidates:")
+            for movie in dropped_candidates:
+                score = float(movie.get("similarity", 0.0) or 0.0)
+                print(f"  - {movie['title']} ({movie.get('year', 'N/A')}) score={score:.4f}")
+        print("final top 5:")
+        for movie in hybrid_result["final_results"]:
+            score = float(movie.get("similarity", 0.0) or 0.0)
+            print(f"  - {movie['title']} ({movie.get('year', 'N/A')}) score={score:.4f}")
+
     if query.get("similar_to"):
         try:
-            movies = hybrid_recommend_similar_movies(
+            hybrid_result = hybrid_recommend_similar_movies(
                 query["similar_to"],
                 genre=query.get("genre"),
                 mood=query.get("mood"),
@@ -143,9 +166,12 @@ def recommend_movies(user_input: str):
                 candidate_k=50,
                 top_k=5,
             )
+            movies = hybrid_result["final_results"]
             if movies:
+                print_hybrid_debug(hybrid_result)
                 return movies
             if has_hard_filters:
+                print_hybrid_debug(hybrid_result)
                 return []
             return recommend_similar_movies(query["similar_to"], top_k=5)
         except FileNotFoundError:
@@ -153,7 +179,7 @@ def recommend_movies(user_input: str):
 
     if query.get("semantic_query"):
         try:
-            movies = hybrid_search(
+            hybrid_result = hybrid_search(
                 query["semantic_query"],
                 genre=query.get("genre"),
                 mood=query.get("mood"),
@@ -164,9 +190,12 @@ def recommend_movies(user_input: str):
                 candidate_k=50,
                 top_k=5,
             )
+            movies = hybrid_result["final_results"]
             if movies:
+                print_hybrid_debug(hybrid_result)
                 return movies
             if has_hard_filters:
+                print_hybrid_debug(hybrid_result)
                 return []
             return cosine_search(query["semantic_query"], top_k=5)
         except FileNotFoundError:
