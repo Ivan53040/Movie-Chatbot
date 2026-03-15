@@ -36,7 +36,12 @@ class MovieQuery(BaseModel):
 
 def _to_int_or_none(value):
     try:
-        return int(value) if value is not None else None
+        if value is None:
+            return None
+        parsed = int(value)
+        if parsed <= 1800:
+            return None
+        return parsed
     except (TypeError, ValueError):
         return None
 
@@ -64,9 +69,17 @@ def parse_user_query(user_input: str) -> dict:
                     "- year_max means movies before that year\n"
                     "- year means exactly that year\n"
                     "- language means movie language\n"
-                    "- similar_to is a movie title the user wants something like\n"
+                    "- similar_to must only be used when the user explicitly mentions a specific movie title\n"
+                    "- Never use similar_to for generic concepts, topics, themes, or categories\n"
+                    "- Phrases like robot movies, space movies, sad movies, war movies, or action movies are not movie titles\n"
                     "- semantic_query is a free-text taste query about themes, vibe, or story style\n"
                     "- If the user says 'like Interstellar', set similar_to to 'Interstellar'\n"
+                    "- If the user says they want robot-related movies, set semantic_query to 'robot movies'\n"
+                    "- If the user asks in Chinese for machine, robot, AI, or space related movies, use semantic_query, not similar_to\n"
+                    "- Example: 'I want movies like Interstellar' -> similar_to='Interstellar'\n"
+                    "- Example: 'Recommend robot movies' -> semantic_query='robot movies'\n"
+                    "- Example: '我想看機器人相關的電影' -> semantic_query='robot movies'\n"
+                    "- Example: '推薦像星際效應的電影' -> similar_to='Interstellar'\n"
                     "- If the user describes a vibe or concept, copy that into semantic_query\n"
                     "- If information is missing return null\n"
                     "- Return ONLY valid JSON"
@@ -127,7 +140,7 @@ def recommend_movies(user_input: str):
                 year_max=query.get("year_max"),
                 year=query.get("year"),
                 language=query.get("language"),
-                candidate_k=20,
+                candidate_k=50,
                 top_k=5,
             )
             if movies:
@@ -148,7 +161,7 @@ def recommend_movies(user_input: str):
                 year_max=query.get("year_max"),
                 year=query.get("year"),
                 language=query.get("language"),
-                candidate_k=20,
+                candidate_k=50,
                 top_k=5,
             )
             if movies:
