@@ -1,0 +1,1002 @@
+{
+  "users": 20,
+  "queries_run": 80,
+  "helpful": 65,
+  "not_helpful": 15,
+  "no_results": 1,
+  "per_user": [
+    {
+      "user_id": "synthetic_marvel_fan_01",
+      "language": "en",
+      "queries": [
+        {
+          "query": "latest marvel movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"latest marvel movie\".",
+          "top_titles": [
+            "Avengers: Doomsday",
+            "The Fantastic 4: First Steps",
+            "Captain America: Brave New World"
+          ]
+        },
+        {
+          "query": "exciting marvel movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"exciting marvel movie\".",
+          "top_titles": [
+            "Deadpool & Wolverine",
+            "The Avengers",
+            "The Fantastic 4: First Steps"
+          ]
+        },
+        {
+          "query": "mcu action movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"mcu action movie\".",
+          "top_titles": [
+            "Deadpool & Wolverine",
+            "The Avengers",
+            "The Fantastic 4: First Steps"
+          ]
+        },
+        {
+          "query": "fun marvel movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"fun marvel movie\".",
+          "top_titles": [
+            "Deadpool & Wolverine",
+            "Spider-Man: No Way Home",
+            "The Avengers"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_dc_fan_02",
+      "language": "en",
+      "queries": [
+        {
+          "query": "latest dc movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"latest dc movie\".",
+          "top_titles": [
+            "Superman",
+            "Zack Snyder's Justice League",
+            "Aquaman"
+          ]
+        },
+        {
+          "query": "exciting dc movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"exciting dc movie\".",
+          "top_titles": [
+            "Zack Snyder's Justice League",
+            "Superman",
+            "Batman v Superman: Dawn of Justice"
+          ]
+        },
+        {
+          "query": "dceu superhero movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"dceu superhero movie\".",
+          "top_titles": [
+            "Zack Snyder's Justice League",
+            "Superman",
+            "Batman v Superman: Dawn of Justice"
+          ]
+        },
+        {
+          "query": "dark dc movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"dark dc movie\".",
+          "top_titles": [
+            "Zack Snyder's Justice League",
+            "Superman",
+            "Batman v Superman: Dawn of Justice"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_starwars_fan_03",
+      "language": "en",
+      "queries": [
+        {
+          "query": "star wars movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"star wars movie\".",
+          "top_titles": [
+            "Star Wars"
+          ]
+        },
+        {
+          "query": "latest star wars movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"latest star wars movie\".",
+          "top_titles": [
+            "Star Wars"
+          ]
+        },
+        {
+          "query": "space adventure like star wars",
+          "route": "hybrid_similar",
+          "helpful": false,
+          "reason": "No results were returned for this request.",
+          "top_titles": []
+        },
+        {
+          "query": "exciting star wars film",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"exciting star wars film\".",
+          "top_titles": [
+            "Star Wars"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_nolan_fan_04",
+      "language": "en",
+      "queries": [
+        {
+          "query": "a great Christopher Nolan movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"a great Christopher Nolan movie\".",
+          "top_titles": [
+            "Interstellar",
+            "Oppenheimer",
+            "Inception"
+          ]
+        },
+        {
+          "query": "Nolan movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"Nolan movie\".",
+          "top_titles": [
+            "Interstellar",
+            "Oppenheimer",
+            "Inception"
+          ]
+        },
+        {
+          "query": "mind-bending sci-fi",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"mind-bending sci-fi\".",
+          "top_titles": [
+            "Project Hail Mary",
+            "Interstellar",
+            "Inception"
+          ]
+        },
+        {
+          "query": "movie directed by Christopher Nolan",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"movie directed by Christopher Nolan\".",
+          "top_titles": [
+            "Interstellar",
+            "Oppenheimer",
+            "Inception"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_horror_fan_05",
+      "language": "en",
+      "queries": [
+        {
+          "query": "give me a horror movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"give me a horror movie\".",
+          "top_titles": [
+            "28 Years Later: The Bone Temple",
+            "Sinners",
+            "Scream 7"
+          ]
+        },
+        {
+          "query": "scary movie tonight",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"scary movie tonight\".",
+          "top_titles": [
+            "Sinners",
+            "Frankenstein",
+            "Whistle"
+          ]
+        },
+        {
+          "query": "psychological horror",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"psychological horror\".",
+          "top_titles": [
+            "Sinners",
+            "Frankenstein",
+            "Whistle"
+          ]
+        },
+        {
+          "query": "horror movie with a twist",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"horror movie with a twist\".",
+          "top_titles": [
+            "Sinners",
+            "Frankenstein",
+            "Whistle"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_romcom_fan_06",
+      "language": "en",
+      "queries": [
+        {
+          "query": "funny romance movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"funny romance movie\".",
+          "top_titles": [
+            "Lilo & Stitch",
+            "Zootopia 2",
+            "Hoppers"
+          ]
+        },
+        {
+          "query": "romance after 2015",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"romance after 2015\".",
+          "top_titles": [
+            "Venus as a Boy",
+            "Reminders of Him",
+            "Reminders of Him"
+          ]
+        },
+        {
+          "query": "cozy romance movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"cozy romance movie\".",
+          "top_titles": [
+            "Venus as a Boy",
+            "Reminders of Him",
+            "Reminders of Him"
+          ]
+        },
+        {
+          "query": "feel-good romantic comedy",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"feel-good romantic comedy\".",
+          "top_titles": [
+            "Lilo & Stitch",
+            "Zootopia 2",
+            "Hoppers"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_family_parent_07",
+      "language": "en",
+      "queries": [
+        {
+          "query": "family movie tonight",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"family movie tonight\".",
+          "top_titles": [
+            "Avatar: The Way of Water",
+            "The Family Plan",
+            "The Family Plan 2"
+          ]
+        },
+        {
+          "query": "wholesome animated movie",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"EVANGELION 30th Anniversary Special Screening\" did not match this persona strongly enough for query \"wholesome animated movie\".",
+          "top_titles": [
+            "EVANGELION 30th Anniversary Special Screening",
+            "Chainsaw Man - The Movie: Reze Arc",
+            "Cosmic Princess Kaguya!"
+          ]
+        },
+        {
+          "query": "movie for kids and parents",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"movie for kids and parents\".",
+          "top_titles": [
+            "Avatar: The Way of Water",
+            "Weapons",
+            "Send Help"
+          ]
+        },
+        {
+          "query": "feel-good family movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"feel-good family movie\".",
+          "top_titles": [
+            "The Good Boy",
+            "Inside Out 2",
+            "Inside Out"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_korean_thriller_08",
+      "language": "en",
+      "queries": [
+        {
+          "query": "korean thriller",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"korean thriller\".",
+          "top_titles": [
+            "Parasite",
+            "No Other Choice",
+            "The Handmaiden"
+          ]
+        },
+        {
+          "query": "korean revenge movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"korean revenge movie\".",
+          "top_titles": [
+            "Parasite",
+            "The King's Warden",
+            "No Other Choice"
+          ]
+        },
+        {
+          "query": "dark korean movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"dark korean movie\".",
+          "top_titles": [
+            "Parasite",
+            "The King's Warden",
+            "No Other Choice"
+          ]
+        },
+        {
+          "query": "suspenseful korean film",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"suspenseful korean film\".",
+          "top_titles": [
+            "Parasite",
+            "No Other Choice",
+            "The Handmaiden"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_sports_fan_09",
+      "language": "en",
+      "queries": [
+        {
+          "query": "give me a sport movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"give me a sport movie\".",
+          "top_titles": [
+            "Marty Supreme",
+            "GOAT",
+            "F1"
+          ]
+        },
+        {
+          "query": "feel-good sports movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"feel-good sports movie\".",
+          "top_titles": [
+            "Marty Supreme",
+            "F1",
+            "GOAT"
+          ]
+        },
+        {
+          "query": "sports drama",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"sports drama\".",
+          "top_titles": [
+            "Marty Supreme",
+            "F1",
+            "Pelé: Birth of a Legend"
+          ]
+        },
+        {
+          "query": "true story sports movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"true story sports movie\".",
+          "top_titles": [
+            "Marty Supreme",
+            "F1",
+            "GOAT"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_a24_fan_10",
+      "language": "en",
+      "queries": [
+        {
+          "query": "A24-style emotional drama",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"A24-style emotional drama\".",
+          "top_titles": [
+            "Little Amélie or the Character of Rain",
+            "Made in Korea",
+            "Even If This Love Disappears Tonight"
+          ]
+        },
+        {
+          "query": "quiet emotional drama",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"quiet emotional drama\".",
+          "top_titles": [
+            "Little Amélie or the Character of Rain",
+            "Made in Korea",
+            "Even If This Love Disappears Tonight"
+          ]
+        },
+        {
+          "query": "beautifully shot indie drama",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"beautifully shot indie drama\".",
+          "top_titles": [
+            "Made in Korea",
+            "Little Amélie or the Character of Rain",
+            "Even If This Love Disappears Tonight"
+          ]
+        },
+        {
+          "query": "sad movie that is still beautiful",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"sad movie that is still beautiful\".",
+          "top_titles": [
+            "Little Amélie or the Character of Rain",
+            "Made in Korea",
+            "Even If This Love Disappears Tonight"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_keanu_fan_11",
+      "language": "en",
+      "queries": [
+        {
+          "query": "movie starring Keanu Reeves",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"movie starring Keanu Reeves\".",
+          "top_titles": [
+            "Sonic the Hedgehog 3",
+            "Ballerina",
+            "The Matrix"
+          ]
+        },
+        {
+          "query": "Keanu Reeves action movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"Keanu Reeves action movie\".",
+          "top_titles": [
+            "Sonic the Hedgehog 3",
+            "Ballerina",
+            "Shelter"
+          ]
+        },
+        {
+          "query": "John Wick style action",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"John Wick style action\".",
+          "top_titles": [
+            "Sonic the Hedgehog 3",
+            "Ballerina",
+            "Shelter"
+          ]
+        },
+        {
+          "query": "movie cast by keanu",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"movie cast by keanu\".",
+          "top_titles": [
+            "Sonic the Hedgehog 3",
+            "Ballerina",
+            "The Matrix"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_tom_cruise_fan_12",
+      "language": "en",
+      "queries": [
+        {
+          "query": "Tom Cruise film",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"Tom Cruise film\".",
+          "top_titles": [
+            "Top Gun: Maverick",
+            "Mission: Impossible - The Final Reckoning",
+            "Jack Reacher"
+          ]
+        },
+        {
+          "query": "movie starring Tom Cruise",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"movie starring Tom Cruise\".",
+          "top_titles": [
+            "Top Gun: Maverick",
+            "Mission: Impossible - The Final Reckoning",
+            "Jack Reacher"
+          ]
+        },
+        {
+          "query": "mission impossible movie",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"mission impossible movie\".",
+          "top_titles": [
+            "Mission: Impossible - The Final Reckoning"
+          ]
+        },
+        {
+          "query": "fast action movie with Tom Cruise",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"fast action movie with Tom Cruise\".",
+          "top_titles": [
+            "Top Gun: Maverick",
+            "Mission: Impossible - The Final Reckoning",
+            "Shelter"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_animation_fan_13",
+      "language": "en",
+      "queries": [
+        {
+          "query": "animated movie for adults",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"EVANGELION 30th Anniversary Special Screening\" did not match this persona strongly enough for query \"animated movie for adults\".",
+          "top_titles": [
+            "EVANGELION 30th Anniversary Special Screening",
+            "Chainsaw Man - The Movie: Reze Arc",
+            "Cosmic Princess Kaguya!"
+          ]
+        },
+        {
+          "query": "beautiful animation movie",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"EVANGELION 30th Anniversary Special Screening\" did not match this persona strongly enough for query \"beautiful animation movie\".",
+          "top_titles": [
+            "EVANGELION 30th Anniversary Special Screening",
+            "Chainsaw Man - The Movie: Reze Arc",
+            "Cosmic Princess Kaguya!"
+          ]
+        },
+        {
+          "query": "emotional animated film",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"emotional animated film\".",
+          "top_titles": [
+            "Chainsaw Man - The Movie: Reze Arc",
+            "EVANGELION 30th Anniversary Special Screening",
+            "Inside Out 2"
+          ]
+        },
+        {
+          "query": "animation with heart",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"EVANGELION 30th Anniversary Special Screening\" did not match this persona strongly enough for query \"animation with heart\".",
+          "top_titles": [
+            "EVANGELION 30th Anniversary Special Screening",
+            "Chainsaw Man - The Movie: Reze Arc",
+            "Cosmic Princess Kaguya!"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_scifi_fan_14",
+      "language": "en",
+      "queries": [
+        {
+          "query": "movie set in space",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"movie set in space\".",
+          "top_titles": [
+            "Project Hail Mary",
+            "Interstellar",
+            "Alien: Romulus"
+          ]
+        },
+        {
+          "query": "underrated sci-fi",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"underrated sci-fi\".",
+          "top_titles": [
+            "Project Hail Mary",
+            "Interstellar",
+            "Alien: Romulus"
+          ]
+        },
+        {
+          "query": "space movie with emotion",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"space movie with emotion\".",
+          "top_titles": [
+            "Project Hail Mary",
+            "Interstellar",
+            "Alien: Romulus"
+          ]
+        },
+        {
+          "query": "movie with aliens",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"movie with aliens\".",
+          "top_titles": [
+            "Project Hail Mary",
+            "Alien: Romulus",
+            "Arrival"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_true_story_15",
+      "language": "en",
+      "queries": [
+        {
+          "query": "crime movie based on true events",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"crime movie based on true events\".",
+          "top_titles": [
+            "The Rip",
+            "Crime 101",
+            "Mystery 101: Deadly History"
+          ]
+        },
+        {
+          "query": "biographical drama",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"biographical drama\".",
+          "top_titles": [
+            "Nuremberg",
+            "Hamnet",
+            "Oppenheimer"
+          ]
+        },
+        {
+          "query": "movie based on a true story",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"movie based on a true story\".",
+          "top_titles": [
+            "The Revenant",
+            "The Wolf of Wall Street",
+            "Send Help"
+          ]
+        },
+        {
+          "query": "historical thriller",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"Scope\" did not match this persona strongly enough for query \"historical thriller\".",
+          "top_titles": [
+            "Scope",
+            "Sinners",
+            "He's Watching You"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_chinese_family_16",
+      "language": "zh",
+      "queries": [
+        {
+          "query": "我想看一部溫馨的家庭電影",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"Big World\" did not match this persona strongly enough for query \"我想看一部溫馨的家庭電影\".",
+          "top_titles": [
+            "Big World",
+            "The Shadow's Edge",
+            "Blades of the Guardians: Wind Rises in the Desert"
+          ]
+        },
+        {
+          "query": "給我一部動畫電影",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"給我一部動畫電影\".",
+          "top_titles": [
+            "Cosmic Princess Kaguya!",
+            "EVANGELION 30th Anniversary Special Screening",
+            "Chainsaw Man - The Movie: Reze Arc"
+          ]
+        },
+        {
+          "query": "適合全家一起看的電影",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"適合全家一起看的電影\".",
+          "top_titles": [
+            "Karate Kid: Legends",
+            "Rental Family",
+            "Back to the Past"
+          ]
+        },
+        {
+          "query": "輕鬆感人的電影",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"Made in Korea\" did not match this persona strongly enough for query \"輕鬆感人的電影\".",
+          "top_titles": [
+            "Made in Korea",
+            "Big World",
+            "The Shadow's Edge"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_chinese_horror_17",
+      "language": "zh",
+      "queries": [
+        {
+          "query": "我想看恐怖片",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"我想看恐怖片\".",
+          "top_titles": [
+            "28 Years Later: The Bone Temple",
+            "Whistle",
+            "Five Nights at Freddy's 2"
+          ]
+        },
+        {
+          "query": "給我一部驚悚電影",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"State of Fear\" did not match this persona strongly enough for query \"給我一部驚悚電影\".",
+          "top_titles": [
+            "State of Fear",
+            "Blades of the Guardians: Wind Rises in the Desert",
+            "A Time for Bravery"
+          ]
+        },
+        {
+          "query": "黑暗一點的電影",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"Big World\" did not match this persona strongly enough for query \"黑暗一點的電影\".",
+          "top_titles": [
+            "Big World",
+            "Cosmic Princess Kaguya!",
+            "Ne Zha 2"
+          ]
+        },
+        {
+          "query": "有反轉的恐怖片",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"In the Morning of La Petite Mort\" did not match this persona strongly enough for query \"有反轉的恐怖片\".",
+          "top_titles": [
+            "In the Morning of La Petite Mort",
+            "Big World",
+            "Whistle"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_chinese_romance_18",
+      "language": "zh",
+      "queries": [
+        {
+          "query": "我想看愛情電影",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"我想看愛情電影\".",
+          "top_titles": [
+            "You Drive Me Crazy",
+            "Hamnet",
+            "Even If This Love Disappears Tonight"
+          ]
+        },
+        {
+          "query": "給我一部浪漫喜劇",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"Big World\" did not match this persona strongly enough for query \"給我一部浪漫喜劇\".",
+          "top_titles": [
+            "Big World",
+            "Blades of the Guardians: Wind Rises in the Desert",
+            "The Shadow's Edge"
+          ]
+        },
+        {
+          "query": "2015 年後的愛情片",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"2015 年後的愛情片\".",
+          "top_titles": [
+            "Inside Out",
+            "Buddy's Mom"
+          ]
+        },
+        {
+          "query": "約會夜看的電影",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"Big World\" did not match this persona strongly enough for query \"約會夜看的電影\".",
+          "top_titles": [
+            "Big World",
+            "Cosmic Princess Kaguya!",
+            "The Shadow's Edge"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_fincher_fan_19",
+      "language": "en",
+      "queries": [
+        {
+          "query": "Fincher movie",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"Fincher movie\".",
+          "top_titles": [
+            "Gone Girl",
+            "Fight Club",
+            "Se7en"
+          ]
+        },
+        {
+          "query": "dark detective story",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"dark detective story\".",
+          "top_titles": [
+            "Se7en",
+            "Wake Up Dead Man: A Knives Out Mystery",
+            "Murder by Numbers"
+          ]
+        },
+        {
+          "query": "psychological thriller",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"psychological thriller\".",
+          "top_titles": [
+            "Gone Girl",
+            "The Dark Knight Rises",
+            "Fight Club"
+          ]
+        },
+        {
+          "query": "crime thriller with style",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"crime thriller with style\".",
+          "top_titles": [
+            "Gone Girl",
+            "The Dark Knight Rises",
+            "Fight Club"
+          ]
+        }
+      ]
+    },
+    {
+      "user_id": "synthetic_wholesome_20",
+      "language": "en",
+      "queries": [
+        {
+          "query": "feel-good movie tonight",
+          "route": "hybrid_semantic",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"feel-good movie tonight\".",
+          "top_titles": [
+            "Good Luck, Have Fun, Don't Die",
+            "Inside Out 2",
+            "The Rip"
+          ]
+        },
+        {
+          "query": "light comedy for a lazy night",
+          "route": "filter_search",
+          "helpful": true,
+          "reason": "The top results matched this persona well enough for query \"light comedy for a lazy night\".",
+          "top_titles": [
+            "Migration",
+            "Good Luck, Have Fun, Don't Die",
+            "Zootopia 2"
+          ]
+        },
+        {
+          "query": "warm family movie",
+          "route": "hybrid_semantic",
+          "helpful": false,
+          "reason": "\"War Machine\" did not match this persona strongly enough for query \"warm family movie\".",
+          "top_titles": [
+            "War Machine",
+            "Shelter",
+            "Avatar: Fire and Ash"
+          ]
+        },
+        {
+          "query": "something uplifting",
+          "route": "filter_search",
+          "helpful": false,
+          "reason": "\"The Good Boy\" did not match this persona strongly enough for query \"something uplifting\".",
+          "top_titles": [
+            "The Good Boy",
+            "Venus as a Boy",
+            "Reminders of Him"
+          ]
+        }
+      ]
+    }
+  ],
+  "matrix": {
+    "users": 20,
+    "movies": 95,
+    "interactions": 120,
+    "matrix_path": "C:\\Users\\ivank\\OneDrive\\Desktop\\Sideproject\\ProjectLLM\\artifacts\\user_item_matrix.npz"
+  }
+}

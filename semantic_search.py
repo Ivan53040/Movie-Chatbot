@@ -1,7 +1,7 @@
 import json
-import numpy as np
 from pathlib import Path
 
+import numpy as np
 from sentence_transformers import SentenceTransformer
 
 
@@ -11,30 +11,52 @@ EMBEDDINGS_PATH = Path(__file__).parent / "movie_embeddings.npz"
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 SEMANTIC_QUERY_HINTS = {
+    "ai": "artificial intelligence robot science fiction movie",
+    "alien": "alien first contact science fiction movie",
+    "anime": "anime animated movie",
+    "animation": "animated movie",
+    "crime": "crime movie",
+    "dc": "dc universe dceu dcu superhero comic book movie",
+    "dceu": "dc universe dceu superhero comic book movie",
+    "dcu": "dc universe dcu superhero comic book movie",
+    "horror": "horror movie",
+    "marvel": "marvel mcu superhero comic book movie",
+    "mcu": "marvel cinematic universe superhero movie",
+    "robot": "robot android artificial intelligence science fiction movie",
+    "space": "space exploration science fiction movie",
+    "star wars": "star wars space opera jedi rebellion sci fi movie",
+    "starwars": "star wars space opera jedi rebellion sci fi movie",
+    "sport": "sports competition athlete inspirational movie",
+    "sports": "sports competition athlete inspirational movie",
+    "super hero": "superhero comic book action movie",
+    "superhero": "superhero comic book action movie",
+    "thriller": "thriller suspense movie",
+    "war": "war movie",
+    "運動": "sports competition athlete inspirational movie",
+    "运动": "sports competition athlete inspirational movie",
+    "體育": "sports competition athlete inspirational movie",
+    "体育": "sports competition athlete inspirational movie",
+    "動畫": "anime animated movie",
+    "动画": "anime animated movie",
+    "愛情": "romantic emotional movie",
+    "爱情": "romantic emotional movie",
+    "懸疑": "mystery thriller movie",
+    "悬疑": "mystery thriller movie",
+    "戰爭": "war movie",
+    "战争": "war movie",
     "機器人": "robot android artificial intelligence science fiction movie",
     "机器人": "robot android artificial intelligence science fiction movie",
-    "ai": "artificial intelligence robot science fiction movie",
-    "人工智慧": "artificial intelligence robot science fiction movie",
-    "人工智能": "artificial intelligence robot science fiction movie",
+    "科幻": "science fiction movie",
+    "犯罪": "crime movie",
+    "空間": "space exploration science fiction movie",
+    "太空": "space exploration science fiction movie",
+    "宇宙": "space exploration science fiction movie",
     "韓國": "korean cinema korean language movie",
     "韩国": "korean cinema korean language movie",
     "日本": "japanese cinema japanese language movie",
-    "驚悚": "thriller suspense movie",
-    "惊悚": "thriller suspense movie",
-    "犯罪": "crime movie",
-    "懸疑片": "mystery thriller movie",
-    "悬疑片": "mystery thriller movie",
-    "太空": "space exploration science fiction movie",
-    "宇宙": "space exploration science fiction movie",
-    "外星": "alien first contact science fiction movie",
-    "科幻": "science fiction movie",
-    "愛情": "romantic emotional movie",
-    "爱情": "romantic emotional movie",
-    "戰爭": "war movie",
-    "战争": "war movie",
     "恐怖": "horror movie",
-    "懸疑": "mystery thriller movie",
-    "悬疑": "mystery thriller movie",
+    "惊悚": "thriller suspense movie",
+    "驚悚": "thriller suspense movie",
 }
 
 
@@ -54,6 +76,8 @@ def load_embeddings():
 
 
 def normalize_semantic_query(query):
+    # Expand a few high-signal topic words before embedding so broad requests
+    # retrieve better candidates.
     query_text = str(query).strip()
     query_lower = query_text.lower()
 
@@ -69,11 +93,17 @@ def normalize_semantic_query(query):
 
 
 def cosine_search(query, top_k=5):
+    # Embeddings are pre-normalized, so a dot product acts like cosine
+    # similarity here.
     movies = load_movies()
     movie_embeddings = load_embeddings()
     normalized_query = normalize_semantic_query(query)
 
-    query_embedding = model.encode([normalized_query], convert_to_numpy=True, normalize_embeddings=True)[0]
+    query_embedding = model.encode(
+        [normalized_query],
+        convert_to_numpy=True,
+        normalize_embeddings=True,
+    )[0]
     scores = np.dot(movie_embeddings, query_embedding)
     top_indices = np.argsort(scores)[::-1][:top_k]
 
@@ -103,6 +133,8 @@ def _list_to_text(value):
 
 
 def make_movie_text(movie):
+    # This text layout defines what information the embedding model "sees"
+    # when movie vectors are generated.
     title = movie.get("title", "")
     year = movie.get("year", "")
     genres = _list_to_text(movie.get("genres", movie.get("genre", [])))
@@ -131,4 +163,7 @@ if __name__ == "__main__":
     results = cosine_search(query, top_k=5)
 
     for movie in results:
-        print(f"{movie['title']} ({movie.get('year', 'N/A')}) - score={movie['similarity']:.4f}")
+        print(
+            f"{movie['title']} ({movie.get('year', 'N/A')}) "
+            f"- score={movie['similarity']:.4f}"
+        )

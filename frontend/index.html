@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieBot Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-panel">
+        <header class="chat-header">
+          <div class="top-tabs">
+            <button class="tab tab-active" type="button">Chat</button>
+            <button class="tab" type="button">Explore</button>
+          </div>
+          <div class="header-copy">
+            <p class="eyebrow">Movie discovery assistant</p>
+            <h1>Talk with MovieBot</h1>
+            <p class="subcopy">
+              Describe a vibe, a favorite movie, or a mood. The bot replies with
+              a few recommendation ideas.
+            </p>
+          </div>
+        </header>
+
+        <section class="prompt-row" aria-label="Suggested prompts">
+          <button class="prompt-chip" type="button">
+            Something like Interstellar
+          </button>
+          <button class="prompt-chip" type="button">Funny movie tonight</button>
+          <button class="prompt-chip" type="button">Korean thriller</button>
+          <button class="prompt-chip" type="button">Romance after 2015</button>
+        </section>
+
+        <section class="messages" id="messages" aria-live="polite">
+          <article class="message message-user">
+            <div class="message-meta">You</div>
+            <div class="bubble bubble-user">
+              I want something like Interstellar, but a bit more emotional.
+            </div>
+          </article>
+
+          <article class="message message-bot">
+            <div class="sender-row">
+              <div class="bot-avatar">MB</div>
+              <div class="message-meta">MovieBot</div>
+            </div>
+            <div class="bubble bubble-bot">
+              You might like these. I prioritized emotional sci-fi with a strong
+              sense of wonder.
+            </div>
+            <section class="message-insights">
+              <div class="route-pill">Route: hybrid_similar</div>
+              <div class="query-chip-row">
+                <span class="query-chip">similar_to: Interstellar</span>
+                <span class="query-chip">mood: emotional</span>
+                <span class="query-chip">genre: Drama</span>
+              </div>
+            </section>
+            <section class="recommendation-stack">
+              <article class="movie-card movie-card-featured">
+                <div class="movie-card-copy">
+                  <p class="movie-kicker">Top pick</p>
+                  <h2>Arrival</h2>
+                  <p class="movie-meta">2016 / Sci-Fi / Drama</p>
+                  <p class="movie-description">
+                    Quiet, emotional, and concept-driven. It hits the same
+                    thoughtful sci-fi space while leaning more into human
+                    connection.
+                  </p>
+                </div>
+              </article>
+
+              <article class="movie-card">
+                <h2>Contact</h2>
+                <p class="movie-meta">1997 / Sci-Fi / Mystery</p>
+              </article>
+
+              <article class="movie-card">
+                <h2>Ad Astra</h2>
+                <p class="movie-meta">2019 / Sci-Fi / Adventure</p>
+              </article>
+            </section>
+          </article>
+        </section>
+
+        <form class="composer" id="composer">
+          <label class="composer-label" for="message-input">Message</label>
+          <div class="composer-frame">
+            <input
+              id="message-input"
+              name="message"
+              class="composer-input"
+              type="text"
+              placeholder="Describe what you want to watch..."
+              autocomplete="off"
+            />
+            <button class="send-button" type="submit">Send</button>
+          </div>
+          <div class="composer-footer">
+            <span>Examples: "funny but not childish", "like Inception", "sad romance"</span>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <template id="user-message-template">
+      <article class="message message-user">
+        <div class="message-meta">You</div>
+        <div class="bubble bubble-user"></div>
+      </article>
+    </template>
+
+    <template id="typing-template">
+      <article class="message message-bot typing-message">
+        <div class="sender-row">
+          <div class="bot-avatar">MB</div>
+          <div class="message-meta">MovieBot</div>
+        </div>
+        <div class="bubble bubble-bot bubble-typing">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </article>
+    </template>
+
+    <template id="bot-message-template">
+      <article class="message message-bot">
+        <div class="sender-row">
+          <div class="bot-avatar">MB</div>
+          <div class="message-meta">MovieBot</div>
+        </div>
+        <div class="bubble bubble-bot bot-text"></div>
+        <section class="message-insights">
+          <div class="route-pill"></div>
+          <div class="query-chip-row"></div>
+        </section>
+        <section class="recommendation-stack"></section>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

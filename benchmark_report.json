@@ -1,0 +1,1512 @@
+{
+  "config": {
+    "search_sample_size": 1000,
+    "parser_sample_size": 100,
+    "seed": 42
+  },
+  "search_aggregate": {
+    "total_cases": 1000,
+    "summary_by_category": {
+      "director": {
+        "count": 106,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "genre_year": {
+        "count": 92,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "keyword_year": {
+        "count": 97,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "cast": {
+        "count": 93,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "keyword": {
+        "count": 99,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "similar": {
+        "count": 106,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "cast_genre": {
+        "count": 105,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "language_genre": {
+        "count": 108,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "genre": {
+        "count": 86,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      },
+      "director_genre": {
+        "count": 108,
+        "parse_success_rate": 1.0,
+        "top_result_match_rate": 1.0,
+        "avg_result_match_ratio": 1.0,
+        "no_result_rate": 0.0
+      }
+    },
+    "failure_counts": {}
+  },
+  "parser_aggregate": {
+    "total_cases": 100,
+    "summary_by_category": {
+      "cast_genre": {
+        "count": 14,
+        "parse_success_rate": 1.0
+      },
+      "director_genre": {
+        "count": 9,
+        "parse_success_rate": 1.0
+      },
+      "similar": {
+        "count": 10,
+        "parse_success_rate": 0.9
+      },
+      "keyword": {
+        "count": 13,
+        "parse_success_rate": 0.923
+      },
+      "genre_year": {
+        "count": 5,
+        "parse_success_rate": 1.0
+      },
+      "language_genre": {
+        "count": 11,
+        "parse_success_rate": 1.0
+      },
+      "director": {
+        "count": 10,
+        "parse_success_rate": 1.0
+      },
+      "keyword_year": {
+        "count": 12,
+        "parse_success_rate": 1.0
+      },
+      "cast": {
+        "count": 11,
+        "parse_success_rate": 1.0
+      },
+      "genre": {
+        "count": 5,
+        "parse_success_rate": 1.0
+      }
+    },
+    "failure_count": 2
+  },
+  "search_examples": [
+    {
+      "category": "director",
+      "query": "I want a movie directed by Pedro Morelli",
+      "parsed": {
+        "director": "Pedro Morelli"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "State of Fear"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre_year",
+      "query": "I want a Western movie after 1916",
+      "parsed": {
+        "genre": "Western",
+        "year_min": 1917
+      },
+      "results_count": 21,
+      "top_titles": [
+        "The Good, the Bad and the Ugly",
+        "Django Unchained",
+        "Once Upon a Time in the West",
+        "The Young Country",
+        "Oscar Shaw"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Roger Allers",
+      "parsed": {
+        "director": "Roger Allers"
+      },
+      "results_count": 2,
+      "top_titles": [
+        "The Little Matchgirl",
+        "The Lion King"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about drama after 1953",
+      "parsed": {
+        "keywords": "drama",
+        "year_min": 1954
+      },
+      "results_count": 10,
+      "top_titles": [
+        "12 Angry Men",
+        "A Night to Remember",
+        "Wrath of Man",
+        "In the Morning of La Petite Mort",
+        "El Camino: A Breaking Bad Movie"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "cast",
+      "query": "I want a movie starring Matt Damon",
+      "parsed": {
+        "cast": "Matt Damon"
+      },
+      "results_count": 6,
+      "top_titles": [
+        "The Rip",
+        "Oppenheimer",
+        "The Martian",
+        "The Departed",
+        "We Bought a Zoo"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about ponzi scheme",
+      "parsed": {
+        "keywords": "ponzi scheme"
+      },
+      "results_count": 2,
+      "top_titles": [
+        "Honor Thy Father",
+        "The Polka King"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "similar",
+      "query": "I want movies like The Internship",
+      "parsed": {
+        "similar_to": "The Internship"
+      },
+      "results_count": 5,
+      "top_titles": [
+        "Wildcat",
+        "Hunting Season",
+        "Ballerina",
+        "The Rip",
+        "Mantis"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about absurd after 1952",
+      "parsed": {
+        "keywords": "absurd",
+        "year_min": 1953
+      },
+      "results_count": 22,
+      "top_titles": [
+        "Nobody",
+        "Sisu: Road to Revenge",
+        "The Bride!",
+        "Mission: Impossible - The Final Reckoning",
+        "Die Hard"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about vigilante",
+      "parsed": {
+        "keywords": "vigilante"
+      },
+      "results_count": 16,
+      "top_titles": [
+        "Spider-Man: No Way Home",
+        "The Batman",
+        "The Dark Knight",
+        "A Working Man",
+        "The Dark Knight Rises"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "cast",
+      "query": "I want a movie starring Yuriko Ishida",
+      "parsed": {
+        "cast": "Yuriko Ishida"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "Princess Mononoke"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "cast_genre",
+      "query": "I want a Action movie starring Kirsten Dunst",
+      "parsed": {
+        "cast": "Kirsten Dunst",
+        "genre": "Action"
+      },
+      "results_count": 2,
+      "top_titles": [
+        "Spider-Man",
+        "Spider-Man 3"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about slow burn",
+      "parsed": {
+        "keywords": "slow burn"
+      },
+      "results_count": 2,
+      "top_titles": [
+        "Even If This Love Disappears Tonight",
+        "Iron Lung"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Neil Marshall",
+      "parsed": {
+        "director": "Neil Marshall"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "Doomsday"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "cast_genre",
+      "query": "I want a Mystery movie starring Aditya Nanda",
+      "parsed": {
+        "cast": "Aditya Nanda",
+        "genre": "Mystery"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "Accused"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "similar",
+      "query": "I want movies like The Time Travelers",
+      "parsed": {
+        "similar_to": "The Time Travelers"
+      },
+      "results_count": 5,
+      "top_titles": [
+        "Interstellar",
+        "Good Luck, Have Fun, Don't Die",
+        "Tim Travers and the Time Traveler's Paradox",
+        "Mercy",
+        "The Tomorrow War"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "cast",
+      "query": "I want a movie starring Thomas Haden Church",
+      "parsed": {
+        "cast": "Thomas Haden Church"
+      },
+      "results_count": 3,
+      "top_titles": [
+        "The Peanut Butter Falcon",
+        "We Bought a Zoo",
+        "Spider-Man 3"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about live action and animation after 1909",
+      "parsed": {
+        "keywords": "live action and animation",
+        "year_min": 1910
+      },
+      "results_count": 9,
+      "top_titles": [
+        "The Lord of the Rings: The Return of the King",
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "The Lord of the Rings: The Two Towers",
+        "Sonic the Hedgehog 3",
+        "The Hobbit: The Battle of the Five Armies"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about power after 1978",
+      "parsed": {
+        "keywords": "power",
+        "year_min": 1979
+      },
+      "results_count": 63,
+      "top_titles": [
+        "David",
+        "KPop Demon Hunters",
+        "The Lord of the Rings: The Return of the King",
+        "The Housemaid",
+        "Avatar: Fire and Ash"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "language_genre",
+      "query": "I want a en Action movie",
+      "parsed": {
+        "language": "en",
+        "genre": "Action"
+      },
+      "results_count": 205,
+      "top_titles": [
+        "War Machine",
+        "Shelter",
+        "Mercy",
+        "Predator: Badlands",
+        "Hellfire"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Ruben Fleischer",
+      "parsed": {
+        "director": "Ruben Fleischer"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "Now You See Me: Now You Don't"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about ice hockey",
+      "parsed": {
+        "keywords": "ice hockey"
+      },
+      "results_count": 2,
+      "top_titles": [
+        "Inside Out",
+        "95"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by John Ford",
+      "parsed": {
+        "director": "John Ford"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "How Green Was My Valley"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about religious horror",
+      "parsed": {
+        "keywords": "religious horror"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "The Conjuring: The Devil Made Me Do It"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre_year",
+      "query": "I want a Horror movie after 1919",
+      "parsed": {
+        "genre": "Horror",
+        "year_min": 1920
+      },
+      "results_count": 167,
+      "top_titles": [
+        "Sinners",
+        "Frankenstein",
+        "Whistle",
+        "28 Years Later: The Bone Temple",
+        "Cold Storage"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "language_genre",
+      "query": "I want a en Action movie",
+      "parsed": {
+        "language": "en",
+        "genre": "Action"
+      },
+      "results_count": 205,
+      "top_titles": [
+        "War Machine",
+        "Shelter",
+        "Mercy",
+        "Predator: Badlands",
+        "Hellfire"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre_year",
+      "query": "I want a Animation movie after 1976",
+      "parsed": {
+        "genre": "Animation",
+        "year_min": 1977
+      },
+      "results_count": 92,
+      "top_titles": [
+        "Hoppers",
+        "Zootopia 2",
+        "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+        "David",
+        "KPop Demon Hunters"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre",
+      "query": "I want to watch a Mystery movie",
+      "parsed": {
+        "genre": "Mystery"
+      },
+      "results_count": 90,
+      "top_titles": [
+        "Project Hail Mary",
+        "Zootopia 2",
+        "The Housemaid",
+        "The Good Boy",
+        "The Wrecking Crew"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre",
+      "query": "I want to watch a Science Fiction movie",
+      "parsed": {
+        "genre": "Science Fiction"
+      },
+      "results_count": 146,
+      "top_titles": [
+        "War Machine",
+        "Project Hail Mary",
+        "Hoppers",
+        "Mercy",
+        "Predator: Badlands"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre_year",
+      "query": "I want a Action movie after 1987",
+      "parsed": {
+        "genre": "Action",
+        "year_min": 1988
+      },
+      "results_count": 235,
+      "top_titles": [
+        "War Machine",
+        "Akshardham: Operation Vajra Shakti",
+        "Shelter",
+        "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+        "The Dark Knight"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about cheating at cards after 1906",
+      "parsed": {
+        "keywords": "cheating at cards",
+        "year_min": 1907
+      },
+      "results_count": 1,
+      "top_titles": [
+        "The Young Country"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about dynamite",
+      "parsed": {
+        "keywords": "dynamite"
+      },
+      "results_count": 2,
+      "top_titles": [
+        "Butch Cassidy and the Sundance Kid",
+        "The Great Texas Dynamite Chase"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "language_genre",
+      "query": "I want a en Music movie",
+      "parsed": {
+        "language": "en",
+        "genre": "Music"
+      },
+      "results_count": 26,
+      "top_titles": [
+        "KPop Demon Hunters",
+        "The Testament of Ann Lee",
+        "Coco",
+        "Whiplash",
+        "5 Seconds of Summer: How Did We End Up Here?"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Cameron Crowe",
+      "parsed": {
+        "director": "Cameron Crowe"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "We Bought a Zoo"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "similar",
+      "query": "I want movies like Prometheus",
+      "parsed": {
+        "similar_to": "Prometheus"
+      },
+      "results_count": 5,
+      "top_titles": [
+        "Interstellar",
+        "Project Hail Mary",
+        "Arrival",
+        "Bugonia",
+        "Alien: Romulus"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "language_genre",
+      "query": "I want a es Thriller movie",
+      "parsed": {
+        "language": "es",
+        "genre": "Thriller"
+      },
+      "results_count": 7,
+      "top_titles": [
+        "My Fault",
+        "Venganza",
+        "Follow",
+        "Sirāt",
+        "Firebreak"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "director_genre",
+      "query": "I want a Action movie directed by Anthony Russo",
+      "parsed": {
+        "director": "Anthony Russo",
+        "genre": "Action"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "Avengers: Endgame"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "director_genre",
+      "query": "I want a Drama movie directed by Gwen Arner",
+      "parsed": {
+        "director": "Gwen Arner",
+        "genre": "Drama"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "My Town"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre",
+      "query": "I want to watch a Drama movie",
+      "parsed": {
+        "genre": "Drama"
+      },
+      "results_count": 366,
+      "top_titles": [
+        "Made in Korea",
+        "Akshardham: Operation Vajra Shakti",
+        "David",
+        "Peaky Blinders: The Immortal Man",
+        "Venus as a Boy"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "similar",
+      "query": "I want movies like Final Destination Bloodlines",
+      "parsed": {
+        "similar_to": "Final Destination Bloodlines"
+      },
+      "results_count": 5,
+      "top_titles": [
+        "Final Destination Bloodlines",
+        "Sinners",
+        "Send Help",
+        "28 Years Later: The Bone Temple",
+        "Scream VI"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "similar",
+      "query": "I want movies like Heaven's Prisoners",
+      "parsed": {
+        "similar_to": "Heaven's Prisoners"
+      },
+      "results_count": 5,
+      "top_titles": [
+        "Shelter",
+        "South of Heaven",
+        "The Rip",
+        "Crime 101",
+        "Sinners"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "language_genre",
+      "query": "I want a en Science Fiction movie",
+      "parsed": {
+        "language": "en",
+        "genre": "Science Fiction"
+      },
+      "results_count": 134,
+      "top_titles": [
+        "War Machine",
+        "Project Hail Mary",
+        "Hoppers",
+        "Mercy",
+        "Predator: Badlands"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about friendship after 1995",
+      "parsed": {
+        "keywords": "friendship",
+        "year_min": 1996
+      },
+      "results_count": 37,
+      "top_titles": [
+        "Project Hail Mary",
+        "GOAT",
+        "Harry Potter and the Philosopher's Stone",
+        "Django Unchained",
+        "A Silent Voice: The Movie"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "cast",
+      "query": "I want a movie starring Jaeden Martell",
+      "parsed": {
+        "cast": "Jaeden Martell"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "It"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre",
+      "query": "I want to watch a Adventure movie",
+      "parsed": {
+        "genre": "Adventure"
+      },
+      "results_count": 201,
+      "top_titles": [
+        "Project Hail Mary",
+        "Hoppers",
+        "Zootopia 2",
+        "Predator: Badlands",
+        "Avatar: Fire and Ash"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "cast_genre",
+      "query": "I want a Western movie starring Gojko Mitić",
+      "parsed": {
+        "cast": "Gojko Mitić",
+        "genre": "Western"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "Trail of the Falcon"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "cast_genre",
+      "query": "I want a Adventure movie starring Lali Meskhi",
+      "parsed": {
+        "cast": "Lali Meskhi",
+        "genre": "Adventure"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "Trail of the Falcon"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "genre_year",
+      "query": "I want a Drama movie after 1986",
+      "parsed": {
+        "genre": "Drama",
+        "year_min": 1987
+      },
+      "results_count": 290,
+      "top_titles": [
+        "Made in Korea",
+        "Akshardham: Operation Vajra Shakti",
+        "Venus as a Boy",
+        "Interstellar",
+        "The Shawshank Redemption"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Danny Boyle",
+      "parsed": {
+        "director": "Danny Boyle"
+      },
+      "results_count": 1,
+      "top_titles": [
+        "28 Years Later"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about estranged sister after 1997",
+      "parsed": {
+        "keywords": "estranged sister",
+        "year_min": 1998
+      },
+      "results_count": 1,
+      "top_titles": [
+        "Ready or Not 2: Here I Come"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    },
+    {
+      "category": "language_genre",
+      "query": "I want a en Adventure movie",
+      "parsed": {
+        "language": "en",
+        "genre": "Adventure"
+      },
+      "results_count": 173,
+      "top_titles": [
+        "Project Hail Mary",
+        "Hoppers",
+        "Zootopia 2",
+        "Predator: Badlands",
+        "Avatar: Fire and Ash"
+      ],
+      "parse_success": true,
+      "top_result_match": true,
+      "result_match_ratio": 1.0
+    }
+  ],
+  "parser_examples": [
+    {
+      "category": "cast_genre",
+      "query": "I want a Thriller movie starring Jack O'Connell",
+      "expected": {
+        "cast": "Jack O'Connell",
+        "genre": "Thriller"
+      },
+      "parsed": {
+        "genre": "Thriller",
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": "Jack O'Connell",
+        "director": null,
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "director_genre",
+      "query": "I want a Action movie directed by Quentin Tarantino",
+      "expected": {
+        "director": "Quentin Tarantino",
+        "genre": "Action"
+      },
+      "parsed": {
+        "genre": "Action",
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": "Quentin Tarantino",
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "similar",
+      "query": "I want movies like The Conjuring: Last Rites",
+      "expected": {
+        "similar_to": "The Conjuring: Last Rites"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": null,
+        "similar_to": "The Conjuring: Last Rites",
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about dynamite",
+      "expected": {
+        "keywords": "dynamite"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": "dynamite",
+        "similar_to": null,
+        "semantic_query": "dynamite"
+      },
+      "parse_success": true
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about iran",
+      "expected": {
+        "keywords": "iran"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": "iran",
+        "similar_to": null,
+        "semantic_query": "movies about iran"
+      },
+      "parse_success": true
+    },
+    {
+      "category": "genre_year",
+      "query": "I want a Action movie after 1946",
+      "expected": {
+        "genre": "Action",
+        "year_min": 1947
+      },
+      "parsed": {
+        "genre": "Action",
+        "mood": null,
+        "year_min": 1947,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "language_genre",
+      "query": "I want a en Horror movie",
+      "expected": {
+        "language": "en",
+        "genre": "Horror"
+      },
+      "parsed": {
+        "genre": "Horror",
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": "en",
+        "cast": null,
+        "director": null,
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Fred Niblo",
+      "expected": {
+        "director": "Fred Niblo"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": "Fred Niblo",
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about sword duel after 1941",
+      "expected": {
+        "keywords": "sword duel",
+        "year_min": 1942
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": 1942,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": "sword duel",
+        "similar_to": null,
+        "semantic_query": "sword duel"
+      },
+      "parse_success": true
+    },
+    {
+      "category": "cast",
+      "query": "I want a movie starring Janet McTeer",
+      "expected": {
+        "cast": "Janet McTeer"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": "Janet McTeer",
+        "director": null,
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "director_genre",
+      "query": "I want a TV Movie movie directed by Jake Helgren",
+      "expected": {
+        "director": "Jake Helgren",
+        "genre": "TV Movie"
+      },
+      "parsed": {
+        "genre": "TV Movie",
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": "tv",
+        "cast": null,
+        "director": "Jake Helgren",
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "similar",
+      "query": "I want movies like Killing Faith",
+      "expected": {
+        "similar_to": "Killing Faith"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": null,
+        "similar_to": "Killing Faith",
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about retrospective after 1906",
+      "expected": {
+        "keywords": "retrospective",
+        "year_min": 1907
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": 1907,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": "retrospective",
+        "similar_to": null,
+        "semantic_query": "retrospective"
+      },
+      "parse_success": true
+    },
+    {
+      "category": "cast_genre",
+      "query": "I want a Comedy movie starring Marlon Wayans",
+      "expected": {
+        "cast": "Marlon Wayans",
+        "genre": "Comedy"
+      },
+      "parsed": {
+        "genre": "Comedy",
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": "Marlon Wayans",
+        "director": null,
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "similar",
+      "query": "I want movies like Pirates of the Caribbean: Dead Man's Chest",
+      "expected": {
+        "similar_to": "Pirates of the Caribbean: Dead Man's Chest"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": null,
+        "similar_to": "Pirates of the Caribbean: Dead Man's Chest",
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "director_genre",
+      "query": "I want a Thriller movie directed by Sam Taylor-Johnson",
+      "expected": {
+        "director": "Sam Taylor-Johnson",
+        "genre": "Thriller"
+      },
+      "parsed": {
+        "genre": "Thriller",
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": "Sam Taylor-Johnson",
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about robot after 1939",
+      "expected": {
+        "keywords": "robot",
+        "year_min": 1940
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": 1940,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": "robot",
+        "similar_to": null,
+        "semantic_query": "robot"
+      },
+      "parse_success": true
+    },
+    {
+      "category": "cast_genre",
+      "query": "I want a Comedy movie starring George Albert Smith",
+      "expected": {
+        "cast": "George Albert Smith",
+        "genre": "Comedy"
+      },
+      "parsed": {
+        "genre": "Comedy",
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": "George Albert Smith",
+        "director": null,
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "director_genre",
+      "query": "I want a Comedy movie directed by Sergio Corbucci",
+      "expected": {
+        "director": "Sergio Corbucci",
+        "genre": "Comedy"
+      },
+      "parsed": {
+        "genre": "Comedy",
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": "Sergio Corbucci",
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about softcore after 1979",
+      "expected": {
+        "keywords": "softcore",
+        "year_min": 1980
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": 1980,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": "softcore",
+        "similar_to": null,
+        "semantic_query": "softcore"
+      },
+      "parse_success": true
+    },
+    {
+      "category": "keyword",
+      "query": "I want a movie about nazi war criminal",
+      "expected": {
+        "keywords": "nazi war criminal"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": "nazi war criminal",
+        "similar_to": null,
+        "semantic_query": "nazi war criminal"
+      },
+      "parse_success": true
+    },
+    {
+      "category": "keyword_year",
+      "query": "I want a movie about 1920s after 1989",
+      "expected": {
+        "keywords": "1920s",
+        "year_min": 1990
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": 1990,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": null,
+        "keywords": "1920s",
+        "similar_to": null,
+        "semantic_query": "1920s"
+      },
+      "parse_success": true
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Bi Gan",
+      "expected": {
+        "director": "Bi Gan"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": "Bi Gan",
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Jonathan Lynn",
+      "expected": {
+        "director": "Jonathan Lynn"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": "Jonathan Lynn",
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    },
+    {
+      "category": "director",
+      "query": "I want a movie directed by Jim Drake",
+      "expected": {
+        "director": "Jim Drake"
+      },
+      "parsed": {
+        "genre": null,
+        "mood": null,
+        "year_min": null,
+        "year_max": null,
+        "year": null,
+        "language": null,
+        "cast": null,
+        "director": "Jim Drake",
+        "keywords": null,
+        "similar_to": null,
+        "semantic_query": null
+      },
+      "parse_success": true
+    }
+  ]
+}

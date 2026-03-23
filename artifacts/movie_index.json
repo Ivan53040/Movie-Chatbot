@@ -1,0 +1,572 @@
+[
+  {
+    "movie_id": "1272837",
+    "movie_title": "28 Years Later: The Bone Temple",
+    "movie_year": "2026",
+    "index": 0
+  },
+  {
+    "movie_id": "1589891",
+    "movie_title": "A Time for Bravery",
+    "movie_year": "2025",
+    "index": 1
+  },
+  {
+    "movie_id": "845861",
+    "movie_title": "Akshardham: Operation Vajra Shakti",
+    "movie_year": "2025",
+    "index": 2
+  },
+  {
+    "movie_id": "945961",
+    "movie_title": "Alien: Romulus",
+    "movie_year": "2024",
+    "index": 3
+  },
+  {
+    "movie_id": "297802",
+    "movie_title": "Aquaman",
+    "movie_year": "2018",
+    "index": 4
+  },
+  {
+    "movie_id": "329865",
+    "movie_title": "Arrival",
+    "movie_year": "2016",
+    "index": 5
+  },
+  {
+    "movie_id": "83533",
+    "movie_title": "Avatar: Fire and Ash",
+    "movie_year": "2025",
+    "index": 6
+  },
+  {
+    "movie_id": "76600",
+    "movie_title": "Avatar: The Way of Water",
+    "movie_year": "2022",
+    "index": 7
+  },
+  {
+    "movie_id": "1003596",
+    "movie_title": "Avengers: Doomsday",
+    "movie_year": "2026",
+    "index": 8
+  },
+  {
+    "movie_id": "650524",
+    "movie_title": "Back to the Past",
+    "movie_year": "2025",
+    "index": 9
+  },
+  {
+    "movie_id": "541671",
+    "movie_title": "Ballerina",
+    "movie_year": "2025",
+    "index": 10
+  },
+  {
+    "movie_id": "209112",
+    "movie_title": "Batman v Superman: Dawn of Justice",
+    "movie_year": "2016",
+    "index": 11
+  },
+  {
+    "movie_id": "1278101",
+    "movie_title": "Big World",
+    "movie_year": "2024",
+    "index": 12
+  },
+  {
+    "movie_id": "1305781",
+    "movie_title": "Blades of the Guardians: Wind Rises in the Desert",
+    "movie_year": "2026",
+    "index": 13
+  },
+  {
+    "movie_id": "387848",
+    "movie_title": "Buddy's Mom",
+    "movie_year": "2015",
+    "index": 14
+  },
+  {
+    "movie_id": "822119",
+    "movie_title": "Captain America: Brave New World",
+    "movie_year": "2025",
+    "index": 15
+  },
+  {
+    "movie_id": "1218925",
+    "movie_title": "Chainsaw Man - The Movie: Reze Arc",
+    "movie_year": "2025",
+    "index": 16
+  },
+  {
+    "movie_id": "1575337",
+    "movie_title": "Cosmic Princess Kaguya!",
+    "movie_year": "2026",
+    "index": 17
+  },
+  {
+    "movie_id": "1171145",
+    "movie_title": "Crime 101",
+    "movie_year": "2026",
+    "index": 18
+  },
+  {
+    "movie_id": "1167307",
+    "movie_title": "David",
+    "movie_year": "2025",
+    "index": 19
+  },
+  {
+    "movie_id": "533535",
+    "movie_title": "Deadpool & Wolverine",
+    "movie_year": "2024",
+    "index": 20
+  },
+  {
+    "movie_id": "1600672",
+    "movie_title": "EVANGELION 30th Anniversary Special Screening",
+    "movie_year": "2026",
+    "index": 21
+  },
+  {
+    "movie_id": "1466115",
+    "movie_title": "Even If This Love Disappears Tonight",
+    "movie_year": "2025",
+    "index": 22
+  },
+  {
+    "movie_id": "911430",
+    "movie_title": "F1",
+    "movie_year": "2025",
+    "index": 23
+  },
+  {
+    "movie_id": "550",
+    "movie_title": "Fight Club",
+    "movie_year": "1999",
+    "index": 24
+  },
+  {
+    "movie_id": "574475",
+    "movie_title": "Final Destination Bloodlines",
+    "movie_year": "2025",
+    "index": 25
+  },
+  {
+    "movie_id": "1228246",
+    "movie_title": "Five Nights at Freddy's 2",
+    "movie_year": "2025",
+    "index": 26
+  },
+  {
+    "movie_id": "1062722",
+    "movie_title": "Frankenstein",
+    "movie_year": "2025",
+    "index": 27
+  },
+  {
+    "movie_id": "1297842",
+    "movie_title": "GOAT",
+    "movie_year": "2026",
+    "index": 28
+  },
+  {
+    "movie_id": "210577",
+    "movie_title": "Gone Girl",
+    "movie_year": "2014",
+    "index": 29
+  },
+  {
+    "movie_id": "1119449",
+    "movie_title": "Good Luck, Have Fun, Don't Die",
+    "movie_year": "2026",
+    "index": 30
+  },
+  {
+    "movie_id": "858024",
+    "movie_title": "Hamnet",
+    "movie_year": "2025",
+    "index": 31
+  },
+  {
+    "movie_id": "1370424",
+    "movie_title": "He's Watching You",
+    "movie_year": "2026",
+    "index": 32
+  },
+  {
+    "movie_id": "1327819",
+    "movie_title": "Hoppers",
+    "movie_year": "2026",
+    "index": 33
+  },
+  {
+    "movie_id": "937101",
+    "movie_title": "In the Morning of La Petite Mort",
+    "movie_year": "2023",
+    "index": 34
+  },
+  {
+    "movie_id": "27205",
+    "movie_title": "Inception",
+    "movie_year": "2010",
+    "index": 35
+  },
+  {
+    "movie_id": "150540",
+    "movie_title": "Inside Out",
+    "movie_year": "2015",
+    "index": 36
+  },
+  {
+    "movie_id": "1022789",
+    "movie_title": "Inside Out 2",
+    "movie_year": "2024",
+    "index": 37
+  },
+  {
+    "movie_id": "157336",
+    "movie_title": "Interstellar",
+    "movie_year": "2014",
+    "index": 38
+  },
+  {
+    "movie_id": "75780",
+    "movie_title": "Jack Reacher",
+    "movie_year": "2012",
+    "index": 39
+  },
+  {
+    "movie_id": "324552",
+    "movie_title": "John Wick: Chapter 2",
+    "movie_year": "2017",
+    "index": 40
+  },
+  {
+    "movie_id": "1011477",
+    "movie_title": "Karate Kid: Legends",
+    "movie_year": "2025",
+    "index": 41
+  },
+  {
+    "movie_id": "552524",
+    "movie_title": "Lilo & Stitch",
+    "movie_year": "2025",
+    "index": 42
+  },
+  {
+    "movie_id": "682012",
+    "movie_title": "Little Amélie or the Character of Rain",
+    "movie_year": "2025",
+    "index": 43
+  },
+  {
+    "movie_id": "1561687",
+    "movie_title": "Made in Korea",
+    "movie_year": "2026",
+    "index": 44
+  },
+  {
+    "movie_id": "1317288",
+    "movie_title": "Marty Supreme",
+    "movie_year": "2025",
+    "index": 45
+  },
+  {
+    "movie_id": "940551",
+    "movie_title": "Migration",
+    "movie_year": "2023",
+    "index": 46
+  },
+  {
+    "movie_id": "575265",
+    "movie_title": "Mission: Impossible - The Final Reckoning",
+    "movie_year": "2025",
+    "index": 47
+  },
+  {
+    "movie_id": "11892",
+    "movie_title": "Murder by Numbers",
+    "movie_year": "2002",
+    "index": 48
+  },
+  {
+    "movie_id": "847357",
+    "movie_title": "Mystery 101: Deadly History",
+    "movie_year": "2021",
+    "index": 49
+  },
+  {
+    "movie_id": "980477",
+    "movie_title": "Ne Zha 2",
+    "movie_year": "2025",
+    "index": 50
+  },
+  {
+    "movie_id": "639988",
+    "movie_title": "No Other Choice",
+    "movie_year": "2025",
+    "index": 51
+  },
+  {
+    "movie_id": "1214931",
+    "movie_title": "Nuremberg",
+    "movie_year": "2025",
+    "index": 52
+  },
+  {
+    "movie_id": "872585",
+    "movie_title": "Oppenheimer",
+    "movie_year": "2023",
+    "index": 53
+  },
+  {
+    "movie_id": "496243",
+    "movie_title": "Parasite",
+    "movie_year": "2019",
+    "index": 54
+  },
+  {
+    "movie_id": "245913",
+    "movie_title": "Pelé: Birth of a Legend",
+    "movie_year": "2016",
+    "index": 55
+  },
+  {
+    "movie_id": "687163",
+    "movie_title": "Project Hail Mary",
+    "movie_year": "2026",
+    "index": 56
+  },
+  {
+    "movie_id": "1266127",
+    "movie_title": "Ready or Not 2: Here I Come",
+    "movie_year": "2026",
+    "index": 57
+  },
+  {
+    "movie_id": "1367642",
+    "movie_title": "Reminders of Him",
+    "movie_year": "2026",
+    "index": 58
+  },
+  {
+    "movie_id": "1208348",
+    "movie_title": "Rental Family",
+    "movie_year": "2025",
+    "index": 59
+  },
+  {
+    "movie_id": "1469384",
+    "movie_title": "Scope",
+    "movie_year": "2025",
+    "index": 60
+  },
+  {
+    "movie_id": "1159559",
+    "movie_title": "Scream 7",
+    "movie_year": "2026",
+    "index": 61
+  },
+  {
+    "movie_id": "807",
+    "movie_title": "Se7en",
+    "movie_year": "1995",
+    "index": 62
+  },
+  {
+    "movie_id": "1198994",
+    "movie_title": "Send Help",
+    "movie_year": "2026",
+    "index": 63
+  },
+  {
+    "movie_id": "1290821",
+    "movie_title": "Shelter",
+    "movie_year": "2026",
+    "index": 64
+  },
+  {
+    "movie_id": "1233413",
+    "movie_title": "Sinners",
+    "movie_year": "2025",
+    "index": 65
+  },
+  {
+    "movie_id": "939243",
+    "movie_title": "Sonic the Hedgehog 3",
+    "movie_year": "2024",
+    "index": 66
+  },
+  {
+    "movie_id": "634649",
+    "movie_title": "Spider-Man: No Way Home",
+    "movie_year": "2021",
+    "index": 67
+  },
+  {
+    "movie_id": "11",
+    "movie_title": "Star Wars",
+    "movie_year": "1977",
+    "index": 68
+  },
+  {
+    "movie_id": "1426964",
+    "movie_title": "State of Fear",
+    "movie_year": "2026",
+    "index": 69
+  },
+  {
+    "movie_id": "1061474",
+    "movie_title": "Superman",
+    "movie_year": "2025",
+    "index": 70
+  },
+  {
+    "movie_id": "1114901",
+    "movie_title": "Take Care of Maya",
+    "movie_year": "2023",
+    "index": 71
+  },
+  {
+    "movie_id": "24428",
+    "movie_title": "The Avengers",
+    "movie_year": "2012",
+    "index": 72
+  },
+  {
+    "movie_id": "49026",
+    "movie_title": "The Dark Knight Rises",
+    "movie_year": "2012",
+    "index": 73
+  },
+  {
+    "movie_id": "1029575",
+    "movie_title": "The Family Plan",
+    "movie_year": "2023",
+    "index": 74
+  },
+  {
+    "movie_id": "1363123",
+    "movie_title": "The Family Plan 2",
+    "movie_year": "2025",
+    "index": 75
+  },
+  {
+    "movie_id": "617126",
+    "movie_title": "The Fantastic 4: First Steps",
+    "movie_year": "2025",
+    "index": 76
+  },
+  {
+    "movie_id": "1381027",
+    "movie_title": "The Good Boy",
+    "movie_year": "2026",
+    "index": 77
+  },
+  {
+    "movie_id": "290098",
+    "movie_title": "The Handmaiden",
+    "movie_year": "2016",
+    "index": 78
+  },
+  {
+    "movie_id": "1321179",
+    "movie_title": "The King's Warden",
+    "movie_year": "2026",
+    "index": 79
+  },
+  {
+    "movie_id": "1144107",
+    "movie_title": "The Legend of Hei 2",
+    "movie_year": "2025",
+    "index": 80
+  },
+  {
+    "movie_id": "603",
+    "movie_title": "The Matrix",
+    "movie_year": "1999",
+    "index": 81
+  },
+  {
+    "movie_id": "281957",
+    "movie_title": "The Revenant",
+    "movie_year": "2015",
+    "index": 82
+  },
+  {
+    "movie_id": "1306368",
+    "movie_title": "The Rip",
+    "movie_year": "2026",
+    "index": 83
+  },
+  {
+    "movie_id": "1419406",
+    "movie_title": "The Shadow's Edge",
+    "movie_year": "2025",
+    "index": 84
+  },
+  {
+    "movie_id": "106646",
+    "movie_title": "The Wolf of Wall Street",
+    "movie_year": "2013",
+    "index": 85
+  },
+  {
+    "movie_id": "361743",
+    "movie_title": "Top Gun: Maverick",
+    "movie_year": "2022",
+    "index": 86
+  },
+  {
+    "movie_id": "825810",
+    "movie_title": "Venus as a Boy",
+    "movie_year": "2021",
+    "index": 87
+  },
+  {
+    "movie_id": "812583",
+    "movie_title": "Wake Up Dead Man: A Knives Out Mystery",
+    "movie_year": "2025",
+    "index": 88
+  },
+  {
+    "movie_id": "1265609",
+    "movie_title": "War Machine",
+    "movie_year": "2026",
+    "index": 89
+  },
+  {
+    "movie_id": "1078605",
+    "movie_title": "Weapons",
+    "movie_year": "2025",
+    "index": 90
+  },
+  {
+    "movie_id": "1193501",
+    "movie_title": "Whistle",
+    "movie_year": "2026",
+    "index": 91
+  },
+  {
+    "movie_id": "1489187",
+    "movie_title": "You Drive Me Crazy",
+    "movie_year": "2025",
+    "index": 92
+  },
+  {
+    "movie_id": "791373",
+    "movie_title": "Zack Snyder's Justice League",
+    "movie_year": "2021",
+    "index": 93
+  },
+  {
+    "movie_id": "1084242",
+    "movie_title": "Zootopia 2",
+    "movie_year": "2025",
+    "index": 94
+  }
+]

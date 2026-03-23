@@ -4,6 +4,8 @@ from semantic_search import cosine_search, load_embeddings, load_movies
 
 
 def recommend_similar_movies(movie_title, top_k=5):
+    # Reuse the reference movie's embedding directly when we can find an exact
+    # title match in the dataset.
     movies = load_movies()
     movie_embeddings = load_embeddings()
 
@@ -14,6 +16,8 @@ def recommend_similar_movies(movie_title, top_k=5):
             break
 
     if target_index is None:
+        # If the title is missing, fall back to semantic text search instead of
+        # failing the request.
         return cosine_search(f"movies like {movie_title}", top_k=top_k)
 
     target_embedding = movie_embeddings[target_index]

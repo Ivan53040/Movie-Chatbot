@@ -1,379 +1,310 @@
-# ProjectLLM Movie Recommender
+# ProjectLLM
 
-This project is a modular movie recommendation app.
+ProjectLLM is a movie recommendation system that turns free-form user requests into structured search intent, chooses an appropriate retrieval strategy, ranks candidate movies, and returns a small set of recommendations with an LLM-generated explanation for the top result.
 
-It supports:
+In practice, it is a hybrid recommender rather than a single search script. It combines:
 
-- filter search
-- semantic search
-- "movies like X" search
-- hybrid search
-- candidate generation
-- ranking layer
-- API-based parser
+- LLM-based query parsing
+- rule-based filtering
+- embedding-based semantic retrieval
+- title-to-title similarity search
+- heuristic ranking
+- feedback logging
+- item-based collaborative filtering for light personalization
 
-The goal of this structure is to make the pipeline easy to learn and easy to modify.
+## What This Project Is Doing
 
-## Pipeline
+The project lets a user ask for movies in natural language, for example:
 
-The app now follows this flow:
+- `Japanese thrillers after 2015`
+- `movies like Interstellar`
+- `funny Korean movies`
+- `robot movies`
 
-```text
-User input
-  -> Parser
-  -> Router
-  -> Search strategy
-  -> Candidate Movies
-  -> Filter
-  -> Ranking Layer
-  -> Final top results
-```
-
-Example:
+The backend then runs a multi-stage pipeline:
 
 ```text
-movies like Interstellar but after 2010
-  -> parser extracts:
-     similar_to = "Interstellar"
-     year_min = 2011
-  -> router chooses hybrid similar search
-  -> candidate layer builds top 50 similar movies
-  -> filter keeps only movies after 2010
-  -> ranking layer scores remaining movies
-  -> final top 5 returned
-```
-
-## File Structure
-
-### [`llama_parser.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/llama_parser.py)
-
-Responsible for:
-
-- calling the LLM parser
-- extracting structured query fields
-- post-processing the parsed result
-- correcting common parser mistakes
-
-Important logic inside:
-
-- convert invalid years like `0` to `None`
-- regex-based year override
-- remove mood if the user did not explicitly mention it
-- distinguish `similar_to` from `semantic_query`
-
-If you want to improve parsing, this is the first file to edit.
-
-### [`api_parser_client.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/api_parser_client.py)
-
-Responsible for:
-
-- calling the remote LLM API
-- loading API settings from `.env`
-- returning JSON parser output
-
-This file replaces the old local Ollama parser call.
-It is currently configured for Groq.
-
-### [`config.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/config.py)
-
-Responsible for:
-
-- loading `.env`
-- reading environment variables
-
-This keeps API config separate from parser logic.
-
-### [`router.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/router.py)
-
-Responsible for:
-
-- taking parsed query output
-- deciding which search path to use
-- printing debug info
-- returning final results
-
-Main routes:
-
-- `similar_to` -> hybrid similar search
-- `semantic_query` -> hybrid semantic search
-- otherwise -> filter search
-- final fallback -> plain semantic search
-
-If you want to change the decision flow, edit this file.
-
-### [`movie_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/movie_search.py)
-
-Responsible for filter search.
-
-It handles:
-
-- genre filtering
-- mood filtering
-- year filtering
-- language filtering
-- schema normalization
-
-This is the pure rule-based search layer.
-
-If you want stricter or looser filters, edit this file.
-
-### [`semantic_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/semantic_search.py)
-
-Responsible for semantic embedding search.
-
-It handles:
-
-- loading `movies.json`
-- loading `movie_embeddings.npz`
-- converting query text to embedding
-- cosine similarity retrieval
-- semantic query normalization for Chinese topic words
-- building the text used for embeddings
-
-Main function:
-
-- `cosine_search(query, top_k=...)`
-
-If you want to improve embedding quality, edit this file.
-
-### [`similar_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/similar_search.py)
-
-Responsible for:
-
-- "movies like Interstellar"
-- using the selected movie's embedding as the query vector
-
-Main function:
-
-- `recommend_similar_movies(movie_title, top_k=...)`
-
-If you want to improve title-based similarity, edit this file.
-
-### [`candidate_movies.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/candidate_movies.py)
-
-Responsible for candidate generation.
-
-It provides:
-
-- semantic candidate builder
-- similar-movie candidate builder
-- helper for returning candidate/debug bundles
-
-This layer is where you control candidate pool size like `20`, `50`, or `100`.
-
-### [`top_k_movies.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/top_k_movies.py)
-
-Responsible for:
-
-- default top-k behavior
-- max top-k limit
-- deciding candidate pool size from top-k
-- parsing `more` commands in the CLI
-
-Examples:
-
-- default result count = `5`
-- `more` -> show more results for the previous query
-- `more 10` -> show top 10 results for the previous query
-
-### [`hybrid_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/hybrid_search.py)
-
-Responsible for the hybrid pipeline:
-
-```text
-semantic candidates
-  -> filter
+User message
+  -> LLM parser
+  -> deterministic cleanup / normalization
+  -> router
+  -> retrieval strategy
+  -> candidate generation
+  -> hard filtering
   -> ranking
-  -> final top results
+  -> optional personalization
+  -> explanation generation for the top pick
+  -> API/frontend response
 ```
 
-Main functions:
+This means the project is trying to solve two related problems:
 
-- `hybrid_search(...)`
-- `hybrid_recommend_similar_movies(...)`
+1. Understand messy natural language movie requests.
+2. Turn that understanding into useful recommendations with interpretable logic.
 
-This file connects candidate generation, filtering, and ranking.
+## Core Techniques Used
 
-### [`ranking_layer.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/ranking_layer.py)
+This project uses several recommendation and NLP techniques together:
 
-Responsible for scoring movies after retrieval/filtering.
+### 1. LLM Parsing
 
-It currently combines:
+`llama_parser.py` sends the raw user query to an LLM and asks for structured JSON fields such as:
+
+- `genre`
+- `mood`
+- `year`, `year_min`, `year_max`
+- `language`
+- `cast`
+- `director`
+- `keywords`
+- `similar_to`
+- `semantic_query`
+
+This is the natural-language understanding layer of the system.
+
+### 2. Deterministic Post-Processing
+
+The LLM output is not trusted blindly. The parser applies rule-based cleanup after the model response, including:
+
+- regex-based year correction
+- empty / invalid value cleanup
+- explicit phrase overrides like `after 2010`
+- mood validation
+- cast/director alias normalization
+- franchise detection
+
+This is a common hybrid NLP technique: use an LLM for broad understanding, then use deterministic rules to improve reliability.
+
+### 3. Rule-Based Filtering
+
+`movie_search.py` applies hard constraints over the dataset. This is the classical filtering part of the recommender.
+
+Supported filters include:
+
+- genre
+- mood
+- year and year range
+- language
+- cast
+- director
+- keywords
+- franchise
+
+### 4. Embedding-Based Semantic Search
+
+`semantic_search.py` and `build_embeddings.py` use sentence embeddings to represent movie metadata and user queries in vector space.
+
+The project uses:
+
+- `SentenceTransformer("all-MiniLM-L6-v2")`
+- precomputed movie embeddings stored in `movie_embeddings.npz`
+- cosine / vector similarity retrieval
+
+This is what allows fuzzy matching such as:
+
+- `robot movies`
+- `something emotional but uplifting`
+- `space movies like Interstellar`
+
+even when the request does not map cleanly to exact metadata fields.
+
+### 5. Similarity Search
+
+`similar_search.py` supports requests like `movies like Interstellar`.
+
+Technique:
+
+- find the reference movie
+- reuse that movie's embedding as the query vector
+- retrieve nearby movies in embedding space
+
+So this is item-to-item similarity using content embeddings.
+
+### 6. Hybrid Retrieval Pipeline
+
+`hybrid_search.py` combines:
+
+- semantic or similar-item retrieval
+- hard filtering
+- ranking
+
+This is a standard recommender pattern:
+
+```text
+retrieve many
+  -> filter strictly
+  -> rank survivors
+  -> return top few
+```
+
+### 7. Heuristic Ranking
+
+`ranking_layer.py` uses a handcrafted scoring function instead of a trained learning-to-rank model.
+
+Ranking signals include:
 
 - semantic similarity
 - vote average
 - popularity
 - recency bias
-- genre bonus
-- language bonus
-- exact year bonus
-
-Main functions:
-
-- `score_movie(...)`
-- `rank_movies(...)`
-
-If you want to change what "best result" means, edit this file.
-
-## Current Ranking Formula
-
-The current ranking layer uses a weighted score:
-
-```text
-ranking_score =
-  0.60 * similarity
-  + 0.18 * vote_average
-  + 0.12 * popularity
-  + 0.10 * recency
-  + optional bonuses
-```
-
-Optional bonuses:
-
 - genre match bonus
 - language match bonus
-- exact year match bonus
+- cast/director match bonuses
+- mood / keyword bonuses
+- franchise bonus
+- exact year bonus
 
-This is not a trained recommender model.
-It is a handcrafted scoring layer on top of retrieval.
+This makes the ranking logic transparent and easy to tune.
 
-## Candidate Movies
+### 8. Collaborative Filtering Personalization
 
-Current default:
+The project also includes item-based collaborative filtering in `item_based_cf.py`.
 
-- `candidate_k = 50`
-- final `top_k = 5`
+Technique:
 
-So the process is:
+- build a user-item matrix from logged impressions and feedback
+- compute item-item cosine similarity
+- use prior user interactions to slightly boost candidate scores
 
-1. retrieve top 50 candidate movies
-2. filter them
-3. score them
-4. return top 5
+This is a classic recommender-system technique layered on top of the content-based pipeline.
 
-The app now supports a Top-K flow:
+### 9. LLM Explanation Generation
 
-1. first response returns top 5 movies
-2. user can ask for more
-3. the router reruns the same query with a larger `top_k`
+`build_explanation_input.py` prepares a compact structured payload for the top recommendation, and `llm_explanation.py` asks the LLM to generate a short natural-language explanation.
 
-If you want to experiment:
+This uses controlled generation rather than letting the LLM inspect the full dataset directly.
 
-- increase candidate pool in [`hybrid_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/hybrid_search.py)
-- adjust ranking weights in [`ranking_layer.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/ranking_layer.py)
-- adjust top-k rules in [`top_k_movies.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/top_k_movies.py)
+## Retrieval / Routing Logic
 
-## Debug Output
+`router.py` is the orchestration layer. It decides how each query should be handled.
 
-Hybrid search prints:
+Main routing behavior:
 
-- `semantic candidates`
-- `filtered candidates`
-- dropped semantic candidates
-- final top 5
-- similarity score
-- ranking score
+- if `similar_to` exists, use hybrid similar-movie search
+- if `semantic_query` exists, use hybrid semantic search
+- otherwise, use filter search
+- if strict search returns nothing and the query is still broad enough, fall back to semantic search
+- if a `user_id` is available, apply collaborative-filtering score boosts
 
-This is useful for understanding whether the problem is:
+So the project is not "LLM only". The LLM mainly interprets the query and writes the explanation. Retrieval and ranking are mostly classical recommender logic.
 
-- parser
-- semantic retrieval
-- filtering
-- ranking
+## Main Files
+
+- `router.py`: main orchestration and route selection
+- `llama_parser.py`: LLM parsing plus rule-based normalization
+- `api_parser_client.py`: Groq API client for parser/explanation calls
+- `movie_search.py`: strict metadata filtering
+- `semantic_search.py`: text-to-movie embedding retrieval
+- `similar_search.py`: movie-to-movie similarity retrieval
+- `hybrid_search.py`: retrieval + filter + ranking pipeline
+- `ranking_layer.py`: handcrafted scoring
+- `candidate_movies.py`: candidate pool generation
+- `build_explanation_input.py`: explanation payload builder
+- `llm_explanation.py`: top-pick explanation generation
+- `feedback_dataset.py`: log impressions and feedback
+- `build_user_item_matrix.py`: build interaction matrix from logs
+- `item_based_cf.py`: item-item collaborative filtering
+- `fastapi_server.py`: FastAPI API and React frontend serving
+- `frontend_server.py`: older lightweight HTTP server for the static frontend
+
+## Data and Artifacts
+
+- `movies.json`: movie catalog and metadata
+- `movie_embeddings.npz`: precomputed movie embeddings
+- `logs/`: feedback and recommendation events
+- `artifacts/`: user-item matrix, indexes, and item similarity artifacts
+
+## Frontend / API
+
+The project currently exposes a chat-style interface through `fastapi_server.py`.
+
+Main API endpoints:
+
+- `POST /api/chat`: parse the request and return recommendations
+- `POST /api/feedback`: log helpful / not-helpful feedback and reasons
+
+The repository contains two frontends:
+
+- `frontend/`: older static HTML/CSS/JS UI
+- `frontend-react/`: newer React/Vite frontend used by the FastAPI app
 
 ## How To Run
 
-Run the app from the project folder:
+### Start the app
+
+On Windows, the easiest entrypoint is:
 
 ```powershell
-C:\Users\ivank\AppData\Local\Python\bin\python.exe router.py
+./start_chatbot.ps1
 ```
 
-Before running, create a `.env` file in the project root.
-You can copy from `.env.example`.
+This script:
 
-Example:
+- builds the React frontend
+- finds a free local port
+- starts `uvicorn fastapi_server:app`
+- opens the browser automatically
 
-```text
-GROQ_API_KEY=your_groq_api_key_here
-GROQ_MODEL=llama-3.1-8b-instant
-```
-
-Install the API client package if needed:
+### Direct API run
 
 ```powershell
-C:\Users\ivank\AppData\Local\Python\bin\python.exe -m pip install groq
+python -m uvicorn fastapi_server:app --host 127.0.0.1 --port 8000
 ```
 
-Then:
-
-```text
-1. ask for a movie recommendation
-2. app returns top 5
-3. type "more" to get more results
-4. type "more 10" to get top 10 results
-```
-
-## How To Rebuild Embeddings
-
-If you update `movies.json`, rebuild embeddings:
+### Rebuild embeddings
 
 ```powershell
-C:\Users\ivank\AppData\Local\Python\bin\python.exe build_embeddings.py
+python build_embeddings.py
 ```
 
-## Good Learning Order
+### Rebuild user-item matrix
 
-If you want to understand the project step by step, read files in this order:
+```powershell
+python build_user_item_matrix.py
+```
 
-1. [`llama_parser.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/llama_parser.py)
-2. [`api_parser_client.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/api_parser_client.py)
-3. [`router.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/router.py)
-4. [`movie_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/movie_search.py)
-5. [`semantic_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/semantic_search.py)
-6. [`candidate_movies.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/candidate_movies.py)
-7. [`top_k_movies.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/top_k_movies.py)
-8. [`hybrid_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/hybrid_search.py)
-9. [`ranking_layer.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/ranking_layer.py)
+### Run collaborative filtering directly
 
-## Where To Edit Specific Features
+```powershell
+python item_based_cf.py --list-users
+python item_based_cf.py --user-id <USER_ID> --top-k 5
+```
 
-If you want to improve parser behavior:
+## Current Architecture Summary
 
-- edit [`llama_parser.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/llama_parser.py)
+The project is best understood as a hybrid movie recommender with an LLM-assisted interface.
 
-If you want to improve filter logic:
+It uses:
 
-- edit [`movie_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/movie_search.py)
+- LLM parsing for query understanding
+- rules for parser correction and strict filtering
+- embeddings for semantic retrieval
+- content-based item similarity for "movies like X"
+- heuristic ranking for final ordering
+- feedback logs for learning from user responses
+- item-based collaborative filtering for personalization
+- LLM generation for short recommendation explanations
 
-If you want to improve semantic retrieval:
+## Short Project Summary
 
-- edit [`semantic_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/semantic_search.py)
+If you want one sentence:
 
-If you want to change candidate pool size:
+ProjectLLM is a hybrid movie recommendation chatbot that uses LLM parsing plus recommender-system techniques to turn natural-language requests into filtered, ranked, explainable movie suggestions.
 
-- edit [`candidate_movies.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/candidate_movies.py)
-- or edit [`hybrid_search.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/hybrid_search.py)
+## Suggested Reading Order
 
-If you want to change how many movies are shown first:
+If you want to study the codebase, read these files in order:
 
-- edit [`top_k_movies.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/top_k_movies.py)
+1. `router.py`
+2. `llama_parser.py`
+3. `movie_search.py`
+4. `semantic_search.py`
+5. `similar_search.py`
+6. `hybrid_search.py`
+7. `ranking_layer.py`
+8. `item_based_cf.py`
+9. `build_explanation_input.py`
+10. `llm_explanation.py`
+11. `fastapi_server.py`
 
-If you want to improve final ordering:
-
-- edit [`ranking_layer.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/ranking_layer.py)
-
-If you want to change which route gets used:
-
-- edit [`router.py`](/C:/Users/ivank/OneDrive/Desktop/Sideproject/ProjectLLM/router.py)
-
-## Future Improvements
-
-Good next upgrades:
-
-- multilingual embedding model
-- actor and director filters
-- keyword filters
-- explanation layer for "why this movie was recommended"
-- learned ranking weights
-- user profile memory
+For a longer guided explanation, see `CODE_WALKTHROUGH.md`.
