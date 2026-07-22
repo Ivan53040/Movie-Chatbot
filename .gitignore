@@ -3,3 +3,9 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+frontend-react/node_modules/
+frontend-react/dist/
+logs/
+parser_failure_log.json
+.claude/
+.codex/

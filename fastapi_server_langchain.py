@@ -7,14 +7,14 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from chatbot_service import handle_chat_request, handle_feedback_request
+from langchain_chatbot_service import handle_chat_request, handle_feedback_request
 from router import DEFAULT_TOP_K
 
 
 ROOT_DIR = Path(__file__).parent
 FRONTEND_BUILD_DIR = ROOT_DIR / "frontend-react" / "dist"
 
-app = FastAPI(title="ProjectLLM MovieBot API")
+app = FastAPI(title="ProjectLLM MovieBot API (LangChain Pipeline)")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

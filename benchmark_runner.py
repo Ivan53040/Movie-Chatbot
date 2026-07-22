@@ -3,7 +3,7 @@ import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from llama_parser import parse_user_query
+from movie_query_parser import parse_user_query
 from movie_search import filter_movies
 from router import recommend_from_query
 

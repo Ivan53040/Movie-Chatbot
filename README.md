@@ -1,54 +1,74 @@
-# ProjectLLM
+# Movie Chatbot
 
-ProjectLLM is a movie recommendation system that turns free-form user requests into structured search intent, chooses an appropriate retrieval strategy, ranks candidate movies, and returns a small set of recommendations with an LLM-generated explanation for the top result.
+ProjectLLM is a movie recommendation system that combines LLM-based query understanding with deterministic search, filtering, ranking, and explanation generation.
 
-In practice, it is a hybrid recommender rather than a single search script. It combines:
+The project supports two backend styles:
 
-- LLM-based query parsing
-- rule-based filtering
-- embedding-based semantic retrieval
-- title-to-title similarity search
-- heuristic ranking
-- feedback logging
-- item-based collaborative filtering for light personalization
+- a custom Python orchestration pipeline in `router.py`
+- a LangChain orchestration pipeline in `langchain_orchestrator.py`
 
-## What This Project Is Doing
+Both versions use the same recommendation core: parse the request, choose a retrieval strategy, gather candidates, apply filters, rank results, and generate short recommendation explanations.
 
-The project lets a user ask for movies in natural language, for example:
+## What The Project Does
 
-- `Japanese thrillers after 2015`
-- `movies like Interstellar`
-- `funny Korean movies`
-- `robot movies`
+This project lets a user ask for movies in natural language, for example:
 
-The backend then runs a multi-stage pipeline:
+- "movies like Interstellar but after 2010"
+- "Japanese thrillers"
+- "robot movies"
+- "movies directed by Christopher Nolan"
 
-```text
-User message
-  -> LLM parser
-  -> deterministic cleanup / normalization
-  -> router
-  -> retrieval strategy
-  -> candidate generation
-  -> hard filtering
-  -> ranking
-  -> optional personalization
-  -> explanation generation for the top pick
-  -> API/frontend response
+It can handle:
+
+- metadata filtering by genre, mood, year, language, cast, director, keywords, and franchise
+- semantic retrieval for broad taste or topic queries
+- title-based similarity search for "movies like X"
+- hybrid retrieval plus exact filtering plus reranking
+- multi-turn chat with memory and follow-up rewriting
+- clarification when a person name could mean either cast or director
+- explanation generation for returned recommendations
+- feedback logging and lightweight personalization with collaborative filtering
+
+## End-To-End Flow
+
+The custom and LangChain entry points share the same deterministic recommendation core:
+
+```mermaid
+flowchart LR
+    A[User message] --> B[Contextual rewrite]
+    B --> C[LLM parser]
+    C --> D[Structured query]
+    D --> E{Route selection}
+    E --> F[Semantic search]
+    E --> G[Title similarity]
+    E --> H[Metadata search]
+    F --> I[Exact filters]
+    G --> I
+    H --> I
+    I --> J[Ranking and reranking]
+    J --> K[Explanations]
+    K --> L[Movie recommendations]
 ```
 
-This means the project is trying to solve two related problems:
+Example:
 
-1. Understand messy natural language movie requests.
-2. Turn that understanding into useful recommendations with interpretable logic.
+```text
+movies like Interstellar but after 2010
+  -> parser extracts similar_to="Interstellar", year_min=2011
+  -> router selects hybrid similar search
+  -> system retrieves a larger candidate pool from embeddings
+  -> year filter removes older titles
+  -> ranking layer orders survivors
+  -> explanation layer writes short reasons for the output
+```
 
-## Core Techniques Used
+## Techniques Used
 
-This project uses several recommendation and NLP techniques together:
+This project uses a mix of LLM, retrieval, recommender-system, and rules-based techniques:
 
 ### 1. LLM Parsing
 
-`llama_parser.py` sends the raw user query to an LLM and asks for structured JSON fields such as:
+Natural-language requests are converted into a structured query object with fields such as:
 
 - `genre`
 - `mood`
@@ -60,251 +80,346 @@ This project uses several recommendation and NLP techniques together:
 - `similar_to`
 - `semantic_query`
 
-This is the natural-language understanding layer of the system.
+Implementation:
 
-### 2. Deterministic Post-Processing
+- `movie_query_parser.py`
+- `langchain_chains.py`
+- `api_parser_client.py`
 
-The LLM output is not trusted blindly. The parser applies rule-based cleanup after the model response, including:
+Important design choice:
 
-- regex-based year correction
-- empty / invalid value cleanup
-- explicit phrase overrides like `after 2010`
-- mood validation
-- cast/director alias normalization
-- franchise detection
+- the LLM output is not trusted blindly
+- parser results are normalized with regex rules, alias mapping, year correction, and fallback parsing
 
-This is a common hybrid NLP technique: use an LLM for broad understanding, then use deterministic rules to improve reliability.
+This is a guarded LLM parsing approach rather than free-form agent behavior.
 
-### 3. Rule-Based Filtering
+### 2. Query Rewriting For Multi-Turn Chat
 
-`movie_search.py` applies hard constraints over the dataset. This is the classical filtering part of the recommender.
+Follow-up requests like "more recent ones" or "something darker" are rewritten into standalone requests using chat history.
 
-Supported filters include:
+Implementation:
 
-- genre
-- mood
-- year and year range
-- language
-- cast
-- director
-- keywords
-- franchise
-
-### 4. Embedding-Based Semantic Search
-
-`semantic_search.py` and `build_embeddings.py` use sentence embeddings to represent movie metadata and user queries in vector space.
-
-The project uses:
-
-- `SentenceTransformer("all-MiniLM-L6-v2")`
-- precomputed movie embeddings stored in `movie_embeddings.npz`
-- cosine / vector similarity retrieval
-
-This is what allows fuzzy matching such as:
-
-- `robot movies`
-- `something emotional but uplifting`
-- `space movies like Interstellar`
-
-even when the request does not map cleanly to exact metadata fields.
-
-### 5. Similarity Search
-
-`similar_search.py` supports requests like `movies like Interstellar`.
+- `langchain_chains.py`
+- `langchain_memory.py`
+- `langchain_history_adapter.py`
 
 Technique:
 
-- find the reference movie
-- reuse that movie's embedding as the query vector
-- retrieve nearby movies in embedding space
+- conversational contextualization with persistent SQLite-backed message history
 
-So this is item-to-item similarity using content embeddings.
+### 3. Embedding-Based Semantic Search
 
-### 6. Hybrid Retrieval Pipeline
+Broad theme or vibe requests are handled with sentence embeddings.
 
-`hybrid_search.py` combines:
+Implementation:
 
-- semantic or similar-item retrieval
-- hard filtering
-- ranking
+- `semantic_search.py`
+- `build_embeddings.py`
 
-This is a standard recommender pattern:
+Technique:
 
-```text
-retrieve many
-  -> filter strictly
-  -> rank survivors
-  -> return top few
-```
+- SentenceTransformers model: `all-MiniLM-L6-v2`
+- precomputed movie embeddings stored in `movie_embeddings.npz`
+- cosine-style retrieval using normalized vectors and dot product
+- manual query expansion for high-signal topics such as robot, anime, sports, Marvel, DC, Star Wars, and some Chinese keywords
 
-### 7. Heuristic Ranking
+### 4. Title-To-Title Similarity Search
 
-`ranking_layer.py` uses a handcrafted scoring function instead of a trained learning-to-rank model.
+Queries like "movies like Interstellar" use the embedding of the named movie itself as the query vector.
 
-Ranking signals include:
+Implementation:
+
+- `similar_search.py`
+
+Technique:
+
+- item-to-item semantic similarity using the reference movie embedding
+
+### 5. Hybrid Search
+
+The project does not return embedding matches directly. It first retrieves a candidate pool, then applies strict constraints, then reranks.
+
+Implementation:
+
+- `candidate_movies.py`
+- `hybrid_search.py`
+- `movie_search.py`
+- `ranking_layer.py`
+
+Technique:
+
+- retrieve-many -> filter -> rank
+- semantic candidate generation followed by deterministic post-filtering
+
+This is the main recommender-system pattern used in the repo.
+
+### 6. Rules-Based Filtering
+
+Hard constraints are enforced after retrieval or used directly in pure filter search.
+
+Implementation:
+
+- `movie_search.py`
+
+Technique:
+
+- deterministic AND filtering over movie metadata
+- genre normalization, language normalization, name matching, keyword matching, and franchise matching
+
+### 7. Handcrafted Ranking / Reranking
+
+Final ranking is manually designed instead of learned from a training set.
+
+Implementation:
+
+- `ranking_layer.py`
+
+Signals used in scoring:
 
 - semantic similarity
 - vote average
 - popularity
-- recency bias
+- recency / latest preference
 - genre match bonus
 - language match bonus
-- cast/director match bonuses
-- mood / keyword bonuses
+- cast bonus
+- director bonus
+- mood bonus
+- keyword bonus
 - franchise bonus
 - exact year bonus
 
-This makes the ranking logic transparent and easy to tune.
+Technique:
 
-### 8. Collaborative Filtering Personalization
+- heuristic reranking layer
 
-The project also includes item-based collaborative filtering in `item_based_cf.py`.
+### 8. LLM Explanation Generation
+
+The project generates short recommendation explanations after ranking.
+
+Implementation:
+
+- `build_explanation_input.py`
+- `llm_explanation.py`
+- `langchain_chains.py`
 
 Technique:
 
-- build a user-item matrix from logged impressions and feedback
-- compute item-item cosine similarity
-- use prior user interactions to slightly boost candidate scores
+- controlled prompt payload design
+- structured reason tags passed to the model
+- explanation generation is restricted to compact movie facts instead of raw full-dataset access
 
-This is a classic recommender-system technique layered on top of the content-based pipeline.
+### 9. Clarification Flow
 
-### 9. LLM Explanation Generation
+If a name could refer to either an actor or a director, the system asks the user to clarify before running retrieval.
 
-`build_explanation_input.py` prepares a compact structured payload for the top recommendation, and `llm_explanation.py` asks the LLM to generate a short natural-language explanation.
+Implementation:
 
-This uses controlled generation rather than letting the LLM inspect the full dataset directly.
+- `chatbot_service.py`
+- `movie_search.py`
 
-## Retrieval / Routing Logic
+Technique:
 
-`router.py` is the orchestration layer. It decides how each query should be handled.
+- ambiguity detection plus clarification UX
 
-Main routing behavior:
+### 10. Feedback Logging And Personalization
 
-- if `similar_to` exists, use hybrid similar-movie search
-- if `semantic_query` exists, use hybrid semantic search
-- otherwise, use filter search
-- if strict search returns nothing and the query is still broad enough, fall back to semantic search
-- if a `user_id` is available, apply collaborative-filtering score boosts
+The app logs impressions and feedback, builds a user-item matrix, and uses item-based collaborative filtering as a reranking bonus.
 
-So the project is not "LLM only". The LLM mainly interprets the query and writes the explanation. Retrieval and ranking are mostly classical recommender logic.
+Implementation:
 
-## Main Files
+- `feedback_dataset.py`
+- `build_user_item_matrix.py`
+- `item_based_cf.py`
 
-- `router.py`: main orchestration and route selection
-- `llama_parser.py`: LLM parsing plus rule-based normalization
-- `api_parser_client.py`: Groq API client for parser/explanation calls
-- `movie_search.py`: strict metadata filtering
-- `semantic_search.py`: text-to-movie embedding retrieval
-- `similar_search.py`: movie-to-movie similarity retrieval
-- `hybrid_search.py`: retrieval + filter + ranking pipeline
-- `ranking_layer.py`: handcrafted scoring
-- `candidate_movies.py`: candidate pool generation
-- `build_explanation_input.py`: explanation payload builder
-- `llm_explanation.py`: top-pick explanation generation
-- `feedback_dataset.py`: log impressions and feedback
-- `build_user_item_matrix.py`: build interaction matrix from logs
-- `item_based_cf.py`: item-item collaborative filtering
-- `fastapi_server.py`: FastAPI API and React frontend serving
-- `frontend_server.py`: older lightweight HTTP server for the static frontend
+Technique:
 
-## Data and Artifacts
+- implicit-feedback logging
+- user-item matrix construction
+- item-item cosine similarity
+- item-based collaborative filtering for personalized reranking
 
-- `movies.json`: movie catalog and metadata
-- `movie_embeddings.npz`: precomputed movie embeddings
-- `logs/`: feedback and recommendation events
-- `artifacts/`: user-item matrix, indexes, and item similarity artifacts
+Important limitation:
 
-## Frontend / API
+- collaborative filtering does not replace search
+- it only adds a personalization bonus on top of the main retrieval pipeline
 
-The project currently exposes a chat-style interface through `fastapi_server.py`.
+### 11. LangChain Orchestration
 
-Main API endpoints:
+The second backend moves control flow into LangChain runnables.
 
-- `POST /api/chat`: parse the request and return recommendations
-- `POST /api/feedback`: log helpful / not-helpful feedback and reasons
+Implementation:
 
-The repository contains two frontends:
+- `langchain_orchestrator.py`
+- `langchain_chatbot_service.py`
+- `fastapi_server_langchain.py`
 
-- `frontend/`: older static HTML/CSS/JS UI
-- `frontend-react/`: newer React/Vite frontend used by the FastAPI app
+Technique:
+
+- `RunnableWithMessageHistory`
+- `RunnablePassthrough.assign(...)`
+- `RunnableBranch(...)`
+- LangChain prompt chains for contextualization, parsing, route selection, and explanation generation
+
+Important boundary:
+
+- LangChain owns orchestration
+- deterministic Python code still owns search, filtering, ranking, and recommendation math
+
+## Architecture Summary
+
+Key modules:
+
+- `movie_query_parser.py`: guarded LLM parser with deterministic cleanup
+- `router.py`: original orchestration layer
+- `semantic_search.py`: embedding retrieval
+- `similar_search.py`: "movies like X" retrieval
+- `movie_search.py`: exact-match filtering
+- `hybrid_search.py`: candidate generation + filtering + ranking
+- `ranking_layer.py`: heuristic scoring
+- `llm_explanation.py`: explanation generation
+- `chatbot_service.py`: chat flow, clarification, feedback logging
+- `langchain_orchestrator.py`: LangChain-first orchestration backend
+- `langchain_memory.py`: SQLite-backed conversation memory
+
+## Backend Variants
+
+### 1. Original Python Backend
+
+The original backend uses normal Python control flow:
+
+- parse request
+- select route
+- call retrieval functions
+- rank
+- explain
+
+Main files:
+
+- `router.py`
+- `chatbot_service.py`
+- `fastapi_server.py`
+
+### 2. LangChain Backend
+
+The LangChain backend expresses the orchestration as runnable chains while keeping the same recommendation engine underneath.
+
+Main files:
+
+- `langchain_orchestrator.py`
+- `langchain_chatbot_service.py`
+- `fastapi_server_langchain.py`
+
+## Data And Artifacts
+
+Core data:
+
+- `movies.json`: movie metadata dataset
+- `movie_embeddings.npz`: precomputed semantic vectors
+
+Generated personalization artifacts:
+
+- `artifacts/user_item_matrix.npz`
+- `artifacts/user_index.json`
+- `artifacts/movie_index.json`
+- `artifacts/item_item_similarity.npz`
+
+Logs:
+
+- `logs/chat_memory.sqlite3`
+- `logs/recommendation_events.jsonl`
+- `logs/user_movie_ratings.jsonl`
 
 ## How To Run
 
-### Start the app
-
-On Windows, the easiest entrypoint is:
+Install dependencies:
 
 ```powershell
-./start_chatbot.ps1
+python -m pip install -r requirements.txt
 ```
 
-This script:
+Create a `.env` file in the project root:
 
-- builds the React frontend
-- finds a free local port
-- starts `uvicorn fastapi_server:app`
-- opens the browser automatically
+```text
+GROQ_API_KEY=your_key_here
+GROQ_MODEL=llama-3.1-8b-instant
+```
 
-### Direct API run
+### Run The Original FastAPI App
 
 ```powershell
 python -m uvicorn fastapi_server:app --host 127.0.0.1 --port 8000
 ```
 
-### Rebuild embeddings
+Or use:
+
+```powershell
+.\start_chatbot.ps1
+```
+
+### Run The LangChain FastAPI App
+
+```powershell
+python -m uvicorn fastapi_server_langchain:app --host 127.0.0.1 --port 8011
+```
+
+Or use:
+
+```powershell
+.\start_chatbot_langchain.ps1
+```
+
+### Run The Simple Static Frontend Server
+
+```powershell
+python frontend_server.py
+```
+
+### Run The CLI Version
+
+```powershell
+python router.py
+```
+
+## Rebuild Embeddings
+
+If `movies.json` changes:
 
 ```powershell
 python build_embeddings.py
 ```
 
-### Rebuild user-item matrix
+## Build Personalization Artifacts
+
+To rebuild the user-item matrix from feedback logs:
 
 ```powershell
 python build_user_item_matrix.py
 ```
 
-### Run collaborative filtering directly
+To inspect known users or run item-based CF:
 
 ```powershell
 python item_based_cf.py --list-users
-python item_based_cf.py --user-id <USER_ID> --top-k 5
+python item_based_cf.py --user-id YOUR_USER_ID --top-k 5
 ```
 
-## Current Architecture Summary
+## Best Way To Read The Code
 
-The project is best understood as a hybrid movie recommender with an LLM-assisted interface.
-
-It uses:
-
-- LLM parsing for query understanding
-- rules for parser correction and strict filtering
-- embeddings for semantic retrieval
-- content-based item similarity for "movies like X"
-- heuristic ranking for final ordering
-- feedback logs for learning from user responses
-- item-based collaborative filtering for personalization
-- LLM generation for short recommendation explanations
-
-## Short Project Summary
-
-If you want one sentence:
-
-ProjectLLM is a hybrid movie recommendation chatbot that uses LLM parsing plus recommender-system techniques to turn natural-language requests into filtered, ranked, explainable movie suggestions.
-
-## Suggested Reading Order
-
-If you want to study the codebase, read these files in order:
+Suggested reading order:
 
 1. `router.py`
-2. `llama_parser.py`
+2. `movie_query_parser.py`
 3. `movie_search.py`
 4. `semantic_search.py`
 5. `similar_search.py`
 6. `hybrid_search.py`
 7. `ranking_layer.py`
-8. `item_based_cf.py`
-9. `build_explanation_input.py`
-10. `llm_explanation.py`
-11. `fastapi_server.py`
+8. `build_explanation_input.py`
+9. `llm_explanation.py`
+10. `chatbot_service.py`
+11. `langchain_orchestrator.py`
 
-For a longer guided explanation, see `CODE_WALKTHROUGH.md`.
+## Short Project Summary
+
+This project is a hybrid movie recommender and conversational search system. It uses LLM parsing and explanation generation, sentence-embedding retrieval, deterministic filtering, heuristic reranking, conversational memory, clarification prompts, and item-based collaborative filtering for personalization. The LangChain version changes how orchestration is expressed, but the recommendation logic remains mostly deterministic and modular.
