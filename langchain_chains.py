@@ -16,7 +16,7 @@ _CONTEXTUALIZE_PROMPT = ChatPromptTemplate.from_messages(
             "Keep the user's language.\n"
             "Preserve exact movie titles, actor names, director names, years, and constraints.\n"
             "If the latest message is already standalone, return it unchanged.\n"
-            "Return JSON only in this form: {\"standalone_query\":\"...\"}",
+            "Return JSON only in this form: {{\"standalone_query\":\"...\"}}",
         ),
         MessagesPlaceholder("history"),
         ("human", "{user_input}"),
@@ -113,7 +113,7 @@ _EXPLANATION_PROMPT = ChatPromptTemplate.from_messages(
             "If relevant, compare it briefly to the user's reference movie or stated preference.\n"
             "Every movie must include a why-it-fits reason, not just plot summary.\n"
             "Return JSON only in this form: "
-            "{\"movie_texts\":[{\"title\":\"...\",\"text\":\"...\"}]}",
+            "{{\"movie_texts\":[{{\"title\":\"...\",\"text\":\"...\"}}]}}",
         ),
         ("human", "{payload_json}"),
     ]
@@ -133,7 +133,7 @@ _ROUTE_PROMPT = ChatPromptTemplate.from_messages(
             "Prefer hybrid_semantic when parsed_query.semantic_query is present.\n"
             "Prefer filter_search when the request is mostly metadata constraints and does not need fuzzy retrieval.\n"
             "Return JSON only in this form: "
-            "{\"route\":\"hybrid_similar|hybrid_semantic|filter_search\",\"reason\":\"...\"}",
+            "{{\"route\":\"hybrid_similar|hybrid_semantic|filter_search\",\"reason\":\"...\"}}",
         ),
         ("human", "User message:\n{user_input}\n\nParsed query:\n{parsed_query_json}"),
     ]

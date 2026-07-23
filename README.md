@@ -2,6 +2,10 @@
 
 ProjectLLM is a movie recommendation system that combines LLM-based query understanding with deterministic search, filtering, ranking, and explanation generation.
 
+![Movie Chatbot recommendation results](docs/screenshots/movie-chatbot-results.png)
+
+_A live recommendation conversation showing the top pick, matching genres, release year, explanation, and additional results._
+
 The project supports two backend styles:
 
 - a custom Python orchestration pipeline in `router.py`
