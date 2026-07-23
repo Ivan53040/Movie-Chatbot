@@ -29,7 +29,7 @@ The code mixes classic filtering with embedding-based semantic search. That is t
 Read the backend in this order:
 
 1. `router.py`
-2. `llama_parser.py`
+2. `movie_query_parser.py`
 3. `movie_search.py`
 4. `semantic_search.py`
 5. `similar_search.py`
@@ -48,7 +48,7 @@ Because it is the control tower. It does not do every job itself, but it shows w
 ### Core backend
 
 - `router.py`: main orchestration layer for CLI and recommendation flow
-- `llama_parser.py`: turns free text into structured query fields
+- `movie_query_parser.py`: turns free text into structured query fields
 - `movie_search.py`: rule-based filtering over `movies.json`
 - `semantic_search.py`: embedding retrieval using `movie_embeddings.npz`
 - `similar_search.py`: "movies like X" retrieval using the reference movie embedding
@@ -105,7 +105,7 @@ movies like Interstellar but after 2010
 
 ### Step 1: parse the user message
 
-File: `llama_parser.py`
+File: `movie_query_parser.py`
 
 The parser tries to convert natural language into the structured query object.
 
@@ -269,7 +269,7 @@ Important functions:
 - `recommend_from_query()`: lower-level route executor after parsing
 - `recommend_movies_with_metadata()`: returns route and parsed query for the frontend
 
-### `llama_parser.py`
+### `movie_query_parser.py`
 
 Think of this as a guarded parser, not just an LLM call.
 
@@ -494,7 +494,7 @@ If the candidate list looks good but order is bad, the problem is usually rankin
 If your goal is to improve your programming, these files teach different lessons:
 
 - `router.py`: orchestration and fallback design
-- `llama_parser.py`: defensive LLM integration
+- `movie_query_parser.py`: defensive LLM integration
 - `movie_search.py`: clean filter logic over JSON data
 - `semantic_search.py`: basic embedding retrieval
 - `ranking_layer.py`: handcrafted recommender scoring
@@ -505,14 +505,14 @@ If your goal is to improve your programming, these files teach different lessons
 If you want to learn by editing, these are good first tasks:
 
 1. Add a new filter, such as runtime range.
-2. Add more cast/director aliases in `llama_parser.py`.
+2. Add more cast/director aliases in `movie_query_parser.py`.
 3. Change ranking weights in `ranking_layer.py` and compare results.
 4. Add new semantic query expansions in `semantic_search.py`.
 5. Extend the frontend to show ranking score or similarity.
 
 ## 13. Where to make specific changes
 
-- parser behavior: `llama_parser.py`
+- parser behavior: `movie_query_parser.py`
 - exact filter logic: `movie_search.py`
 - semantic retrieval behavior: `semantic_search.py`
 - "movies like X" logic: `similar_search.py`
@@ -526,7 +526,7 @@ If you want to learn by editing, these are good first tasks:
 
 If you forget everything else, remember this:
 
-- `llama_parser.py` turns free text into structure
+- `movie_query_parser.py` turns free text into structure
 - `router.py` decides the search path
 - retrieval modules find candidate movies
 - `movie_search.py` applies exact constraints

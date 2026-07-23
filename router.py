@@ -1,6 +1,7 @@
 from hybrid_search import hybrid_recommend_similar_movies, hybrid_search
 from item_based_cf import score_movies_for_user
-from llama_parser import parse_user_query
+from langchain_chains import choose_search_route
+from movie_query_parser import parse_user_query
 from llm_explanation import generate_recommendation_explanation
 from movie_search import filter_movies, search_movies
 from ranking_layer import rank_movies
@@ -13,6 +14,8 @@ from top_k_movies import (
     normalize_top_k,
     parse_more_command,
 )
+
+VALID_ROUTE_NAMES = {"hybrid_similar", "hybrid_semantic", "filter_search"}
 
 
 # Build one shared scoring context so the ranking layer does not need to know
@@ -227,6 +230,40 @@ def _apply_cf_personalization(movies, *, user_id, top_k):
     )[:top_k]
 
 
+def _rule_based_route_name_from_query(query: dict) -> str:
+    if query.get("similar_to"):
+        return "hybrid_similar"
+    if query.get("semantic_query"):
+        return "hybrid_semantic"
+    return "filter_search"
+
+
+def _select_search_route(query, *, user_input):
+    route_name = _rule_based_route_name_from_query(query)
+    selected_query = dict(query)
+
+    try:
+        route_bundle = choose_search_route(user_input=user_input, parsed_query=selected_query)
+    except Exception:
+        route_bundle = {}
+
+    candidate_route = str(route_bundle.get("route", "")).strip().lower()
+    if candidate_route in VALID_ROUTE_NAMES:
+        if candidate_route == "hybrid_similar" and selected_query.get("similar_to"):
+            route_name = candidate_route
+        elif candidate_route == "hybrid_semantic":
+            route_name = candidate_route
+        elif candidate_route == "filter_search":
+            route_name = candidate_route
+
+    if route_name == "hybrid_semantic" and not selected_query.get("semantic_query"):
+        semantic_seed = str(user_input or "").strip()
+        if semantic_seed:
+            selected_query["semantic_query"] = semantic_seed
+
+    return route_name, selected_query
+
+
 # Retry a narrower hybrid route with relaxed filters before giving up entirely.
 def _try_relaxed_hybrid(query, *, strategy, candidate_k, top_k, user_input, explain):
     for relaxed_query in _relaxed_query_variants(query):
@@ -258,6 +295,7 @@ def recommend_from_query(
     user_id="",
     debug=True,
     explain=True,
+    selected_route=None,
 ):
     query = dict(query)
     if _requests_latest(user_input):
@@ -282,6 +320,9 @@ def recommend_from_query(
     if not query.get("genre") and query.get("mood") in mood_genre_map:
         query["genre"] = mood_genre_map[query["mood"]]
 
+    if selected_route is None:
+        selected_route, query = _select_search_route(query, user_input=user_input)
+
     ranking_context = build_ranking_context(query)
     has_hard_filters = any(
         query.get(key) is not None
@@ -289,7 +330,7 @@ def recommend_from_query(
     )
 
     # Route 1: title-based similarity search, then strict filtering and ranking.
-    if query.get("similar_to"):
+    if selected_route == "hybrid_similar" and query.get("similar_to"):
         try:
             hybrid_result = _run_similar_hybrid(
                 query,
@@ -339,7 +380,7 @@ def recommend_from_query(
             pass
 
     # Route 2: semantic text search for theme/vibe/style requests.
-    if query.get("semantic_query"):
+    if selected_route == "hybrid_semantic" and query.get("semantic_query"):
         try:
             hybrid_result = _run_semantic_hybrid(
                 query,
@@ -454,11 +495,7 @@ def recommend_movies(
 
 
 def _route_name_from_query(query: dict) -> str:
-    if query.get("similar_to"):
-        return "hybrid_similar"
-    if query.get("semantic_query"):
-        return "hybrid_semantic"
-    return "filter_search"
+    return _rule_based_route_name_from_query(query)
 
 
 def recommend_movies_with_metadata(
@@ -483,18 +520,23 @@ def recommend_movies_with_metadata(
         print("\nParsed query:")
         print(query)
 
+    selected_route, routed_query = _select_search_route(query, user_input=user_input)
+    if debug:
+        print(f"Selected route: {selected_route}")
+
     results = recommend_from_query(
-        query,
+        routed_query,
         user_input=user_input,
         top_k=top_k,
         exclude_ids=exclude_ids,
         user_id=user_id,
         debug=debug,
         explain=explain,
+        selected_route=selected_route,
     )
     return {
-        "parsed_query": query,
-        "route": _route_name_from_query(query),
+        "parsed_query": routed_query,
+        "route": selected_route,
         "results": results,
     }
 

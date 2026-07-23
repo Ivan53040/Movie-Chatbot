@@ -18,98 +18,113 @@ def _get_int_env(name, default):
         return int(default)
 
 
-def _build_groq_client():
+def build_chat_model(*, temperature):
     try:
-        from groq import Groq
+        from langchain_groq import ChatGroq
     except ImportError as exc:
         raise RuntimeError(
-            "The Groq Python package is not installed. "
-            "Install it with: pip install groq"
+            "LangChain Groq dependencies are not installed. "
+            "Install them with: pip install langchain langchain-groq"
         ) from exc
 
     api_key = get_env("GROQ_API_KEY")
     if not api_key:
         raise RuntimeError(
-            "GROQ_API_KEY is missing. Add it to .env before running the parser."
+            "GROQ_API_KEY is missing. Add it to .env before running the chatbot."
         )
 
-    timeout_seconds = _get_float_env("GROQ_TIMEOUT_SECONDS", 12.0)
-    max_retries = _get_int_env("GROQ_MAX_RETRIES", 0)
-    return Groq(
+    return ChatGroq(
         api_key=api_key,
-        timeout=timeout_seconds,
-        max_retries=max_retries,
+        model=get_env("GROQ_MODEL", "llama-3.1-8b-instant"),
+        temperature=temperature,
+        timeout=_get_float_env("GROQ_TIMEOUT_SECONDS", 12.0),
+        max_retries=_get_int_env("GROQ_MAX_RETRIES", 0),
     )
 
 
-def chat_json(*, system_prompt, user_input):
-    # Force JSON mode for parser/explanation tasks where downstream code expects
-    # machine-readable output.
-    client = _build_groq_client()
-    model = get_env("GROQ_MODEL", "llama-3.1-8b-instant")
-    response = _chat_with_retry(
-        client=client,
-        model=model,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_input},
-        ],
-        temperature=0,
+def invoke_messages(*, messages, temperature, response_format=None, max_attempts=2):
+    for attempt in range(1, max_attempts + 1):
+        try:
+            model = build_chat_model(temperature=temperature)
+            if response_format is not None:
+                model = model.bind(response_format=response_format)
+            return model.invoke(messages)
+        except Exception as exc:
+            if attempt == max_attempts or not _is_retryable_rate_limit(exc):
+                raise
+            sleep_seconds = min(3.0, 1.0 * attempt)
+            time.sleep(sleep_seconds)
+
+
+def invoke_json_messages(*, messages, temperature=0):
+    response = invoke_messages(
+        messages=messages,
+        temperature=temperature,
         response_format={"type": "json_object"},
     )
-
-    content = response.choices[0].message.content
+    content = coerce_content_to_text(response.content)
     if not content:
         raise RuntimeError("Model returned empty content.")
     return json.loads(content)
 
 
-def chat_text(*, system_prompt, user_input):
-    client = _build_groq_client()
-    model = get_env("GROQ_MODEL", "llama-3.1-8b-instant")
-    response = _chat_with_retry(
-        client=client,
-        model=model,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_input},
-        ],
-        temperature=0.2,
-    )
-
-    content = response.choices[0].message.content
+def invoke_text_messages(*, messages, temperature=0.2):
+    response = invoke_messages(messages=messages, temperature=temperature)
+    content = coerce_content_to_text(response.content)
     if not content:
         raise RuntimeError("Model returned empty content.")
     return content
 
 
-def _chat_with_retry(
-    *,
-    client,
-    model,
-    messages,
-    temperature,
-    response_format=None,
-    max_attempts=2,
-):
-    request_kwargs = {
-        "model": model,
-        "messages": messages,
-        "temperature": temperature,
-    }
-    if response_format is not None:
-        request_kwargs["response_format"] = response_format
+def chat_json(*, system_prompt, user_input):
+    try:
+        from langchain_core.messages import HumanMessage, SystemMessage
+    except ImportError as exc:
+        raise RuntimeError(
+            "LangChain core is not installed. Install it with: pip install langchain"
+        ) from exc
 
-    for attempt in range(1, max_attempts + 1):
-        try:
-            return client.chat.completions.create(**request_kwargs)
-        except Exception as exc:
-            # Retry only for rate limits; other failures should surface
-            # immediately so the caller can fall back.
-            if attempt == max_attempts or not _is_retryable_rate_limit(exc):
-                raise
-            sleep_seconds = min(3.0, 1.0 * attempt)
-            time.sleep(sleep_seconds)
+    return invoke_json_messages(
+        messages=[
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=user_input),
+        ]
+    )
+
+
+def chat_text(*, system_prompt, user_input):
+    try:
+        from langchain_core.messages import HumanMessage, SystemMessage
+    except ImportError as exc:
+        raise RuntimeError(
+            "LangChain core is not installed. Install it with: pip install langchain"
+        ) from exc
+
+    return invoke_text_messages(
+        messages=[
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=user_input),
+        ]
+    )
+
+
+def coerce_content_to_text(content):
+    if isinstance(content, str):
+        return content.strip()
+    if isinstance(content, list):
+        parts = []
+        for item in content:
+            if isinstance(item, str):
+                parts.append(item)
+                continue
+            if isinstance(item, dict) and item.get("type") == "text":
+                text = item.get("text")
+                if text:
+                    parts.append(str(text))
+        return "".join(parts).strip()
+    if content is None:
+        return ""
+    return str(content).strip()
 
 
 def _is_retryable_rate_limit(exc):

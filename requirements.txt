@@ -1,0 +1,8 @@
+fastapi
+langchain
+langchain-groq
+numpy
+pydantic
+scipy
+sentence-transformers
+uvicorn

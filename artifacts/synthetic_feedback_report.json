@@ -997,6 +997,6 @@
     "users": 20,
     "movies": 95,
     "interactions": 120,
-    "matrix_path": "C:\\Users\\ivank\\OneDrive\\Desktop\\Sideproject\\ProjectLLM\\artifacts\\user_item_matrix.npz"
+    "matrix_path": "artifacts/user_item_matrix.npz"
   }
 }
